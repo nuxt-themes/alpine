@@ -1,7 +1,7 @@
 <template>
   <div class="text-gray-700 dark:text-gray-200">
   <Navbar />
-    <main class="prose dark:prose-invert m-auto sm:px-0 md:px-0 lg:px-0 max-w-[348px] md:max-w-[650px] lg:max-w-[864px] break-words">
+    <main class="prose dark:prose-invert m-auto sm:px-0 max-w-[342px] md:max-w-[650px] lg:max-w-[864px] break-words">
       <slot />
     </main>
   </div>
