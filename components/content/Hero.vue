@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: ''
@@ -51,7 +51,7 @@ const props = defineProps({
         v-if="image"
         class="max-h-[178px] object-cover w-full rounded-xl lg:mt-0 md:max-h-[274px] lg:h-[192px] lg:w-[388px]"
         :class="layout === 'left' ? 'order-first lg:mr-[56px] mb-8' : 'lg:ml-[56px] mt-8'"
-        :src="props.image"
+        :src="image"
         alt=":("
       />
     </Container>

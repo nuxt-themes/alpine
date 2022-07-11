@@ -10,7 +10,7 @@ defineProps({
 
 <template>
   <div
-    :class="[padded ? 'px-4 sm:px-6' : '']"
+    :class="[padded ? 'sm:mx-6 mx-4' : '']"
     class="mx-auto  py-[36px]"
   >
     <slot />
