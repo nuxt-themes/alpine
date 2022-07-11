@@ -8,28 +8,6 @@ const galleryProps = defineProps({
     required: true
   }
 })
-/* const galleryImageClass = ref('')
-const galleryContainerClass = ref('')
-onMounted(() => {
-  if (galleryProps.images && galleryProps.images.length <= 3) {
-    switch (galleryProps.images.length) {
-      case 2:
-        galleryImageClass.value = 'h-[386px]'
-        galleryContainerClass.value = 'grid grid-flow-col-dense justify-between gap-x-[92px]'
-        break
-      case 3:
-        galleryImageClass.value = 'h-[176px]'
-        galleryContainerClass.value = 'grid grid-flow-col-dense gap-x-[72px]'
-        break
-      default:
-        galleryImageClass.value = 'h-[392px]'
-        galleryContainerClass.value = ''
-        break
-    }
-  } else {
-    
-  }
-}) */
 const galleryImage1 = ref(null)
 const galleryImage2 = ref(null)
 const galleryImage3 = ref(null)
