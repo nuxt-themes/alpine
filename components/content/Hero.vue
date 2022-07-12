@@ -14,7 +14,7 @@ defineProps({
   },
   layout: {
     type: String,
-    defaut: 'right'
+    default: 'right'
   }
 })
 </script>

@@ -3,16 +3,13 @@ defineProps({
   padded: {
     type: Boolean,
     required: false,
-    default: false
+    default: true
   }
 })
 </script>
 
 <template>
-  <div
-    :class="[padded ? 'sm:mx-6 mx-4' : '']"
-    class="mx-auto py-[36px]"
-  >
+  <div :class="[padded ? 'px-4 sm:px-6' : '']" class="lg:max-w-4xl mx-auto">
     <slot />
   </div>
 </template>
