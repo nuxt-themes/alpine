@@ -13,6 +13,10 @@ export default defineNuxtConfig({
     navigation: {
       fields: ['navTitle']
     },
+    highlight: {
+      theme: 'github-dark',
+      preload: ['c']
+    }
   },
   theme: {
     meta: {
