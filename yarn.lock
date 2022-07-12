@@ -626,9 +626,9 @@
     vite-plugin-checker "^0.4.8"
 
 "@nuxthq/studio@npm:@nuxthq/studio-edge@latest":
-  version "0.0.1-27627218.25a110d"
-  resolved "https://registry.yarnpkg.com/@nuxthq/studio-edge/-/studio-edge-0.0.1-27627218.25a110d.tgz#969962247a13e6a0fb5723dda6743d766c20c26d"
-  integrity sha512-0pSlaYz5gzxpIWN7LSCqU8bRUwlgHfzyIG+pWj3Rm6zQKBA7W2nPjQ8nbbAMooBv9Y78Ql05Zlf+WzTdXuxaGQ==
+  version "0.0.1-27627248.dae31d1"
+  resolved "https://registry.yarnpkg.com/@nuxthq/studio-edge/-/studio-edge-0.0.1-27627248.dae31d1.tgz#bbf19b5a71853ce5f93f47c838d48947913e854a"
+  integrity sha512-szpb8ig0+g4M9+6khH1dvZu7N/VHDpX1oHqr0dFfr7aRrKdJEY/GGXbtNA+tidzzcMezD7sTHsR9dv5F2pbnvQ==
   dependencies:
     "@nuxt/kit" "^3.0.0-rc.4"
     nuxt-component-meta "^0.1.5"
