@@ -6,4 +6,3 @@ node_modules
 .output
 .env
 .vscode/
-yarn.lock
