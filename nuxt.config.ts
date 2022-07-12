@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     'nuxt-theme-kit/module',
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
+    '@nuxthq/studio',
     '@nuxtjs/color-mode'
   ],
   content: {
