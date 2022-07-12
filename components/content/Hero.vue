@@ -53,8 +53,10 @@ defineProps({
         :class="layout === 'left' ? 'order-first lg:mr-[56px] mb-8' : 'lg:ml-[56px] mt-8'"
         :src="image"
         alt=":("
-      />
+      >
     </Container>
   </section>
-  <p v-else> :( a hero block must have a title !</p>
+  <p v-else>
+    :( a hero block must have a title !
+  </p>
 </template>

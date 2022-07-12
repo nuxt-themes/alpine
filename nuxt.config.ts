@@ -15,8 +15,8 @@ export default defineNuxtConfig({
       fields: ['navTitle']
     },
     highlight: {
-      theme: 'github-dark',
-      preload: ['c']
+      theme: 'one-dark-pro',
+      preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini'],
     }
   },
   theme: {
