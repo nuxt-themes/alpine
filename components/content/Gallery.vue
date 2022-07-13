@@ -17,16 +17,19 @@ defineProps({
     <div
       class="grid gap-8"
       :class="{
-        'lg:grid-cols-3': images.length === 3,
-        'lg:grid-cols-2': images.length === 2
+        'md:grid-col-2 md:grid-row-2 lg:grid-cols-3': images.length === 3,
+        'md:grid-cols-2': images.length === 2
       }"
     >
       <img
         v-for="(image, index) in images"
         :key="index"
-        class="object-cover aspect-[4/3] w-full h-full rounded-xl"
+        class="object-cover w-full h-56 rounded-xl"
         :src="image"
-        :class="{ 'md:col-span-2 lg:col-span-1': images.length === 3 && index === images.length - 1 }"
+        :class="[{ 'row-span-1 md:col-span-2 lg:col-span-1': images.length === 3 && index === images.length - 1 },
+                 { 'md:h-72 lg:h-96' : images.length === 1 },
+                 { 'md:h-48 lg:h-52' : images.length === 2 },
+                 { 'md:h-48 lg:h-44' : images.length === 3 }]"
       >
     </div>
   </section>
