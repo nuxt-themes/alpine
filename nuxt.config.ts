@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     },
     highlight: {
       theme: 'one-dark-pro',
-      preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini'],
+      preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini', 'c', 'cpp']
     }
   },
   theme: {

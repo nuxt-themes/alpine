@@ -11,7 +11,7 @@ const theme = useTheme()
           theme.header.position === 'center' ||
           theme.header.position === 'right')
     "
-    class="grid grid-cols-1 grid-rows-2 h-[127px] md:h-[143px] py-[24px] md:py-[32px] mb-[24px] md:mb-[32px]"
+    class="grid grid-cols-1 grid-rows-2 h-32 md:h-36 py-6 md:py-8 mb-6 md:mb-8"
     :class="{
       'place-items-start': theme.header.position === 'left',
       'place-items-center': theme.header.position === 'center',
@@ -21,7 +21,7 @@ const theme = useTheme()
     <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100">
       Alpine.
     </h1>
-    <div class="grid grid-flow-col gap-x-[38px] auto-cols-max mt-[31px]">
+    <div class="grid grid-flow-col gap-x-9 auto-cols-max mt-8">
       <NuxtLink
         v-for="link of navigation"
         :key="link._path"
