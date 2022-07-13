@@ -15,3 +15,6 @@ dist
 
 # Local History
 .history
+
+# VSCode
+.vscode/
