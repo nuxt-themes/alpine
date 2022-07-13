@@ -2,7 +2,6 @@
 defineProps({
   padded: {
     type: Boolean,
-    required: false,
     default: true
   }
 })
