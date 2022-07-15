@@ -2,16 +2,16 @@ import { defineTheme } from 'nuxt-theme-kit'
 
 export default defineTheme({
   header: {
-    position: 'right' // possible value are : 'none' | 'left' | 'center' | 'right'
+    position: 'left' // possible value are : 'none' | 'left' | 'center' | 'right'
   },
   footer: {
-    title: true, // possible value are : true | false
-    navigation: true, // possible value are : true | false
+    title: false, // possible value are : true | false
+    navigation: false, // possible value are : true | false
     position: 'center', // possible value are : 'none' | 'left' | 'center' | 'right'
     socials: {
       enabled: true, // possible value are : true | false
       icons: true, // possible value are : true | false
-      message: '' // string that will be displayed on top of the icons / text (leave empty to disable)
+      message: 'Follow me on' // string that will be displayed on top of the icons / text (leave empty to disable)
     }
   },
   socials: {
