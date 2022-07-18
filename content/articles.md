@@ -1,0 +1,9 @@
+---
+navTitle: 'Articles'
+layout: 'page'
+---
+::articles-list
+---
+path: 'articles'
+---
+::
