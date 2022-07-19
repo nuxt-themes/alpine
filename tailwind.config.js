@@ -6,14 +6,7 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/line-clamp'),
-  ],
-  content: [
-    'content/**/*.{md,yml,json,json5,csv}',
-    './components/**/*.{js,vue,ts}',
-    './layouts/**/*.vue',
-    './pages/**/*.vue',
-    './plugins/**/*.{js,ts}'
+    require('@tailwindcss/line-clamp')
   ],
   theme: {
     extend: {
