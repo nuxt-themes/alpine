@@ -20,9 +20,9 @@ const props = defineProps({
   }
 })
 
-// @ts-ignore
-const { data: articles } = await useAsyncData('articles', () => {
-  return queryContent(props.path).sort({ date: -1 }).where({ _path: { $ne: `/${props.path}` } }).find()
-})
+const { data: _articles } = await useAsyncData('articles', async () => await queryContent(props.path).sort({ date: -1 }).where({ _path: { $ne: `/${props.path}` } }).find())
 
+const articles = computed(
+  () => _articles.value || []
+)
 </script>
