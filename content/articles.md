@@ -4,6 +4,6 @@ layout: 'page'
 ---
 ::articles-list
 ---
-path: 'articles'
+path: articles
 ---
 ::
