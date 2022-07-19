@@ -18,7 +18,7 @@ const theme = useTheme()
       'place-items-end': theme.header.position === 'right'
     }"
   >
-    <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100">
+    <h1 class="text-3xl font-bold text-primary-900 dark:text-primary-100">
       Alpine.
     </h1>
     <div class="grid grid-flow-col gap-x-9 auto-cols-max mt-8">
@@ -27,7 +27,7 @@ const theme = useTheme()
         :key="link._path"
         :to="link._path"
         active-class="font-bold"
-        class="text-gray-700 dark:text-gray-200"
+        class="text-primary-700 dark:text-primary-200"
       >
         {{ link.navTitle || link.title }}
       </NuxtLink>

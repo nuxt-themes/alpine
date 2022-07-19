@@ -26,7 +26,7 @@ const theme = useTheme()
       }`,
     ]"
   >
-    <h1 v-if="theme.footer.title" class="text-3xl font-bold text-gray-900 dark:text-gray-100">
+    <h1 v-if="theme.footer.title" class="text-3xl font-bold text-primary-900 dark:text-primary-100">
       Alpine.
     </h1>
     <div v-if="theme.footer.navigation" class="grid grid-flow-col gap-x-9 auto-cols-max my-4">
@@ -35,12 +35,12 @@ const theme = useTheme()
         :key="link._path"
         :to="link._path"
         active-class="font-bold"
-        class="text-gray-700 dark:text-gray-200"
+        class="text-primary-700 dark:text-primary-200"
       >
         {{ link.navTitle || link.title }}
       </NuxtLink>
     </div>
-    <p v-if="theme.footer.socials.message && theme.footer.socials.enabled" class="text-gray-700 dark:text-gray-200 text-center text-justify">
+    <p v-if="theme.footer.socials.message && theme.footer.socials.enabled" class="text-primary-700 dark:text-primary-200 text-center text-justify">
       {{ theme.footer.socials.message }}
     </p>
     <div v-if="theme.footer.socials.enabled" class="grid grid-flow-col gap-x-9 auto-cols-max">

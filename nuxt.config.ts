@@ -5,18 +5,15 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt-themes/config/module',
     '@nuxtjs/design-tokens/module',
+    '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
-    '@nuxthq/studio',
-    '@nuxtjs/color-mode'
+    '@nuxthq/studio'
   ],
   tailwindcss: {
     exposeConfig: true,
     injectPosition: 'last'
   },
-  buildModules: [
-    '@nuxtjs/tailwindcss'
-  ],
   css: [
     // Including Inter CSS is the first component to reproduce HMR issue. It also causes playground to look better,
     // since Inter is a native font for Tailwind UI
