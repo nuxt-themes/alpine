@@ -1,21 +1,27 @@
 <script setup lang="ts">
-// @ts-ignore
-import { formatDate } from '../../utils/index.ts'
+import { formatDate } from '../../utils/index'
 
 defineProps({
-  article: { type: Object, default: null }
+  article: {
+    type: Object,
+    default: null
+  },
+  hero: {
+    type: Boolean,
+    default: false
+  }
 })
 </script>
 
 <template>
   <nuxt-link v-if="article && article._path && article.title" :to="article._path">
-    <div class="flex flex-col h-96">
-      <img v-if="article.cover" class="object-cover w-full h-44 rounded-xl" :src="article.cover">
-      <div class="flex flex-col h-full mt-5">
+    <div class="flex flex-col h-[352px]" :class="{'md:h-52 lg:h-44 md:flex-row' : hero}">
+      <img v-if="article.cover" class="object-cover w-full h-40 md:h-44 rounded-xl mb-5" :class="{'md:h-full md:mb-0 md:mr-14 md:flex-none md:w-64 lg:w-96' : hero}" :src="article.cover">
+      <div class="flex flex-col h-full">
         <h1 class="flex-none text-2xl font-semibold line-clamp-2">
           {{ article.title }}
         </h1>
-        <p class="flex-none" :class="article.cover ? 'line-clamp-4' : 'line-clamp-8'">
+        <p class="flex-none mt-2" :class="article.cover ? 'line-clamp-2' : 'line-clamp-4'">
           {{ article.description }}
         </p>
         <div class="grow" />
