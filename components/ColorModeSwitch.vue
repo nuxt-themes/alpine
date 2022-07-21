@@ -11,14 +11,21 @@ defineProps({
 })
 
 const colorMode = useColorMode()
-const onClick = () => (colorMode.value === 'light' ? (colorMode.preference = 'dark') : (colorMode.preference = 'light'))
+const onClick = () => {
+  const values = ['light', 'dark', 'system']
+  const index = values.indexOf(colorMode.preference)
+  const next = (index + 1) % values.length
+
+  colorMode.preference = values[next]
+}
 </script>
 
 <template>
   <button aria-label="Color Mode" class="inline-block" @click="onClick">
     <ColorScheme placeholder="...">
-      <Icon v-if="colorMode.value === 'dark'" name="heroicons-outline:moon" />
-      <Icon v-else name="heroicons-outline:sun" />
+      <Icon v-if="colorMode.preference === 'dark'" name="uil:moon" />
+      <Icon v-else-if="colorMode.preference === 'light'" name="uil:sun" />
+      <Icon v-else name="uil:desktop" />
     </ColorScheme>
   </button>
 </template>

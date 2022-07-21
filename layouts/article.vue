@@ -2,14 +2,16 @@
   <Container>
     <Header />
     <nuxt-link :to="parentPath">
-      <p class="mb-7">
+      <p class="mb-7 text-primary-900 dark:text-primary-100">
         <Icon class="mr-2" name="mdi:arrow-left" /> Back
       </p>
     </nuxt-link>
-    <h1 class="text-5xl font-semibold mb-4">
+    <h1 class="text-5xl font-semibold text-primary-900 dark:text-primary-100 mb-4">
       {{ article.title }}
     </h1>
-    <p>{{ formatDate(article.date) }}</p>
+    <p class="text-primary-700 dark:text-primary-400">
+      {{ formatDate(article.date) }}
+    </p>
     <main class="prose dark:prose-invert max-w-full">
       <slot />
     </main>

@@ -2,7 +2,7 @@ import { defineTheme } from '@nuxt-themes/config'
 
 export default defineTheme({
   header: {
-    position: 'center' // possible value are : 'none' | 'left' | 'center' | 'right'
+    position: 'left' // possible value are : 'none' | 'left' | 'center' | 'right'
   },
   footer: {
     title: false, // possible value are : true | false
