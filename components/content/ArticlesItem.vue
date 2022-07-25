@@ -1,20 +1,32 @@
 <script setup lang="ts">
 import { formatDate } from '../../utils/index'
 
+type Article = {
+  _path: string
+  title: string
+  date: string
+  description: string
+}
+
 defineProps({
   article: {
     type: Object,
-    default: null
+    required: true,
+    validator: (value: Article) => {
+      if (value && value._path && value.title) { return true }
+      return false
+    }
   },
   hero: {
     type: Boolean,
     default: false
   }
 })
+
 </script>
 
 <template>
-  <nuxt-link v-if="article && article._path && article.title" :to="article._path">
+  <nuxt-link v-if="article._path && article.title" :to="article._path">
     <div class="flex flex-col h-[352px]" :class="{'md:h-52 lg:h-44 md:flex-row' : hero}">
       <img v-if="article.cover" class="object-cover w-full h-40 md:h-44 rounded-xl mb-5" :class="{'md:h-full md:mb-0 md:mr-14 md:flex-none md:w-64 lg:w-96' : hero}" :src="article.cover">
       <div class="flex flex-col h-full">

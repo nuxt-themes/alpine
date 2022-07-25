@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="articles && articles.length">
     <div class="mt-8 mb-16">
       <ArticlesItem :article="articles[0]" :hero="true" />
     </div>
