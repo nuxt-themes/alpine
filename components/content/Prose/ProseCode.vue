@@ -20,9 +20,6 @@ const props = defineProps({
     default: () => []
   }
 })
-console.log('code: ', props.code)
-console.log('lang: ', props.language)
-console.log('filename: ', props.filename)
 </script>
 
 <template>
