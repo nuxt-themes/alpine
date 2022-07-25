@@ -21,7 +21,7 @@ const onClick = () => {
 </script>
 
 <template>
-  <button aria-label="Color Mode" class="inline-block" @click="onClick">
+  <button aria-label="Color Mode" class="inline-block text-primary-800 dark:text-primary-200" @click="onClick">
     <ColorScheme placeholder="...">
       <Icon v-if="colorMode.preference === 'dark'" name="uil:moon" />
       <Icon v-else-if="colorMode.preference === 'light'" name="uil:sun" />

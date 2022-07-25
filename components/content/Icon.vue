@@ -3,13 +3,14 @@ import type { IconifyIcon } from '@iconify/vue'
 import { Icon as Iconify } from '@iconify/vue/dist/offline'
 import { loadIcon } from '@iconify/vue'
 
-const nuxtApp = useNuxtApp()
 const props = defineProps({
   name: {
     type: String,
     required: true
   }
 })
+
+const nuxtApp = useNuxtApp()
 const state = useState('icons', () => ({}))
 const isFetching = ref(false)
 const icon = computed<IconifyIcon | null>(() => state.value?.[props.name])
@@ -29,11 +30,14 @@ async function loadIconComponent () {
 watch(() => props.name, loadIconComponent)
 
 !component.value && await loadIconComponent()
+
 </script>
 
 <template>
-  <span v-if="isFetching" class="inline-block w-5 h-5" />
-  <Iconify v-else-if="icon" :icon="icon" class="inline-block w-5 h-5" />
-  <Component :is="component" v-else-if="component" class="inline-block w-5 h-5" />
-  <span v-else>{{ name }}</span>
+  <div class="text-primary-800 dark:text-primary-200">
+    <span v-if="isFetching" class="inline-block w-5 h-5" />
+    <Iconify v-else-if="icon" :icon="icon" class="inline-block w-5 h-5" />
+    <Component :is="component" v-else-if="component" class="inline-block w-5 h-5" />
+    <span v-else>{{ name }}</span>
+  </div>
 </template>

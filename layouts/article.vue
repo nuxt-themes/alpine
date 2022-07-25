@@ -3,7 +3,7 @@
     <Header />
     <nuxt-link :to="parentPath">
       <p class="mb-7 text-primary-900 dark:text-primary-100">
-        <Icon class="mr-2" name="mdi:arrow-left" /> Back
+        <Icon class="mr-2" name="uil:arrow-left" /> Back
       </p>
     </nuxt-link>
     <h1 class="text-5xl font-semibold text-primary-900 dark:text-primary-100 mb-4">

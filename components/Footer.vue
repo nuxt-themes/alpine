@@ -45,7 +45,7 @@ const theme = useTheme()
     </p>
     <div v-if="theme.footer.socials.enabled" class="grid grid-flow-col gap-x-9 auto-cols-max">
       <NuxtLink v-for="[icon, link] of Object.entries(theme.socials)" :key="icon" :to="link">
-        <Icon v-if="theme.footer.socials.icons" :name="`mdi:${icon}`" class="w-4 h-4" />
+        <Icon v-if="theme.footer.socials.icons" :name="`uil:${icon}`" class="w-4 h-4" />
         <p v-else>
           {{ icon }}
         </p>
