@@ -40,7 +40,7 @@ const theme = useTheme()
         {{ link.navTitle || link.title }}
       </NuxtLink>
     </div>
-    <p v-if="theme.footer.socials.message && theme.footer.socials.enabled" class="text-primary-700 dark:text-primary-200 text-center text-justify">
+    <p v-if="theme.footer.socials.message && theme.footer.socials.enabled" class="text-primary-700 dark:text-primary-200 text-center">
       {{ theme.footer.socials.message }}
     </p>
     <div v-if="theme.footer.socials.enabled" class="grid grid-flow-col gap-x-9 auto-cols-max">
