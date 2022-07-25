@@ -12,7 +12,7 @@ defineProps({
 
 const colorMode = useColorMode()
 const onClick = () => {
-  const values = ['light', 'dark', 'system']
+  const values = ['system', 'light', 'dark']
   const index = values.indexOf(colorMode.preference)
   const next = (index + 1) % values.length
 
