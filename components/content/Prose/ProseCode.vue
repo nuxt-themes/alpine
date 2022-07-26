@@ -21,19 +21,14 @@ const props = defineProps({
   }
 })
 
-const codeBlock = ref(null)
-
 </script>
 
 <template>
-  <div ref="codeBlock" class="relative group min-h-min w-full prose-code prose-code:flex prose-code:flex-col prose-pre:py-7">
-    <div v-if="codeBlock" class="absolute right-0 h-full flex flex-col">
-      <p v-if="filename && codeBlock && codeBlock.clientHeight >= 120" class="transition mx-auto hover:opacity-0 text-primary-100 not-prose my-0" :class="{'mb-6 mr-4 md:mr-5 mt-4 md:mt-5': codeBlock.clientHeight >= 120}">
-        {{ filename }}
-      </p>
-      <div class="grow" />
-      <CopyButton :content="code" class="mr-4 md:mr-5 mb-4 md:mb-5" />
-    </div>
+  <div class="group relative flex items-center w-full min-h-[5rem] mb-4 overflow-hidden rounded-md bg-primary-900 prose-pre:my-0 prose-code:flex prose-code:flex-col prose-pre:bg-transparent">
     <slot />
+    <span v-if="filename" class="absolute text-xs transition top-2 right-2 hover:opacity-0 text-primary-100">
+      {{ filename }}
+    </span>
+    <CopyButton :content="code" class="absolute text-xs bottom-2 right-2 h-min" />
   </div>
 </template>
