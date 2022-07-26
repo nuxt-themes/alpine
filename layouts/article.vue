@@ -2,7 +2,7 @@
   <Container>
     <Header />
     <nuxt-link :to="parentPath">
-      <p class="mb-7 text-primary-900 dark:text-primary-100">
+      <p class="flex flex-row mt-10 mb-7 text-primary-900 dark:text-primary-100">
         <Icon class="mr-2" name="uil:arrow-left" /> Back
       </p>
     </nuxt-link>
