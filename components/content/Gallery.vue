@@ -15,7 +15,7 @@ defineProps({
 <template>
   <section class="not-prose">
     <div
-      class="grid gap-8"
+      class="grid gap-8 my-16"
       :class="{
         'md:grid-col-2 md:grid-rows-2 lg:grid-rows-1 lg:grid-cols-3': images.length === 3,
         'md:grid-cols-2': images.length === 2
