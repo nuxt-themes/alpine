@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 const { navigation } = useContent()
 const theme = useTheme()
-const colorMode = useColorMode()
 </script>
 
 <template>
@@ -24,7 +23,8 @@ const colorMode = useColorMode()
       }"
     >
       <NuxtLink to="/" class="text-primary-700 dark:text-primary-200">
-        <img :src="(colorMode.value === 'dark' && theme.header.logo.logoDark && theme.header.logo.logoDark.length) ? theme.header.logo.logoDark : theme.header.logo.logo" :alt="theme.header.logo.alt">
+        <img class="dark-img" :src="theme.header.logo.logoDark">
+        <img class="light-img" :src="theme.header.logo.logo">
       </NuxtLink>
       <div class="grid grid-flow-col gap-x-9 auto-cols-max mt-8">
         <NuxtLink

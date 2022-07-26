@@ -9,11 +9,11 @@
         </p>
       </div>
     </nuxt-link>
-    <h1 class="text-5xl font-semibold text-primary-900 dark:text-primary-100 mb-4">
-      {{ article.title }}
+    <h1 v-if="page?.title" class="text-5xl font-semibold text-primary-900 dark:text-primary-100 mb-4">
+      {{ page.title }}
     </h1>
-    <p class="text-primary-700 dark:text-primary-400">
-      {{ formatDate(article.date) }}
+    <p v-if="page?.date" class="text-primary-700 dark:text-primary-400">
+      {{ formatDate(page.date) }}
     </p>
     <main class="prose dark:prose-invert max-w-full">
       <slot />
@@ -27,15 +27,13 @@ import { formatDate } from '../utils/index'
 
 const route = useRoute()
 
-const parentPath = computed(() => {
-  const pathTabl = route.path.split('/')
-  pathTabl.pop()
-  return pathTabl.join('/')
-})
+const parentPath = computed(
+  () => {
+    const pathTabl = route.path.split('/')
+    pathTabl.pop()
+    return pathTabl.join('/')
+  }
+)
 
-// @ts-ignore
-const { data: article } = await useAsyncData('article', () => {
-  return queryContent(route.path).findOne()
-})
-
+const { page } = useContent()
 </script>

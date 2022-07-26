@@ -1,7 +1,20 @@
+@tailwind components;
+
 html {
   @apply bg-secondary-100;
 }
 
 html.dark {
   @apply bg-secondary-900;
+}
+
+
+@layer components {
+  /* Images */
+  .light-img {
+    @apply block dark:hidden;
+  }
+  .dark-img {
+    @apply hidden dark:block;
+  }
 }
