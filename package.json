@@ -14,7 +14,7 @@
     "@nuxthq/studio": "npm:@nuxthq/studio-edge@latest",
     "@nuxtjs/color-mode": "^3.1.4",
     "@nuxtjs/design-tokens": "npm:@nuxtjs/design-tokens-edge@latest",
-    "@nuxtjs/tailwindcss": "^5.3.0",
+    "@nuxtjs/tailwindcss": "^5.3.1",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.4.0",
     "@tailwindcss/typography": "^0.5.4",
@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^10.0.0",
-    "@vueuse/core": "^8.9.4",
+    "@vueuse/core": "^9.0.0",
     "eslint": "^8.20.0",
     "nuxt": "npm:nuxt3@latest",
     "typescript": "^4.7.4"

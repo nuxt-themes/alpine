@@ -11,7 +11,7 @@ const theme = useTheme()
           theme.footer.position === 'center' ||
           theme.footer.position === 'right')
     "
-    class="grid grid-cols-1 h-32 md:h-36 py-6 md:py-8 mb-6 md:mb-8 mt-24"
+    class="grid grid-cols-1 h-32 md:h-36 py-6 md:py-8 mt-24"
     :class="[
       {
         'place-items-start': theme.footer.position === 'left',

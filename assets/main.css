@@ -1,0 +1,7 @@
+html {
+  @apply bg-secondary-100;
+}
+
+html.dark {
+  @apply bg-secondary-900;
+}

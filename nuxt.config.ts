@@ -1,4 +1,9 @@
+import { fileURLToPath } from 'url'
 import { defineNuxtConfig } from 'nuxt'
+import { resolve } from 'pathe'
+
+const themeDir = fileURLToPath(new URL('./', import.meta.url))
+const resolveThemeDir = (path: string) => resolve(themeDir, path)
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -11,10 +16,12 @@ export default defineNuxtConfig({
     '@nuxthq/studio'
   ],
   tailwindcss: {
+    viewer: false,
     exposeConfig: true,
     injectPosition: 'last'
   },
   css: [
+    resolveThemeDir('./assets/main.css'),
     // Including Inter CSS is the first component to reproduce HMR issue. It also causes playground to look better,
     // since Inter is a native font for Tailwind UI
     '@fontsource/inter/400.css',
