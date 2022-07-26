@@ -21,8 +21,8 @@ defineProps({
 
 <template>
   <section v-if="title || $slots.title" class="not-prose">
-    <div :class="image ? 'lg:flex' : ''" class="">
-      <div :class="image ? 'shrink' : ''">
+    <div class="flex flex-col lg:flex-row">
+      <div :class="image ? 'grow' : ''">
         <div class="text-3xl font-bold text-primary-900 dark:text-primary-100">
           <p v-if="title" class="!my-0">
             {{ title }}
