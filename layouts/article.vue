@@ -2,9 +2,12 @@
   <Container>
     <Header />
     <nuxt-link :to="parentPath">
-      <p class="flex flex-row mt-10 mb-7 text-primary-900 dark:text-primary-100">
-        <Icon class="mr-2" name="uil:arrow-left" /> Back
-      </p>
+      <div class="flex flex-row mt-10 mb-7">
+        <Icon class="mr-2" name="uil:arrow-left" />
+        <p class="text-primary-900 dark:text-primary-100">
+          Back
+        </p>
+      </div>
     </nuxt-link>
     <h1 class="text-5xl font-semibold text-primary-900 dark:text-primary-100 mb-4">
       {{ article.title }}
