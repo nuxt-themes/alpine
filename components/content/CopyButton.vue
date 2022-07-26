@@ -1,6 +1,6 @@
 <template>
-  <button class="flex flext-col mx-auto my-auto text-primary-100 not-prose bg-zinc-600 rounded-lg py-1 px-3" @click="copyCode">
-    <Icon v-if="state === 'copied'" name="uil:check" class="w-5 h-5 mr-1 mt-1" />
+  <button class="scale-0 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 flex flext-col mx-auto my-auto text-primary-100 not-prose bg-zinc-600 rounded-lg pt-1 pb-1.5 px-3" @click="copyCode">
+    <Icon v-if="state === 'copied'" name="uil:check" class="w-5 h-5 mr-1 !text-primary-100 !dark:text-primary-100" />
     <p>
       {{ state }}
     </p>
