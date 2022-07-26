@@ -2,7 +2,13 @@ import { defineTheme } from '@nuxt-themes/config'
 
 export default defineTheme({
   header: {
-    position: 'left' // possible value are : 'none' | 'left' | 'center' | 'right'
+    position: 'left', // possible value are : 'none' | 'left' | 'center' | 'right'
+    logo: {
+      enabled: true, // possible value are : true | false
+      logo: 'assets/Logo.svg', // path of the logo
+      logoDark: 'assets/LogoDark.svg', // path of the logo in dark mode, leave this empty if you want to use the same logo
+      alt: 'alpine' // alt of the logo
+    }
   },
   footer: {
     title: false, // possible value are : true | false

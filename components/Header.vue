@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 const { navigation } = useContent()
 const theme = useTheme()
+const colorMode = useColorMode()
 </script>
 
 <template>
@@ -22,9 +23,9 @@ const theme = useTheme()
         'place-items-end': theme.header.position === 'right'
       }"
     >
-      <h1 class="text-3xl font-bold text-primary-900 dark:text-primary-100">
-        Alpine.
-      </h1>
+      <NuxtLink to="/" class="text-primary-700 dark:text-primary-200">
+        <img :src="(colorMode.value === 'dark' && theme.header.logo.logoDark && theme.header.logo.logoDark.length) ? theme.header.logo.logoDark : theme.header.logo.logo" :alt="theme.header.logo.alt">
+      </NuxtLink>
       <div class="grid grid-flow-col gap-x-9 auto-cols-max mt-8">
         <NuxtLink
           v-for="link of navigation"
