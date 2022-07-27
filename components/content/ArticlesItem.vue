@@ -13,7 +13,7 @@ defineProps({
     type: Object,
     required: true,
     validator: (value: Article) => {
-      if (value && value._path && value.title) { return true }
+      if (value?._path && value.title) { return true }
       return false
     }
   },
