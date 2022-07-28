@@ -25,7 +25,7 @@ import type { Field, ContactField } from '~/types/contact'
 const props = defineProps({
   sendButton: {
     type: String,
-    default: 'Send message' // if empty, send button will be disabled.
+    default: 'Send message'
   },
   email: {
     type: String,
