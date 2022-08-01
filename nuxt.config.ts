@@ -1,13 +1,12 @@
-import { fileURLToPath } from 'url'
 import { defineNuxtConfig } from 'nuxt'
-import { resolve } from 'pathe'
+import { createResolver } from '@nuxt/kit'
 
-const themeDir = fileURLToPath(new URL('./', import.meta.url))
-const resolveThemeDir = (path: string) => resolve(themeDir, path)
+const { resolve } = createResolver(import.meta.url)
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   modules: [
+    // TODO: improve to leverage only `@nuxt/studio`
     '@nuxt-themes/config/module',
     '@nuxtjs/design-tokens/module',
     '@nuxtjs/color-mode',
@@ -15,13 +14,13 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@vueuse/nuxt'
   ],
+  // TODO: shall be added by Studio or Nuxt Content v3
   components: [
-    '~/components',
-    // TODO: shall be added by Studio or Nuxt Content v3
-    { path: '~/elements', global: true }
+    resolve('./components'),
+    { path: resolve('./elements'), global: true }
   ],
   css: [
-    resolveThemeDir('./assets/main.css'),
+    resolve('./assets/main.css'),
     '@fontsource/inter/400.css',
     '@fontsource/inter/500.css',
     '@fontsource/inter/600.css',
