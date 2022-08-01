@@ -42,7 +42,8 @@ export default defineNuxtConfig({
       meta: {
         name: 'Alpine',
         description: 'Just a basic blog theme for Nuxt.',
-        author: 'NuxtLabs'
+        author: 'NuxtLabs',
+        url: 'https://alpine.nuxt.dev'
       }
     }
   },
