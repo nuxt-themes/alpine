@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4 class="text-md">
+    <h4 class="text-md mb-3 mt-0">
       {{ field.name }}
     </h4>
     <input
