@@ -8,7 +8,7 @@ const resolveThemeDir = (path: string) => resolve(themeDir, path)
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   modules: [
-    '@nuxthq/studio',
+    process.env.NODE_ENV === 'development' ? '@nuxthq/studio' : undefined,
     '@nuxt-themes/config/module',
     '@nuxtjs/design-tokens/module',
     '@nuxtjs/color-mode',

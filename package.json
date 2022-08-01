@@ -13,7 +13,6 @@
     "@iconify/vue": "^3.2.1",
     "@nuxt-themes/config": "npm:@nuxt-themes/config-edge@latest",
     "@nuxt/content": "npm:@nuxt/content-edge@latest",
-    "@nuxthq/studio": "^0.0.9",
     "@nuxtjs/color-mode": "^3.1.4",
     "@nuxtjs/design-tokens": "npm:@nuxtjs/design-tokens-edge@latest",
     "@nuxtjs/tailwindcss": "^5.3.1",
@@ -28,5 +27,8 @@
     "eslint": "^8.20.0",
     "nuxt": "npm:nuxt3@latest",
     "typescript": "^4.7.4"
+  },
+  "peerDependencies": {
+    "@nuxthq/studio": "^0.0.9"
   }
 }
