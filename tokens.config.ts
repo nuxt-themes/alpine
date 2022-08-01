@@ -1,4 +1,4 @@
-import { defineTokens, palette } from '@nuxtjs/design-tokens'
+import { defineTokens } from '@nuxtjs/design-tokens'
 
 export default defineTokens({
   colors: {
@@ -7,8 +7,8 @@ export default defineTokens({
     },
     primary: {
       DEFAULT: { value: '#78716c' },
-      50: { value: '#fafaf9' },
-      100: { value: '#f5f5f4' },
+      50: { value: '#ffffff' },
+      100: { value: '#ffffff' },
       200: { value: '#e7e5e4' },
       300: { value: '#d6d3d1' },
       400: { value: '#a8a29e' },
