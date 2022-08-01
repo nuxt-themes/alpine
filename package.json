@@ -3,10 +3,11 @@
   "version": "0.0.1",
   "main": "./nuxt.config.ts",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "dev": "nuxi dev",
+    "play": "nuxi dev playground",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview"
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.11",
