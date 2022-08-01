@@ -15,6 +15,10 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxthq/studio'
   ],
+  components: [
+    '~/components',
+    { path: '~/elements', global: true }
+  ],
   tailwindcss: {
     viewer: false,
     exposeConfig: true,
