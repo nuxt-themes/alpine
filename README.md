@@ -19,12 +19,6 @@ pnpm install --shamefully-hoist
 
 ## Development Server
 
-Install Studio locally:
-
-```bash
-yarn add --dev @nuxthq/studio
-```
-
 Start the development server on http://localhost:3000
 
 ```bash
