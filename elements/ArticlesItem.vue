@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { formatDate } from '../../utils/index'
-
 type Article = {
   _path: string
   title: string
@@ -28,7 +26,7 @@ defineProps({
 <template>
   <nuxt-link v-if="article._path && article.title" :to="article._path">
     <div class="flex flex-col h-80 md:h-[352px]" :class="{'md:h-52 lg:h-44 md:flex-row' : hero}">
-      <img v-if="article.cover" class="object-cover w-full h-40 md:h-44 rounded-xl mb-5" :class="{'md:h-full md:mb-0 md:mr-14 md:flex-none md:w-64 lg:w-96' : hero}" :src="article.cover">
+      <img v-if="article.cover" class="object-cover w-full h-40 mb-5 md:h-44 rounded-xl" :class="{'md:h-full md:mb-0 md:mr-14 md:flex-none md:w-64 lg:w-96' : hero}" :src="article.cover">
       <div class="flex flex-col h-full">
         <h1 class="flex-none text-2xl font-semibold line-clamp-2 text-primary-900 dark:text-primary-100">
           {{ article.title }}

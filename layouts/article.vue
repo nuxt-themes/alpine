@@ -9,13 +9,13 @@
         </p>
       </div>
     </nuxt-link>
-    <h1 v-if="page?.title" class="text-5xl font-semibold text-primary-900 dark:text-primary-100 mb-4">
+    <h1 v-if="page?.title" class="mb-4 text-5xl font-semibold text-primary-900 dark:text-primary-100">
       {{ page.title }}
     </h1>
     <p v-if="page?.date" class="text-primary-700 dark:text-primary-400">
       {{ formatDate(page.date) }}
     </p>
-    <main class="prose dark:prose-invert max-w-full">
+    <main class="max-w-full prose dark:prose-invert">
       <slot />
     </main>
     <Footer />
@@ -23,8 +23,6 @@
 </template>
 
 <script setup lang="ts">
-import { formatDate } from '../utils/index'
-
 const route = useRoute()
 
 const parentPath = computed(

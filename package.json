@@ -1,5 +1,7 @@
 {
-  "private": true,
+  "name": "@nuxt-themes/alpine",
+  "version": "0.0.1",
+  "main": "./nuxt.config.ts",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -11,7 +13,6 @@
     "@iconify/vue": "^3.2.1",
     "@nuxt-themes/config": "npm:@nuxt-themes/config-edge@latest",
     "@nuxt/content": "npm:@nuxt/content-edge@latest",
-    "@nuxthq/studio": "npm:@nuxthq/studio-edge@latest",
     "@nuxtjs/color-mode": "^3.1.4",
     "@nuxtjs/design-tokens": "npm:@nuxtjs/design-tokens-edge@latest",
     "@nuxtjs/tailwindcss": "^5.3.1",

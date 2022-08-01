@@ -12,8 +12,11 @@ export default defineNuxtConfig({
     '@nuxtjs/design-tokens/module',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
-    '@nuxt/content',
-    '@nuxthq/studio'
+    '@nuxt/content'
+  ],
+  components: [
+    '~/components',
+    { path: '~/elements', global: true }
   ],
   tailwindcss: {
     viewer: false,
