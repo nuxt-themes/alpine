@@ -1,5 +1,7 @@
 {
-  "private": true,
+  "name": "@nuxt-themes/alpine",
+  "version": "0.0.1",
+  "main": "./nuxt.config.ts",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
