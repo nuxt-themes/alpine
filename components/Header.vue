@@ -34,7 +34,7 @@ const theme = useTheme()
           active-class="font-bold"
           class="text-primary-700 dark:text-primary-200"
         >
-          {{ link.navTitle || link.title }}
+          {{ link.title }}
         </NuxtLink>
       </div>
     </div>

@@ -12,31 +12,26 @@ export default defineNuxtConfig({
     '@nuxtjs/design-tokens/module',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@vueuse/nuxt'
   ],
   components: [
     '~/components',
+    // TODO: shall be added by Studio or Nuxt Content v3
     { path: '~/elements', global: true }
   ],
-  tailwindcss: {
-    viewer: false,
-    exposeConfig: true,
-    injectPosition: 'last'
-  },
   css: [
     resolveThemeDir('./assets/main.css'),
-    // Including Inter CSS is the first component to reproduce HMR issue. It also causes playground to look better,
-    // since Inter is a native font for Tailwind UI
     '@fontsource/inter/400.css',
     '@fontsource/inter/500.css',
     '@fontsource/inter/600.css',
     '@fontsource/inter/700.css'
   ],
+  tailwindcss: {
+    injectPosition: 'last'
+  },
   content: {
     documentDriven: true,
-    navigation: {
-      fields: ['navTitle']
-    },
     highlight: {
       theme: 'one-dark-pro',
       preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini', 'c', 'cpp']
@@ -52,13 +47,9 @@ export default defineNuxtConfig({
     tokens: true
   },
   colorMode: {
-    preference: 'system', // default value of $colorMode.preference
-    fallback: 'light', // fallback value if not system preference found
-    hid: 'nuxt-color-mode-script',
-    globalName: '__NUXT_COLOR_MODE__',
-    componentName: 'ColorScheme',
-    classPrefix: '',
-    classSuffix: '',
-    storageKey: 'nuxt-color-mode'
+    classSuffix: ''
+  },
+  experimental: {
+    viteNode: true
   }
 })
