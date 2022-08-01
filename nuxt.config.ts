@@ -37,14 +37,14 @@ export default defineNuxtConfig({
       preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini', 'c', 'cpp']
     }
   },
-  theme: {
-    meta: {
-      name: 'Alpine',
-      description: 'Just a basic blog theme for Nuxt.',
-      author: 'NuxtLabs'
-    },
-    options: true,
-    tokens: true
+  app: {
+    theme: {
+      meta: {
+        name: 'Alpine',
+        description: 'Just a basic blog theme for Nuxt.',
+        author: 'NuxtLabs'
+      }
+    }
   },
   colorMode: {
     classSuffix: ''
