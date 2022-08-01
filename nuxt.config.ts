@@ -1,5 +1,6 @@
 import { fileURLToPath } from 'url'
 import { defineNuxtConfig } from 'nuxt'
+import { installModule } from '@nuxt/kit'
 import { resolve } from 'pathe'
 
 const themeDir = fileURLToPath(new URL('./', import.meta.url))
@@ -8,7 +9,13 @@ const resolveThemeDir = (path: string) => resolve(themeDir, path)
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   modules: [
-    process.env.NODE_ENV === 'development' ? '@nuxthq/studio' : undefined,
+    async () => {
+      // @ts-ignore - typescript doesn't know about this module as optional deps
+      const nuxtStudio = await import('@nuxthq/studio').catch(() => null)
+      if (nuxtStudio) {
+        await installModule('@nuxthq/studio')
+      }
+    },
     '@nuxt-themes/config/module',
     '@nuxtjs/design-tokens/module',
     '@nuxtjs/color-mode',

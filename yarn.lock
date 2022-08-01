@@ -6148,9 +6148,9 @@ remark-gfm@^3.0.1:
     unified "^10.0.0"
 
 remark-mdc@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/remark-mdc/-/remark-mdc-1.0.2.tgz#f417adac00c7dbd062d8f842c4115e545b131335"
-  integrity sha512-D4G4c4tb+dFnmbo7LE0og21cF04ZOk3dSd0jSKvUSkiprd/qKclFKT+fEeXa2WqG8c7W6aCn36eSwPbzkCWb2A==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/remark-mdc/-/remark-mdc-1.0.3.tgz#4f018546efc1fe46dbc7f548118d3b5107c7d9db"
+  integrity sha512-eMzh3oSYefE60Hphay5bJFf6M2HDul/ULo6tdZ27OrnnMLk2QyDOKEbTWKOePK2zgiqqNNQLz5xnl3/16JWTnw==
   dependencies:
     flat "^5.0.2"
     js-yaml "^4.1.0"

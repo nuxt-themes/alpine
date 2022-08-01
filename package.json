@@ -29,7 +29,7 @@
     "nuxt": "npm:nuxt3@latest",
     "typescript": "^4.7.4"
   },
-  "peerDependencies": {
+  "optionalDependencies": {
     "@nuxthq/studio": "^0.0.9"
   }
 }
