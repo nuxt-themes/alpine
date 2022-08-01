@@ -1,5 +1,6 @@
 import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
-  extends: '../'
+  extends: '../',
+  modules: ['@nuxthq/studio']
 })

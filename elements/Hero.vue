@@ -1,13 +1,5 @@
 <script setup lang="ts">
 defineProps({
-  title: {
-    type: String,
-    default: ''
-  },
-  description: {
-    type: String,
-    default: null
-  },
   image: {
     type: String,
     default: null
@@ -20,21 +12,17 @@ defineProps({
 </script>
 
 <template>
-  <section v-if="title || $slots.title" class="not-prose">
+  <section class="not-prose">
     <div class="flex flex-col lg:flex-row">
       <div :class="image ? 'grow' : ''">
-        <div class="text-3xl font-bold text-primary-900 dark:text-primary-100">
-          <p v-if="title" class="!my-0">
-            {{ title }}
-          </p>
-          <Markdown v-else :use="$slots.title" unwrap="p" />
-        </div>
-        <div v-if="description || $slots.description" class="mt-3 dark:prose-invert">
-          <p v-if="description" class="!my-0">
-            {{ description }}
-          </p>
-          <Markdown v-else :use="$slots.description" unwrap="p" />
-        </div>
+        <h1 class="text-3xl font-bold text-primary-900 dark:text-primary-100">
+          <span v-if="$slots.title"><Markdown :use="$slots.title" unwrap="p" class="!my-0" /></span>
+          <span v-else>Default title</span>
+        </h1>
+        <p class="mt-3 dark:prose-invert">
+          <Markdown v-if="$slots.description" :use="$slots.description" unwrap="p" />
+          <span v-else>Default description</span>
+        </p>
       </div>
       <img
         v-if="image"
@@ -49,7 +37,4 @@ defineProps({
       >
     </div>
   </section>
-  <p v-else>
-    :( a hero block must have a title !
-  </p>
 </template>
