@@ -4,14 +4,14 @@ const theme = useTheme()
 </script>
 
 <template>
-  <div
+  <footer
     v-if="
       theme.footer.position &&
         (theme.footer.position === 'left' ||
           theme.footer.position === 'center' ||
           theme.footer.position === 'right')
     "
-    class="grid grid-cols-1 h-32 md:h-36 py-6 md:py-8 mt-24"
+    class="grid h-32 grid-cols-1 py-6 mt-24 md:h-36 md:py-8"
     :class="[
       {
         'place-items-start': theme.footer.position === 'left',
@@ -29,7 +29,7 @@ const theme = useTheme()
     <h1 v-if="theme.footer.title" class="text-3xl font-bold text-primary-900 dark:text-primary-100">
       Alpine.
     </h1>
-    <div v-if="theme.footer.navigation" class="grid grid-flow-col gap-x-9 auto-cols-max my-4">
+    <div v-if="theme.footer.navigation" class="grid grid-flow-col my-4 gap-x-9 auto-cols-max">
       <NuxtLink
         v-for="link of navigation"
         :key="link._path"
@@ -40,7 +40,7 @@ const theme = useTheme()
         {{ link.navTitle || link.title }}
       </NuxtLink>
     </div>
-    <p v-if="theme.footer.socials.message && theme.footer.socials.enabled" class="text-primary-700 dark:text-primary-200 text-center">
+    <p v-if="theme.footer.socials.message && theme.footer.socials.enabled" class="text-center text-primary-700 dark:text-primary-200">
       {{ theme.footer.socials.message }}
     </p>
     <div v-if="theme.footer.socials.enabled" class="grid grid-flow-col gap-x-9 auto-cols-max">
@@ -51,6 +51,5 @@ const theme = useTheme()
         </p>
       </NuxtLink>
     </div>
-  </div>
-  <div v-else />
+  </footer>
 </template>
