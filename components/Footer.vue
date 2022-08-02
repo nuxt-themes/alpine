@@ -28,7 +28,7 @@ const rowsNumber = computed(() => {
 
 <template>
   <footer
-    v-if="isFooter"
+    v-if="hasFooter"
     class="grid h-32 grid-cols-1 py-6 mt-24 md:h-36 md:py-8"
     :class="[
       placeItems,
