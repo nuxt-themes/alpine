@@ -6,18 +6,12 @@ const { resolve } = createResolver(import.meta.url)
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   modules: [
-    // TODO: improve to leverage only `@nuxt/studio`
     '@nuxt-themes/config/module',
     '@nuxtjs/design-tokens/module',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
     '@vueuse/nuxt'
-  ],
-  // TODO: shall be added by Studio or Nuxt Content v3
-  components: [
-    resolve('./components'),
-    { path: resolve('./elements'), global: true }
   ],
   css: [
     resolve('./assets/main.css'),
