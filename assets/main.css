@@ -1,5 +1,6 @@
 @tailwind components;
 
+/* TODO: use Design tokens here */
 html {
   @apply bg-secondary-100;
 }
@@ -9,6 +10,7 @@ html.dark {
 }
 
 
+/* TODO: move it into a NuxtImage component */
 @layer components {
   /* Images */
   .light-img {
