@@ -1,6 +1,5 @@
 <template>
-  <Container>
-    <Header />
+  <AppLayout>
     <!-- TODO: could be refactored as a transparent ButtonLink -->
     <NuxtLink :to="parentPath">
       <div class="flex flex-row mt-10 mb-7 items-center">
@@ -19,8 +18,7 @@
     <main class="max-w-full prose dark:prose-invert">
       <slot />
     </main>
-    <Footer />
-  </Container>
+  </AppLayout>
 </template>
 
 <script setup lang="ts">

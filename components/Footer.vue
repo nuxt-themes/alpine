@@ -2,10 +2,6 @@
 const { navigation } = useContent()
 const theme = useTheme()
 
-const hasFooter = computed(() => {
-  return theme.value.footer
-})
-
 const placeItems = computed(() => {
   switch (theme.value.footer.position) {
     case 'left':
@@ -28,7 +24,6 @@ const rowsNumber = computed(() => {
 
 <template>
   <footer
-    v-if="hasFooter"
     class="grid h-32 grid-cols-1 py-6 mt-24 md:h-36 md:py-8"
     :class="[
       placeItems,

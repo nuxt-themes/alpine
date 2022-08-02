@@ -1,9 +1,7 @@
 <template>
-  <Container>
-    <Header />
+  <AppLayout>
     <main class="max-w-full">
       <slot />
     </main>
-    <Footer />
-  </Container>
+  </AppLayout>
 </template>
