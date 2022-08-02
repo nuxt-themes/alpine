@@ -49,6 +49,6 @@ defineProps({
 
 <style scoped>
 .text-input {
-  @apply bg-transparent w-full p-4 outline outline-1 outline-primary-300 caret-primary-900 focus:outline-primary-900 dark:caret-primary-200 accent-primary-900 dark:accent-primary-200 rounded-lg;
+  @apply bg-transparent w-full p-4 outline outline-1 focus:outline-2 outline-primary-300 dark:outline-primary-900 caret-primary-900 dark:caret-primary-200 focus:outline-primary-900 dark:focus:outline-primary-800 accent-primary-900 dark:accent-primary-800 rounded-lg;
 }
 </style>
