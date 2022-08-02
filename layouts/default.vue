@@ -1,9 +1,7 @@
 <template>
-  <Container>
-    <Header />
+  <AppLayout>
     <main class="prose dark:prose-invert max-w-full">
       <slot />
     </main>
-    <Footer />
-  </Container>
+  </AppLayout>
 </template>
