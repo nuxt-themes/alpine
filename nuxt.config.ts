@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     '@nuxtjs/design-tokens/module',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxthq/studio'
   ],
   components: [
     '~/components',
@@ -44,9 +45,9 @@ export default defineNuxtConfig({
   },
   theme: {
     meta: {
-      name: 'Alpine',
+      name: 'Clément Ollivier',
       description: 'Just a basic blog theme for Nuxt.',
-      author: 'NuxtLabs'
+      author: 'Clément Ollivier'
     },
     options: true,
     tokens: true
