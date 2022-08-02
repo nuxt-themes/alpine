@@ -2,7 +2,7 @@
 const { navigation } = useContent()
 const theme = useTheme()
 
-const isFooter = computed(() => {
+const hasFooter = computed(() => {
   return theme.value.footer
 })
 
