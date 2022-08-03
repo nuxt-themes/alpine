@@ -16,12 +16,14 @@ defineProps({
     <div class="flex flex-col lg:flex-row">
       <div :class="image ? 'grow' : ''">
         <h1 class="text-3xl font-bold text-primary-900 dark:text-primary-100">
-          <span v-if="$slots.title"><Markdown :use="$slots.title" unwrap="p" /></span>
-          <span v-else>Default title</span>
+          <Markdown :use="$slots.title" unwrap="p">
+            Default title
+          </Markdown>
         </h1>
         <p class="mt-3">
-          <Markdown v-if="$slots.description" :use="$slots.description" unwrap="p" />
-          <span v-else>Default description</span>
+          <Markdown :use="$slots.description" unwrap="p">
+            Default description
+          </Markdown>
         </p>
       </div>
       <img
