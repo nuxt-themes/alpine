@@ -19,7 +19,7 @@ defineProps({
           <span v-if="$slots.title"><Markdown :use="$slots.title" unwrap="p" /></span>
           <span v-else>Default title</span>
         </h1>
-        <p class="mt-3 dark:prose-invert">
+        <p class="mt-3">
           <Markdown v-if="$slots.description" :use="$slots.description" unwrap="p" />
           <span v-else>Default description</span>
         </p>
@@ -38,3 +38,9 @@ defineProps({
     </div>
   </section>
 </template>
+
+<style lang="postcss" scoped>
+.not-prose :deep(a) {
+  @apply underline;
+}
+</style>

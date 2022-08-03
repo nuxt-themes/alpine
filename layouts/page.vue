@@ -1,7 +1,5 @@
 <template>
-  <AppLayout>
-    <main class="max-w-full">
-      <slot />
-    </main>
-  </AppLayout>
+  <main class="max-w-full">
+    <slot />
+  </main>
 </template>
