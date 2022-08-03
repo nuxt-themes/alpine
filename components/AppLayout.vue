@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="max-w-sm mx-auto md:max-w-2xl lg:max-w-4xl">
+  <div class="px-4 sm:px-0 max-w-sm mx-auto md:max-w-2xl lg:max-w-4xl">
     <AppLoadingBar />
     <Header />
     <slot />

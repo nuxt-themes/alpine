@@ -8,7 +8,6 @@
         <p class="mb-8">
           This page could not be found.
         </p>
-
         <NuxtLink to="/" class="inline-flex items-center gap-2">
           Back to homepage
           <Icon name="uil:arrow-right" />
