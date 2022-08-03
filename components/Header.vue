@@ -2,10 +2,6 @@
 const { navigation } = useContent()
 const theme = useTheme()
 
-const hasHeader = computed(() => {
-  return theme.value.header
-})
-
 const placeItems = computed(() => {
   switch (theme.value.header.position) {
     case 'left':
@@ -22,7 +18,7 @@ const placeItems = computed(() => {
 
 <template>
   <header
-    v-if="hasHeader"
+    v-if="theme.header"
     class="relative"
   >
     <ColorModeSwitch class="absolute top-6 md:top-8" :class="{'right-0' : theme.header.position === 'left'}" />
