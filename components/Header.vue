@@ -17,10 +17,7 @@ const placeItems = computed(() => {
 </script>
 
 <template>
-  <header
-    v-if="theme.header"
-    class="relative"
-  >
+  <header class="relative">
     <ColorModeSwitch class="absolute top-6 md:top-8" :class="{'right-0' : theme.header.position === 'left'}" />
     <div
       class="grid h-32 grid-cols-1 grid-rows-2 py-6 mb-6 md:h-36 md:py-8 md:mb-8"
