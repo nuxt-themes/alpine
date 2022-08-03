@@ -8,9 +8,9 @@ defineProps({
 </script>
 
 <template>
-  <div class="px-4 sm:px-0 max-w-sm mx-auto md:max-w-2xl lg:max-w-4xl">
+  <div class="max-w-sm px-4 mx-auto sm:px-0 md:max-w-2xl lg:max-w-4xl">
     <AppLoadingBar />
-    <Header />
+    <Header v-if="$theme.value.header" />
     <slot />
     <Footer v-if="$theme.value.footer" />
   </div>

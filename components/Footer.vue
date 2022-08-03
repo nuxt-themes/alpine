@@ -16,7 +16,8 @@ const placeItems = computed(() => {
 })
 
 const rowsNumber = computed(() => {
-  return [theme.value.footer.navigation, theme.value.footer.title, theme.value.footer.socials, theme.value.footer.socials?.message.length].reduce((acc, val) => {
+  const footer = theme.value.footer
+  return [footer.navigation, footer.title, footer.socials, footer.socials?.message.length].reduce((acc, val) => {
     return acc + (val ? 1 : 0)
   }, 0)
 })
