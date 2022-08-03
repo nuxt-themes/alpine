@@ -18,9 +18,21 @@ export default defineTheme({
       message: 'Follow me on' // string that will be displayed on top of the icons / text (leave empty to disable)
     }
   },
-  socials: {
-    twitter: 'https://twitter.com/nuxtlabs',
-    instagram: 'https://www.instagram.com/atinuxt',
-    linkedin: 'https://www.linkedin.com/company/nuxtlabs'
-  }
+  socials: [
+    {
+      icon: 'twitter',
+      label: 'Twitter',
+      link: 'https://twitter.com/nuxtlabs'
+    },
+    {
+      icon: 'instagram',
+      label: 'Instagram',
+      link: 'https://www.instagram.com/atinuxt'
+    },
+    {
+      icon: 'linkedin',
+      label: 'LinkedIn',
+      link: 'https://www.linkedin.com/company/nuxtlabs'
+    }
+  ]
 })
