@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 const { navigation } = useContent()
-const theme = useTheme()
+const theme = unref(useTheme())
 
 const placeItems = computed(() => {
-  switch (theme.value.footer.position) {
+  switch (theme.footer.position) {
     case 'left':
       return 'place-items-start'
     case 'center':
@@ -16,7 +16,7 @@ const placeItems = computed(() => {
 })
 
 const rowsNumber = computed(() => {
-  return [theme.value.footer.navigation, theme.value.footer.title, theme.value.footer.socials, theme.value.footer.socials?.message.length].reduce((acc, val) => {
+  return [theme.footer.navigation, theme.footer.title, theme.footer.socials, theme.footer.socials?.message.length].reduce((acc, val) => {
     return acc + (val ? 1 : 0)
   }, 0)
 })
