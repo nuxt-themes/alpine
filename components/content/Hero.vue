@@ -12,15 +12,15 @@ defineProps({
 </script>
 
 <template>
-  <section class="not-prose">
+  <section class="not-prose mb-[72px]">
     <div class="flex flex-col lg:flex-row">
-      <div :class="image ? 'grow' : ''">
-        <h1 class="text-3xl font-bold text-primary-900 dark:text-primary-100">
+      <div class="flex flex-col gap-y-3 justify-between">
+        <h1 class="text-3xl font-bold text-primary-900 dark:text-primary-100" :class="{ 'line-clamp-2': image }">
           <Markdown :use="$slots.title" unwrap="p">
             Default title
           </Markdown>
         </h1>
-        <p class="mt-3">
+        <p :class="{ 'line-clamp-4': image }">
           <Markdown :use="$slots.description" unwrap="p">
             Default description
           </Markdown>
@@ -35,7 +35,7 @@ defineProps({
             : 'lg:ml-14 mt-8'
         "
         :src="image"
-        alt=":("
+        :alt="image"
       >
     </div>
   </section>
