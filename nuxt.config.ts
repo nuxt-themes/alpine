@@ -14,14 +14,13 @@ export default defineNuxtConfig({
     '@vueuse/nuxt'
   ],
   css: [
-    resolve('./assets/main.css'),
     '@fontsource/inter/400.css',
     '@fontsource/inter/500.css',
     '@fontsource/inter/600.css',
     '@fontsource/inter/700.css'
   ],
   tailwindcss: {
-    injectPosition: 'last'
+    cssPath: resolve('./assets/main.css')
   },
   content: {
     documentDriven: true,
