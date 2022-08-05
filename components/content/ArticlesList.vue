@@ -9,6 +9,20 @@
       </div>
     </div>
   </div>
+  <div v-else class="text-primary-700 dark:text-primary-200">
+    <div class="h-screen text-center">
+      <div class="flex justify-center">
+        <Icon name="uil:sad-squint" class="mr-1" />
+        <p>
+          No articles found.
+        </p>
+      </div>
+      <br>
+      <p>
+        Please put somme articles in the article folder or pass their path with the 'path' props !
+      </p>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -21,7 +35,12 @@ const props = defineProps({
 })
 
 // @ts-ignore
-const { data: _articles } = await useAsyncData('articles', async () => await queryContent(props.path).sort({ date: -1 }).where({ _path: { $ne: `/${props.path}` } }).find())
+const { data: _articles } = await useAsyncData(
+  'articles', async () => await queryContent(props.path)
+    .sort({ date: -1 })
+    .where({ _path: { $ne: `/${props.path}` } })
+    .find()
+)
 
 const articles = computed(
   () => _articles.value || []
