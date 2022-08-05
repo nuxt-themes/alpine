@@ -10,7 +10,7 @@ export default defineTheme({
     }
   },
   footer: {
-    title: false, // possible value are : true | false
+    credits: false, // possible value are : true | false
     navigation: false, // possible value are : true | false
     position: 'center', // possible value are : 'none' | 'left' | 'center' | 'right'
     socials: {
