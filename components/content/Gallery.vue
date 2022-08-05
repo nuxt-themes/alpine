@@ -18,17 +18,20 @@ defineProps({
       class="grid gap-y-8 grid justify-between w-full grid-cols-1"
       :class="[
         { 'md:gap-x-[92px] md:grid-cols-2': images.length === 2 },
-        { 'gap-x-8 xl:gap-x-[72px] md:grid-cols-3': images.length === 3 },
+        { 'gap-x-8 md:gap-x-[72px] md:grid-cols-2': images.length === 3 },
       ]"
     >
       <li
         v-for="(image, index) in images"
         :key="index"
+        :class="{ 'md:col-span-2': images.length === 3 && index === 0 }"
       >
         <img
           class="object-cover w-full rounded-xl"
           :src="image"
-          :class="[images.length > 1 ? 'md:max-w-[385px] h-[200px]' : 'h-[222px]']"
+          :class="[
+            images.length === 2 || (images.length === 3 && index !== 0) ? 'md:max-w-[385px] h-[200px]' : 'h-[222px]',
+          ]"
         >
       </li>
     </ul>
