@@ -2,7 +2,7 @@
   <article>
     <!-- TODO: could be refactored as a transparent ButtonLink -->
     <NuxtLink :to="parentPath">
-      <div class="flex flex-row mt-10 mb-7 items-center">
+      <div class="flex flex-row mt-10 mb-8 lg:mb-7 items-center">
         <Icon class="mr-2" name="uil:arrow-left" />
         <p class="text-primary-900 dark:text-primary-100">
           Back

@@ -5,13 +5,13 @@ const theme = useTheme()
 const placeItems = computed(() => {
   switch (theme.value.footer.position) {
     case 'left':
-      return 'place-items-start'
+      return { grid: 'place-items-start', icons: 'items-start' }
     case 'center':
-      return 'place-items-center'
+      return { grid: 'place-items-center', icons: 'items-center' }
     case 'right':
-      return 'place-items-end'
+      return { grid: 'place-items-end', icons: 'items-end' }
     default:
-      return 'place-items-center'
+      return { grid: 'place-items-center', icons: 'items-center' }
   }
 })
 
@@ -27,7 +27,7 @@ const rowsNumber = computed(() => {
   <footer
     class="grid h-32 grid-cols-1 py-6 mt-24 md:h-36 md:py-8"
     :class="[
-      placeItems,
+      placeItems.grid,
       `grid-row-${rowsNumber}`,
     ]"
   >
@@ -48,13 +48,17 @@ const rowsNumber = computed(() => {
     <p v-if="theme.footer.socials && theme.footer.socials.message" class="text-center text-primary-700 dark:text-primary-200">
       {{ theme.footer.socials.message }}
     </p>
-    <div v-if="theme.footer.socials" class="grid grid-flow-col gap-x-9 auto-cols-max">
-      <NuxtLink v-for="[icon, link] of Object.entries(theme.socials)" :key="icon" :to="link">
-        <Icon v-if="theme.footer.socials.icons" :name="`uil:${icon}`" class="w-5 h-5" />
-        <p v-else>
-          {{ icon }}
-        </p>
-      </NuxtLink>
+    <div v-if="theme.footer.socials.icons" class="flex flex-col" :class="placeItems.icons">
+      <div class="grid grid-flow-col gap-x-9 auto-cols-max">
+        <NuxtLink v-for="(social, index) in theme.socials.slice(0, 6)" :key="index" :to="social.link">
+          <Icon v-if="social.icon" :name="`uil:${social.icon}`" class="w-4 h-4" :alt="`${social.label} icon`" />
+          <span v-else> {{ social.label }}</span>
+        </NuxtLink>
+      </div>
+      <div v-if="theme.socials.length > 6" class="flex my-5 text-blue-400 outline space-x-3 rounded-xl outline-1 w-full p-4 bg-blue-100 outline-blue-300">
+        <Icon name="uil:info-circle" class="w-5 h-5 !text-blue-400" />
+        <p>Please consider to override Footer.vue if you want to add more icons</p>
+      </div>
     </div>
   </footer>
 </template>

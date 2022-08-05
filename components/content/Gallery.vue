@@ -28,7 +28,7 @@ defineProps({
         <img
           class="object-cover w-full rounded-xl"
           :src="image"
-          :class="[images.length > 1 ? 'max-w-[385px] h-[200px]' : 'h-[222px]']"
+          :class="[images.length > 1 ? 'md:max-w-[385px] h-[200px]' : 'h-[222px]']"
         >
       </li>
     </ul>
