@@ -50,7 +50,7 @@ const rowsNumber = computed(() => {
     </p>
     <div v-if="theme.footer.socials" class="grid grid-flow-col gap-x-9 auto-cols-max">
       <NuxtLink v-for="[icon, link] of Object.entries(theme.socials)" :key="icon" :to="link">
-        <Icon v-if="theme.footer.socials.icons" :name="`uil:${icon}`" class="w-4 h-4" />
+        <Icon v-if="theme.footer.socials.icons" :name="`uil:${icon}`" class="w-5 h-5" />
         <p v-else>
           {{ icon }}
         </p>

@@ -13,24 +13,24 @@ defineProps({
 </script>
 
 <template>
-  <section class="not-prose">
-    <div
-      class="grid gap-8 my-16"
-      :class="{
-        'md:grid-col-2 md:grid-rows-2 lg:grid-rows-1 lg:grid-cols-3': images.length === 3,
-        'md:grid-cols-2': images.length === 2
-      }"
+  <section class="not-prose my-[72px]">
+    <ul
+      class="grid gap-y-8 grid justify-between w-full grid-cols-1"
+      :class="[
+        { 'md:gap-x-[92px] md:grid-cols-2': images.length === 2 },
+        { 'gap-x-8 xl:gap-x-[72px] md:grid-cols-3': images.length === 3 },
+      ]"
     >
-      <img
+      <li
         v-for="(image, index) in images"
         :key="index"
-        class="object-cover w-full h-56 rounded-xl"
-        :src="image"
-        :class="[{ 'row-span-1 md:col-span-2 lg:col-span-1': images.length === 3 && index === images.length - 1 },
-                 { 'md:h-72 lg:h-96' : images.length === 1 },
-                 { 'md:h-48 lg:h-52' : images.length === 2 },
-                 { 'md:h-48 lg:h-44' : images.length === 3 }]"
       >
-    </div>
+        <img
+          class="object-cover w-full rounded-xl"
+          :src="image"
+          :class="[images.length > 1 ? 'max-w-[385px] h-[200px]' : 'h-[222px]']"
+        >
+      </li>
+    </ul>
   </section>
 </template>
