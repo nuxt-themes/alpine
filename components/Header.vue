@@ -1,57 +1,83 @@
 <script lang="ts" setup>
+import { ref, toRefs } from 'vue'
+import { useScroll } from '@vueuse/core'
+
+const navLinks = ref<HTMLElement | null>(null)
+const { arrivedState } = useScroll(navLinks, {
+  offset: { right: 64, left: 64 }
+})
+const { left, right } = toRefs(arrivedState)
 const { navigation } = useContent()
 const theme = useTheme()
-
-const placeItems = computed(() => {
-  switch (theme.value.header.position) {
-    case 'left':
-      return 'items-start'
-    case 'center':
-      return 'items-center'
-    case 'right':
-      return 'items-end'
-    case 'inline':
-      return 'sm:flex-row justify-between'
-    default:
-      return 'items-start'
-  }
-})
 </script>
 
 <template>
-  <header class="relative h-32 md:h-36 py-8 mb-6 md:mb-8 flex items-center justify-between">
-    <ColorModeSwitch
-      :class="[
-        { 'absolute top-6 md:top-8': !(theme.header.position === 'inline') },
-        { 'order-last self-start md:self-auto': theme.header.position === 'inline' },
-        { 'right-0' : ['left', 'center'].includes(theme.header.position) }
-      ]"
-    />
+  <header class="my-8">
     <div
-      class="flex flex-col gap-y-[24px] md:gap-y-[32px] flex-1"
-      :class="placeItems"
+      class="flex flex-row justify-between flex-wrap"
+      :class="[{'lg:!flex-nowrap': theme?.header?.position === 'inline'},
+               {'!justify-center': theme?.header?.position === 'center'}]"
     >
-      <NuxtLink v-if="theme.header.logo" to="/" class="text-primary-700 dark:text-primary-200">
+      <NuxtLink
+        v-if="theme?.header?.logo"
+        to="/"
+        class="order-1 shrink-0 text-primary-700 dark:text-primary-200"
+      >
         <img class="dark-img" :src="theme.header.logo.pathDark" :alt="theme.header.logo.alt">
         <img class="light-img" :src="theme.header.logo.path" :alt="theme.header.logo.alt">
       </NuxtLink>
-      <ul class="flex h-full sm:justify-center gap-x-[32px]" :class="{ 'flex-1': theme.header.position }">
-        <li
-          v-for="link of navigation"
-          :key="link._path"
-          class="relative group"
+      <div
+        class="overflow-x-auto flex-initial mt-8 order-last basis-full flex"
+        :class="[
+          {'lg:mx-8 lg:!mt-0 lg:!order-2 lg:justify-self-end lg:!basis-auto': theme?.header?.position === 'inline'},
+          {'!justify-end': theme?.header?.position === 'right'},
+          {'!justify-center': theme?.header?.position === 'center'}
+        ]"
+      >
+        <div
+          class="flex max-w-min overflow-x-auto"
         >
-          <!-- underline -->
-          <span class="absolute -bottom-1 w-0 h-0.5 bg-primary-700 dark:bg-primary-100 group-hover:w-full transition-all duration-200 ease-in-out" />
-          <NuxtLink
-            :to="link._path"
-            active-class="font-bold"
-            class="text-primary-700 dark:text-primary-200"
+          <div class="scroll-shadow-box">
+            <span class="bg-gradient-to-r scroll-shadow left-0" :class="{'!opacity-0': left}" />
+          </div>
+          <ul
+            ref="navLinks"
+            class="flex flex-initial h-full gap-x-8 pb-4 overflow-x-auto shrink"
           >
-            {{ link.title }}
-          </NuxtLink>
-        </li>
-      </ul>
+            <li
+              v-for="link of navigation"
+              :key="link._path"
+              class="relative group"
+            >
+              <!-- underline -->
+              <span class="absolute -bottom-1 w-0 h-0.5 bg-primary-700 dark:bg-primary-100 group-hover:w-full transition-all duration-200 ease-in-out" />
+              <NuxtLink
+                :to="link._path"
+                active-class="font-bold"
+                class="text-primary-700 dark:text-primary-200"
+              >
+                {{ link.title }}
+              </NuxtLink>
+            </li>
+          </ul>
+          <div class="scroll-shadow-box">
+            <span class="bg-gradient-to-l scroll-shadow right-0" :class="{'!opacity-0': right}" />
+          </div>
+        </div>
+      </div>
+      <ColorModeSwitch
+        class="flex-none order-3 w-5 justify-self-end"
+        :class="{'!order-first': theme?.header?.position === 'right'}"
+      />
     </div>
   </header>
 </template>
+
+<style>
+.scroll-shadow-box {
+  @apply flex-none w-0 mt-0.5 overflow-visible relative
+}
+.scroll-shadow {
+  @apply absolute z-[1] w-16 h-full transition-all opacity-100 duration-500 pointer-events-none from-secondary-100 dark:from-secondary-900 to-transparent
+}
+</style>

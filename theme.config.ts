@@ -2,7 +2,7 @@ import { defineTheme } from '@nuxt-themes/config'
 
 export default defineTheme({
   header: {
-    position: 'inline', // possible value are : 'none' | 'left' | 'center' | 'right' | 'inline'
+    position: 'right', // possible value are : 'none' | 'left' | 'center' | 'right' | 'inline'
     logo: {
       path: '/logo.svg', // path of the logo
       pathDark: '/logo-dark.svg', // path of the logo in dark mode, leave this empty if you want to use the same logo

@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="px-4 sm:px-6 lg:px-8 mx-auto max-w-4xl">
+  <div class="px-4 sm:px-6 lg:px-8 mx-auto max-w-4xl overflow-x-hidden">
     <AppLoadingBar />
     <Header v-if="$theme.value.header" />
     <slot />
