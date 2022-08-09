@@ -25,15 +25,18 @@ const rowsNumber = computed(() => {
 
 <template>
   <footer
-    class="grid min-h-32 grid-cols-1 mt-24 md:min-h-36 md:py-8 gap-y-4"
+    class="grid min-h-32 grid-cols-1 mt-24 md:min-h-36 py-8 gap-y-4"
     :class="[
       placeItems.grid,
       `grid-row-${rowsNumber}`,
     ]"
   >
-    <h1 v-if="theme.footer.credits" class="text-3xl font-bold text-primary-900 dark:text-primary-100">
-      Alpine.
-    </h1>
+    <NuxtLink v-if="theme.footer.credits.enabled" :to="theme.footer.credits.repository">
+      <h1 class="text-3xl font-bold text-primary-900 dark:text-primary-100">
+        Alpine.
+      </h1>
+    </NuxtLink>
+
     <div v-if="theme.footer.navigation" class="grid grid-flow-col gap-x-9 auto-cols-max">
       <NuxtLink
         v-for="link of navigation"
