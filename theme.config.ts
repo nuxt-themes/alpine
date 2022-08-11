@@ -5,7 +5,7 @@ export default defineTheme({
   description: 'The minimalist blog theme',
   image: {
     src: '/social-card-preview.png',
-    alt: 'An image showcasing My Page.',
+    alt: 'An image showcasing my project.',
     width: 400,
     height: 300
   },
