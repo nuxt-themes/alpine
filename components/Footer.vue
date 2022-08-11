@@ -25,33 +25,36 @@ const rowsNumber = computed(() => {
 
 <template>
   <footer
-    class="grid h-32 grid-cols-1 py-6 mt-24 md:h-36 md:py-8"
+    class="grid min-h-32 grid-cols-1 mt-24 md:min-h-36 py-8 gap-y-4"
     :class="[
       placeItems.grid,
       `grid-row-${rowsNumber}`,
     ]"
   >
-    <h1 v-if="theme.footer.title" class="text-3xl font-bold text-primary-900 dark:text-primary-100">
-      Alpine.
-    </h1>
-    <div v-if="theme.footer.navigation" class="grid grid-flow-col my-4 gap-x-9 auto-cols-max">
+    <NuxtLink v-if="theme.footer.credits.enabled" :to="theme.footer.credits.repository">
+      <h1 class="text-3xl font-bold text-primary-900 dark:text-primary-100">
+        Alpine.
+      </h1>
+    </NuxtLink>
+
+    <div v-if="theme.footer.navigation" class="grid grid-flow-col gap-x-9 auto-cols-max">
       <NuxtLink
         v-for="link of navigation"
         :key="link._path"
         :to="link._path"
         active-class="font-bold"
-        class="text-primary-700 dark:text-primary-200"
+        class="text-primary dark:text-primary-200"
       >
         {{ link.title }}
       </NuxtLink>
     </div>
-    <p v-if="theme.footer.socials && theme.footer.socials.message" class="text-center text-primary-700 dark:text-primary-200">
+    <p v-if="theme.footer.socials && theme.footer.socials.message" class="text-center text-primary dark:text-primary-200">
       {{ theme.footer.socials.message }}
     </p>
     <div v-if="theme.footer.socials.icons" class="flex flex-col" :class="placeItems.icons">
-      <div class="grid grid-flow-col gap-x-9 auto-cols-max">
+      <div class="flex gap-x-9">
         <NuxtLink v-for="(social, index) in theme.socials.slice(0, 6)" :key="index" :to="social.link">
-          <Icon v-if="social.icon" :name="`uil:${social.icon}`" class="w-4 h-4" :alt="`${social.label} icon`" />
+          <Icon v-if="social.icon" :name="`uil:${social.icon}`" class="w-5 h-5 text-primary" :alt="`${social.label} icon`" />
           <span v-else> {{ social.label }}</span>
         </NuxtLink>
       </div>
