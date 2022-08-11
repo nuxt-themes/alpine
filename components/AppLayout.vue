@@ -11,7 +11,7 @@ defineProps({
 
 useHead({
   meta: [
-    { hid: 't-type', name: 'twitter:card', content: 'summary_large_image' }
+    { name: 'twitter:card', content: 'summary_large_image' }
   ]
 })
 
