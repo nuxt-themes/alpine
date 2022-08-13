@@ -41,8 +41,5 @@ export default defineNuxtConfig({
   },
   colorMode: {
     classSuffix: ''
-  },
-  experimental: {
-    viteNode: true
   }
 })
