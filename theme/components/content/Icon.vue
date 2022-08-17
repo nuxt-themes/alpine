@@ -38,7 +38,7 @@ watch(() => props.name, loadIconComponent)
 </script>
 
 <template>
-  <div class="inline-flex text-primary-800 dark:text-primary-200">
+  <div class="inline-block text-primary-800 dark:text-primary-200">
     <span v-if="isFetching" class="inline-block w-5 h-5" />
     <Iconify v-else-if="icon" :icon="icon" class="inline-block w-5 h-5" :style="color ? `color: ${color};` : ''" />
     <Component :is="component" v-else-if="component" class="inline-block w-5 h-5" />
