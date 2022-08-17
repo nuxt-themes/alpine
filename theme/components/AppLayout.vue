@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 const theme = useTheme()
 
 defineProps({
@@ -21,8 +20,8 @@ useContentHead(theme.value)
 <template>
   <div class="px-4 sm:px-6 lg:px-8 mx-auto max-w-4xl">
     <AppLoadingBar />
-    <Header v-if="$theme.value.header" />
+    <AppHeader v-if="theme.header" />
     <slot />
-    <Footer v-if="$theme.value.footer" />
+    <AppFooter v-if="theme.footer" />
   </div>
 </template>

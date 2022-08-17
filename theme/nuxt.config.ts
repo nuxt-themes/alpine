@@ -30,6 +30,9 @@ export default defineNuxtConfig({
     }
   },
   app: {
+    // TODO: Remove this ignore
+    // https://github.com/nuxt-themes/config/issues/5
+    // @ts-ignore
     theme: {
       meta: {
         name: 'Alpine',

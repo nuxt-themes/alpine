@@ -39,15 +39,14 @@ const placeItems = computed(() => {
         <li
           v-for="link of navigation"
           :key="link._path"
-          class="relative group"
         >
-          <!-- underline -->
-          <span class="absolute -bottom-1 w-0 h-0.5 bg-primary-700 dark:bg-primary-100 group-hover:w-full transition-all duration-200 ease-in-out" />
           <NuxtLink
             :to="link._path"
             active-class="font-bold"
-            class="text-primary-700 dark:text-primary-200"
+            class="text-primary-700 dark:text-primary-200 relative group"
           >
+            <!-- underline -->
+            <span class="absolute -bottom-1 w-0 h-0.5 bg-primary-700 dark:bg-primary-100 group-hover:w-full transition-all duration-200 ease-in-out" />
             {{ link.title }}
           </NuxtLink>
         </li>
