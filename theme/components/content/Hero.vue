@@ -13,18 +13,16 @@ defineProps({
 
 <template>
   <section class="not-prose mb-[72px]">
-    <div class="flex flex-col lg:flex-row">
-      <div class="flex flex-col gap-y-3 justify-between">
+    <div class="flex flex-col lg:flex-row justify-between">
+      <div class="flex flex-col gap-y-3">
         <h1 class="text-3xl font-bold text-primary-900 dark:text-primary-100" :class="{ 'line-clamp-2': image }">
-          <Markdown :use="$slots.title" unwrap="p">
+          <ContentSlot :use="$slots.title" unwrap="p">
             Default title
-          </Markdown>
+          </ContentSlot>
         </h1>
-        <p :class="{ 'line-clamp-4': image }">
-          <Markdown :use="$slots.description" unwrap="p">
-            Default description
-          </Markdown>
-        </p>
+        <ContentSlot :use="$slots.description">
+          Default description
+        </ContentSlot>
       </div>
       <img
         v-if="image"
