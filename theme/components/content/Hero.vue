@@ -4,6 +4,10 @@ defineProps({
     type: String,
     default: null
   },
+  imageAlt: {
+    type: String,
+    default: null
+  },
   layout: {
     type: String,
     default: 'right'
@@ -33,7 +37,7 @@ defineProps({
             : 'lg:ml-14 mt-8'
         "
         :src="image"
-        :alt="image"
+        :alt="imageAlt"
       >
     </div>
   </section>
