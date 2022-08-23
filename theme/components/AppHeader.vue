@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 const { navigation } = useContent()
-const theme = useTheme()
+const alpine = useAppConfig().alpine
 
 const placeItems = computed(() => {
-  switch (theme.value.header.position) {
+  switch (alpine.header.position) {
     case 'left':
       return 'items-start'
     case 'center':
@@ -22,20 +22,23 @@ const placeItems = computed(() => {
   <header class="relative h-32 md:h-36 py-8 mb-6 md:mb-8 flex items-center justify-between">
     <ColorModeSwitch
       :class="[
-        { 'absolute top-6 md:top-8': !(theme.header.position === 'inline') },
-        { 'order-last self-start md:self-auto': theme.header.position === 'inline' },
-        { 'right-0' : ['left', 'center'].includes(theme.header.position) }
+        { 'absolute top-6 md:top-8': !(alpine.header.position === 'inline') },
+        { 'order-last self-start md:self-auto': alpine.header.position === 'inline' },
+        { 'right-0' : ['left', 'center'].includes(alpine.header.position) }
       ]"
     />
     <div
       class="flex flex-col gap-y-[24px] md:gap-y-[32px] flex-1"
       :class="placeItems"
     >
-      <NuxtLink v-if="theme.header.logo" to="/" class="text-primary-700 dark:text-primary-200">
-        <img class="dark-img" :src="theme.header.logo.pathDark" :alt="theme.header.logo.alt">
-        <img class="light-img" :src="theme.header.logo.path" :alt="theme.header.logo.alt">
+      <NuxtLink v-if="alpine.header.logo" to="/" class="text-primary-700 dark:text-primary-200">
+        <img class="dark-img" :src="alpine.header.logo.pathDark" :alt="alpine.header.logo.alt">
+        <img class="light-img" :src="alpine.header.logo.path" :alt="alpine.header.logo.alt">
       </NuxtLink>
-      <ul class="flex h-full sm:justify-center gap-x-[32px]" :class="{ 'flex-1': theme.header.position }">
+      <NuxtLink v-else to="/" class="text-primary-700 dark:text-primary-200 text-xl font-semibold">
+        {{ alpine.header.title || alpine.title }}
+      </NuxtLink>
+      <ul class="flex h-full sm:justify-center gap-x-[32px]" :class="{ 'flex-1': alpine.header.position }">
         <li
           v-for="link of navigation"
           :key="link._path"
