@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 const { navigation } = useContent()
-const theme = useTheme()
+const alpine = useAppConfig().alpine
 
 const placeItems = computed(() => {
-  switch (theme.value.footer.position) {
+  switch (alpine.footer.position) {
     case 'left':
       return { grid: 'place-items-start', icons: 'items-start' }
     case 'center':
@@ -16,8 +16,8 @@ const placeItems = computed(() => {
 })
 
 const rowsNumber = computed(() => {
-  const footer = theme.value.footer
-  return [footer.navigation, footer.title, footer.socials, footer.socials?.message.length].reduce((acc, val) => {
+  const footer = alpine.footer
+  return [footer.navigation, footer.title, footer.socials, footer.socials?.message?.length].reduce((acc, val) => {
     return acc + (val ? 1 : 0)
   }, 0)
 })
@@ -31,13 +31,13 @@ const rowsNumber = computed(() => {
       `grid-row-${rowsNumber}`,
     ]"
   >
-    <NuxtLink v-if="theme.footer.credits.enabled" :to="theme.footer.credits.repository">
+    <NuxtLink v-if="alpine.footer?.credits?.enabled" :to="alpine.footer.credits.repository">
       <h1 class="text-3xl font-bold text-primary-900 dark:text-primary-100">
         Alpine.
       </h1>
     </NuxtLink>
 
-    <div v-if="theme.footer.navigation" class="grid grid-flow-col gap-x-9 auto-cols-max">
+    <div v-if="alpine.footer.navigation" class="grid grid-flow-col gap-x-9 auto-cols-max">
       <NuxtLink
         v-for="link of navigation"
         :key="link._path"
@@ -48,17 +48,17 @@ const rowsNumber = computed(() => {
         {{ link.title }}
       </NuxtLink>
     </div>
-    <p v-if="theme.footer.socials && theme.footer.socials.message" class="text-center text-primary dark:text-primary-200">
-      {{ theme.footer.socials.message }}
+    <p v-if="alpine.footer.socials && alpine.footer.socials.message" class="text-center text-primary dark:text-primary-200">
+      {{ alpine.footer.socials.message }}
     </p>
-    <div v-if="theme.footer.socials.icons" class="flex flex-col" :class="placeItems.icons">
+    <div v-if="alpine.footer.socials.icons" class="flex flex-col" :class="placeItems.icons">
       <div class="flex gap-x-9">
-        <NuxtLink v-for="(social, index) in theme.socials.slice(0, 6)" :key="index" :to="social.link">
+        <NuxtLink v-for="(social, index) in alpine.socials.slice(0, 6)" :key="index" :to="social.link">
           <Icon v-if="social.icon" :name="`uil:${social.icon}`" class="w-5 h-5 text-primary" :alt="`${social.label} icon`" />
           <span v-else> {{ social.label }}</span>
         </NuxtLink>
       </div>
-      <div v-if="theme.socials.length > 6" class="flex my-5 text-blue-400 outline space-x-3 rounded-xl outline-1 w-full p-4 bg-blue-100 outline-blue-300">
+      <div v-if="alpine.socials.length > 6" class="flex my-5 text-blue-400 outline space-x-3 rounded-xl outline-1 w-full p-4 bg-blue-100 outline-blue-300">
         <Icon name="uil:info-circle" class="w-5 h-5 !text-blue-400" />
         <p>Please consider to override Footer.vue if you want to add more icons</p>
       </div>
