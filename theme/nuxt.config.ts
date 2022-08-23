@@ -6,7 +6,6 @@ const { resolve } = createResolver(import.meta.url)
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   modules: [
-    '@nuxt-themes/config/module',
     '@nuxtjs/design-tokens/module',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
@@ -27,19 +26,6 @@ export default defineNuxtConfig({
     highlight: {
       theme: 'one-dark-pro',
       preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini', 'c', 'cpp']
-    }
-  },
-  app: {
-    // TODO: Remove this ignore
-    // https://github.com/nuxt-themes/config/issues/5
-    // @ts-ignore
-    theme: {
-      meta: {
-        name: 'Alpine',
-        description: 'Just a basic blog theme for Nuxt.',
-        author: 'NuxtLabs',
-        url: 'https://alpine.nuxt.dev'
-      }
     }
   },
   colorMode: {

@@ -11,9 +11,6 @@ export default {
     aspectRatioPlugin,
     lineClampPlugin
   ],
-  content: [
-    'elements/**/*.vue'
-  ],
   theme: {
     extend: {
       colors: {
