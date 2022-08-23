@@ -48,19 +48,16 @@ const rowsNumber = computed(() => {
         {{ link.title }}
       </NuxtLink>
     </div>
-    <p v-if="alpine.footer.socials && alpine.footer.socials.message" class="text-center text-primary dark:text-primary-200">
-      {{ alpine.footer.socials.message }}
+    <p v-if="alpine.footer && alpine.footer.message" class="text-center text-primary dark:text-primary-200">
+      {{ alpine.footer.message }}
     </p>
-    <div v-if="alpine.footer.socials.icons" class="flex flex-col" :class="placeItems.icons">
+    <div v-if="alpine.socials && Object.entries(alpine.socials)" class="flex flex-col" :class="placeItems.icons">
       <div class="flex gap-x-9">
-        <NuxtLink v-for="(social, index) in alpine.socials.slice(0, 6)" :key="index" :to="social.link">
-          <Icon v-if="social.icon" :name="`uil:${social.icon}`" class="w-5 h-5 text-primary" :alt="`${social.label} icon`" />
-          <span v-else> {{ social.label }}</span>
-        </NuxtLink>
+        <SocialIcons :socials="alpine.socials" />
       </div>
-      <div v-if="alpine.socials.length > 6" class="flex my-5 text-blue-400 outline space-x-3 rounded-xl outline-1 w-full p-4 bg-blue-100 outline-blue-300">
+      <div v-if="alpine.socials && Object.entries(alpine.socials).length > 6" class="flex my-5 text-blue-400 outline space-x-3 rounded-xl outline-1 w-full p-4 bg-blue-100 outline-blue-300">
         <Icon name="uil:info-circle" class="w-5 h-5 !text-blue-400" />
-        <p>Please consider to override Footer.vue if you want to add more icons</p>
+        <p>Please consider to override Footer.vue if you want to add more than 6 icons</p>
       </div>
     </div>
   </footer>

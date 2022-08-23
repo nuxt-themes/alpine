@@ -19,27 +19,16 @@ export default defineAppConfig({
       },
       navigation: false, // possible value are : true | false
       position: 'center', // possible value are : 'none' | 'left' | 'center' | 'right'
-      socials: {
-        icons: true, // possible value are : true | false
-        message: 'Follow me on' // string that will be displayed on top of the icons / text (leave empty to disable)
-      }
+      message: 'Follow me on' // string that will be displayed in the footer (leave empty or delete to disable)
     },
-    socials: [
-      {
-        icon: 'twitter',
-        label: 'Twitter',
-        link: 'https://twitter.com/nuxtlabs'
-      },
-      {
-        icon: 'instagram',
-        label: 'Instagram',
-        link: 'https://www.instagram.com/atinuxt'
-      },
-      {
-        icon: 'linkedin',
+    socials: {
+      twitter: 'nuxtlabs',
+      instagram: 'atinuxt',
+      linkedin: {
+        icon: 'uil:linkedin',
         label: 'LinkedIn',
-        link: 'https://www.linkedin.com/company/nuxtlabs'
+        href: 'https://www.linkedin.com/company/nuxtlabs'
       }
-    ]
+    }
   }
 })
