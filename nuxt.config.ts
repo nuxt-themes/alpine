@@ -1,64 +1,66 @@
-import { fileURLToPath } from 'url'
-import { defineNuxtConfig } from 'nuxt'
-import { resolve } from 'pathe'
+import { createResolver } from '@nuxt/kit'
 
-const themeDir = fileURLToPath(new URL('./', import.meta.url))
-const resolveThemeDir = (path: string) => resolve(themeDir, path)
+const { resolve: resolveThemeDir } = createResolver(import.meta.url)
+
+// That allows to overwrite these dependencies paths via `.env` for local development
+const envModules = {
+  tokens: process?.env?.THEME_DEV_TOKENS_PATH || '@nuxt-themes/tokens',
+  elements: process?.env?.THEME_DEV_ELEMENTS_PATH || '@nuxt-themes/elements',
+  studio: process?.env?.THEME_DEV_STUDIO_PATH || '@nuxthq/studio',
+  typography: process?.env?.THEME_DEV_TYPOGRAPHY_PATH || '@nuxt-themes/typography'
+}
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt-themes/config/module',
-    '@nuxtjs/design-tokens/module',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/tailwindcss',
-    '@nuxt/content'
-  ],
-  components: [
-    '~/components',
-    { path: '~/elements', global: true }
-  ],
+  extends: [envModules.typography, envModules.elements],
+
+  pages: true,
+
+  // TODO: Remove TW
   tailwindcss: {
     viewer: false,
     exposeConfig: true,
     injectPosition: 'last'
   },
+
+  modules: [
+    envModules.tokens,
+    envModules.studio,
+    '@nuxt/content',
+    '@nuxtjs/tailwindcss'
+  ],
+
+  components: [
+    { path: resolveThemeDir('./components'), global: true },
+    { path: resolveThemeDir('./components/content'), global: true }
+  ],
+
   css: [
+    // Global CSS
     resolveThemeDir('./assets/main.css'),
-    // Including Inter CSS is the first component to reproduce HMR issue. It also causes playground to look better,
-    // since Inter is a native font for Tailwind UI
+
+    // Inter font
     '@fontsource/inter/400.css',
     '@fontsource/inter/500.css',
     '@fontsource/inter/600.css',
     '@fontsource/inter/700.css'
   ],
+
+  colorMode: {
+    classSuffix: ''
+  },
+
   content: {
     documentDriven: true,
     navigation: {
       fields: ['navTitle']
     },
     highlight: {
-      theme: 'one-dark-pro',
+      theme: {
+        default: 'github-light',
+        dark: 'github-dark'
+      },
       preload: ['json', 'js', 'ts', 'html', 'css', 'vue', 'diff', 'shell', 'markdown', 'yaml', 'bash', 'ini', 'c', 'cpp']
     }
-  },
-  theme: {
-    meta: {
-      name: 'Alpine',
-      description: 'Just a basic blog theme for Nuxt.',
-      author: 'NuxtLabs'
-    },
-    options: true,
-    tokens: true
-  },
-  colorMode: {
-    preference: 'system', // default value of $colorMode.preference
-    fallback: 'light', // fallback value if not system preference found
-    hid: 'nuxt-color-mode-script',
-    globalName: '__NUXT_COLOR_MODE__',
-    componentName: 'ColorScheme',
-    classPrefix: '',
-    classSuffix: '',
-    storageKey: 'nuxt-color-mode'
   }
 })

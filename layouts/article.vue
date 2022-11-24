@@ -1,6 +1,5 @@
 <template>
-  <Container>
-    <Header />
+  <div>
     <nuxt-link :to="parentPath">
       <div class="flex flex-row mt-10 mb-7">
         <Icon class="mr-2" name="uil:arrow-left" />
@@ -18,8 +17,7 @@
     <main class="max-w-full prose dark:prose-invert">
       <slot />
     </main>
-    <Footer />
-  </Container>
+  </div>
 </template>
 
 <script setup lang="ts">

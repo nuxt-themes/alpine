@@ -1,9 +1,5 @@
 <template>
-  <Container>
-    <Header />
-    <main class="max-w-full">
-      <slot />
-    </main>
-    <Footer />
-  </Container>
+  <main class="max-w-full">
+    <slot />
+  </main>
 </template>

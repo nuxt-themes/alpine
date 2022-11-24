@@ -1,6 +1,4 @@
-import { defineTheme } from '@nuxt-themes/config'
-
-export default defineTheme({
+export default defineAppConfig({
   header: {
     position: 'left', // possible value are : 'none' | 'left' | 'center' | 'right'
     logo: {

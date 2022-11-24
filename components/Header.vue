@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const { navigation } = useContent()
-const theme = useTheme()
+const theme = useAppConfig()
 </script>
 
 <template>

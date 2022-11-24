@@ -27,13 +27,13 @@ defineProps({
           <p v-if="title" class="!my-0">
             {{ title }}
           </p>
-          <Markdown v-else :use="$slots.title" unwrap="p" />
+          <ContentSlot v-else :use="$slots.title" unwrap="p" />
         </div>
         <div v-if="description || $slots.description" class="mt-3 dark:prose-invert">
           <p v-if="description" class="!my-0">
             {{ description }}
           </p>
-          <Markdown v-else :use="$slots.description" unwrap="p" />
+          <ContentSlot v-else :use="$slots.description" unwrap="p" />
         </div>
       </div>
       <img
