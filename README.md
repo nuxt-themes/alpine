@@ -1,10 +1,10 @@
-[![alpine theme](./template/public/social-card-preview.png)](https://alpine.nuxt.dev)
+[![alpine theme](./template/public/social-card-preview.png)](https://alpine.nuxt.space)
 
 # Alpine
 
-The minimalist blog theme, powered by [Nuxt](https://v3.nuxtjs.org).
+The minimalist blog theme, powered by [Nuxt](https://nuxt.com).
 
-Online demo: [alpine.nuxt.dev](https://alpine.nuxt.dev)
+Online demo: [alpine.nuxt.dev](https://alpine.nuxt.space)
 
 ## Features
 
