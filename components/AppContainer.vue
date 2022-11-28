@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
+
 type HTMLElementsTags = keyof HTMLElementTagNameMap
+
 defineProps({
   as: {
     type: String as PropType<HTMLElementsTags>,
