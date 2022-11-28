@@ -24,4 +24,4 @@ TODO
 
 ## License
 
-TODO
+[MIT](./LICENSE)
