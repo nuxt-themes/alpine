@@ -36,15 +36,17 @@ export default defineNuxtConfig({
   ],
 
   css: [
-    // Global CSS
-    resolveThemeDir('./assets/main.css'),
-
     // Inter font
     '@fontsource/inter/400.css',
     '@fontsource/inter/500.css',
     '@fontsource/inter/600.css',
     '@fontsource/inter/700.css'
   ],
+
+  tailwindcss: {
+    cssPath: resolveThemeDir('./assets/main.css'),
+    viewer: false
+  },
 
   colorMode: {
     classSuffix: ''

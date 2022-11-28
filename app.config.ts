@@ -1,26 +1,38 @@
 export default defineAppConfig({
-  header: {
-    position: 'left', // possible value are : 'none' | 'left' | 'center' | 'right'
-    logo: {
-      enabled: true, // possible value are : true | false
-      logo: '/logo.svg', // path of the logo
-      logoDark: '/logo-dark.svg', // path of the logo in dark mode, leave this empty if you want to use the same logo
-      alt: 'alpine' // alt of the logo
-    }
-  },
-  footer: {
-    title: false, // possible value are : true | false
-    navigation: false, // possible value are : true | false
-    position: 'center', // possible value are : 'none' | 'left' | 'center' | 'right'
+  alpine: {
+    title: 'Alpine',
+    description: 'The minimalist blog theme',
+    image: {
+      src: '/social-card-preview.png',
+      alt: 'An image showcasing my project.',
+      width: 400,
+      height: 300
+    },
+    header: {
+      position: 'inline', // possible value are : 'none' | 'left' | 'center' | 'right' | 'inline'
+      logo: {
+        path: '/logo.svg', // path of the logo
+        pathDark: '/logo-dark.svg', // path of the logo in dark mode, leave this empty if you want to use the same logo
+        alt: 'alpine' // alt of the logo
+      }
+    },
+    footer: {
+      credits: {
+        enabled: true, // possible value are : true | false
+        repository: 'https://www.github.com/nuxt-themes/alpine' // our github repository
+      },
+      navigation: false, // possible value are : true | false
+      position: 'center', // possible value are : 'none' | 'left' | 'center' | 'right'
+      message: 'Follow me on' // string that will be displayed in the footer (leave empty or delete to disable)
+    },
     socials: {
-      enabled: true, // possible value are : true | false
-      icons: true, // possible value are : true | false
-      message: 'Follow me on' // string that will be displayed on top of the icons / text (leave empty to disable)
+      twitter: 'nuxtlabs',
+      instagram: 'atinuxt',
+      linkedin: {
+        icon: 'uil:linkedin',
+        label: 'LinkedIn',
+        href: 'https://www.linkedin.com/company/nuxtlabs'
+      }
     }
-  },
-  socials: {
-    twitter: 'https://twitter.com/nuxtlabs',
-    instagram: 'https://www.instagram.com/atinuxt',
-    linkedin: 'https://www.linkedin.com/company/nuxtlabs'
   }
 })
