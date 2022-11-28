@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 
-defineProps({
+const props = defineProps({
   images: {
     type: Array as PropType<string[]>,
     default: () => [],
@@ -13,24 +13,42 @@ defineProps({
 </script>
 
 <template>
-  <section class="not-prose">
+  <section class="not-proseee gallery">
     <div
-      class="grid gap-8 my-16"
-      :class="{
-        'md:grid-col-2 md:grid-rows-2 lg:grid-rows-1 lg:grid-cols-3': images.length === 3,
-        'md:grid-cols-2': images.length === 2
-      }"
+      class="layout"
     >
       <img
         v-for="(image, index) in images"
         :key="index"
-        class="object-cover w-full h-56 rounded-xl"
         :src="image"
-        :class="[{ 'row-span-1 md:col-span-2 lg:col-span-1': images.length === 3 && index === images.length - 1 },
-                 { 'md:h-72 lg:h-96' : images.length === 1 },
-                 { 'md:h-48 lg:h-52' : images.length === 2 },
-                 { 'md:h-48 lg:h-44' : images.length === 3 }]"
       >
     </div>
   </section>
 </template>
+
+<style scoped lang="ts">
+css({
+  '.gallery': {
+    '.layout': {
+      display: 'grid',
+      gap: '{space.8}',
+      my: '{space.16}',
+      '--cols': 1,
+      gridTemplateColumns: 'repeat(var(--cols), minmax(0, 1fr))',
+      '@mq.md': {
+        '--cols': props => props.images.length < 2 ? props.images.length : 2
+      },
+      '@mq.lg': {
+        '--cols': props => props.images.length < 3 ? props.images.length : 3,
+      },
+      img: {
+        objectFit: 'cover',
+        width: '100%',
+        // TODO: add image ratio
+        height: '{space.56}',
+        borderRadius: '{radii.xl}'
+      }
+    }
+  }
+})
+</style>

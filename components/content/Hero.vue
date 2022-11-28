@@ -12,7 +12,7 @@ defineProps({
     type: String,
     default: null
   },
-  layout: {
+  imagePosition: {
     type: String,
     default: 'right'
   }
@@ -20,30 +20,19 @@ defineProps({
 </script>
 
 <template>
-  <section v-if="title || $slots.title" class="not-prose">
-    <div class="flex flex-col lg:flex-row">
-      <div :class="image ? 'grow' : ''">
-        <div class="text-3xl font-bold text-primary-900 dark:text-primary-100">
-          <p v-if="title" class="!my-0">
-            {{ title }}
-          </p>
-          <ContentSlot v-else :use="$slots.title" unwrap="p" />
+  <section v-if="title || $slots.title" class="hero">
+    <div class="layout">
+      <div class="content">
+        <div class="title">
+          <ContentSlot :use="$slots.title" unwrap="p" />
         </div>
-        <div v-if="description || $slots.description" class="mt-3 dark:prose-invert">
-          <p v-if="description" class="!my-0">
-            {{ description }}
-          </p>
-          <ContentSlot v-else :use="$slots.description" unwrap="p" />
+        <div v-if="description || $slots.description" class="description">
+          <ContentSlot :use="$slots.description" unwrap="p" />
         </div>
       </div>
       <img
         v-if="image"
-        class="lg:flex-none max-h-44 object-cover w-full rounded-xl lg:mt-0 md:max-h-72 lg:h-48 lg:w-96"
-        :class="
-          layout === 'left'
-            ? 'order-first lg:mr-14 mb-8'
-            : 'lg:ml-14 mt-8'
-        "
+        :class="[imagePosition]"
         :src="image"
         alt=":("
       >
@@ -53,3 +42,37 @@ defineProps({
     :( a hero block must have a title !
   </p>
 </template>
+
+<style scoped lang="ts">
+css({
+  '.hero': {
+    '.layout': {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
+      gap: '{space.8}',
+      '@mq.lg': {
+        gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+      },
+      '.title': {
+        fontSize: '{text.3xl.fontSize}',
+        lineHeight: '{text.3xl.lineHeight}',
+        fontWeight: '{fontWeights.bold}',
+        color: '{}'
+      },
+      '.description': {
+        marginTop: '{space.3}'
+      },
+      img: {
+        // TODO: add image ratio
+        width: '100%',
+        height: '{space.44}',
+        objectFit: 'cover',
+        borderRadius: '{radii.xl}',
+        '&.left': {
+          order: -1
+        }
+      },
+    }
+  }
+})
+</style>
