@@ -1,6 +1,6 @@
 <template>
   <div v-if="articles?.length">
-    <div class="mt-8 mb-16">
+    <div class="mt-8 mb-[72px]">
       <ArticlesItem :article="articles[0]" :hero="true" />
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">

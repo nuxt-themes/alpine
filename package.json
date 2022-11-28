@@ -1,7 +1,11 @@
 {
   "name": "@nuxt-themes/alpine",
   "version": "0.0.1",
-  "main": "./nuxt.config.ts",
+  "type": "module",
+  "exports": "./theme/nuxt.config.ts",
+  "files": [
+    "theme"
+  ],
   "scripts": {
     "build": "nuxt build .docs",
     "dev": "nuxt dev .docs",

@@ -1,13 +1,14 @@
 <template>
-  <div>
-    <nuxt-link :to="parentPath">
-      <div class="flex flex-row mt-10 mb-7">
+  <article>
+    <!-- TODO: could be refactored as a transparent ButtonLink -->
+    <NuxtLink :to="parentPath">
+      <div class="flex flex-row mt-10 mb-8 lg:mb-7 items-center">
         <Icon class="mr-2" name="uil:arrow-left" />
         <p class="text-primary-900 dark:text-primary-100">
           Back
         </p>
       </div>
-    </nuxt-link>
+    </NuxtLink>
     <h1 v-if="page?.title" class="mb-4 text-5xl font-semibold text-primary-900 dark:text-primary-100">
       {{ page.title }}
     </h1>
@@ -17,10 +18,11 @@
     <main class="max-w-full prose dark:prose-invert">
       <slot />
     </main>
-  </div>
+  </article>
 </template>
 
 <script setup lang="ts">
+const { page } = useContent()
 const route = useRoute()
 
 const parentPath = computed(
@@ -31,5 +33,4 @@ const parentPath = computed(
   }
 )
 
-const { page } = useContent()
 </script>

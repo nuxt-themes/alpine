@@ -1,42 +1,27 @@
-# Content v2 Minimal Starter
+[![alpine theme](./template/public/social-card-preview.png)](https://alpine.nuxt.space)
 
-Look at the [Content documentation](https://content-v2.nuxtjs.org/) to learn more.
+# Alpine
 
-## Setup
+The minimalist blog theme, powered by [Nuxt](https://nuxt.com).
 
-Make sure to install the dependencies:
+Online demo: [alpine.nuxt.dev](https://alpine.nuxt.space)
 
-```bash
-# yarn
-yarn install
+## Features
 
-# npm
-npm install
+- Write pages in Markdown and Vue components
+- Blog section
+- etc. (TODO)
 
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
+## Quick Start
 
 ```bash
-npm run dev
+npx nuxi init my-blog --theme alpine
 ```
 
-## Production
+## Contributing
 
-Build the application for production:
+TODO
 
-```bash
-npm run build
-```
+## License
 
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+[MIT](./LICENSE)

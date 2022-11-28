@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import type { Field, ContactField } from '~/types/contact'
+import type { Field, ContactField } from '../types/contact'
 
 const props = defineProps({
   sendButton: {
