@@ -21,7 +21,7 @@ export default defineAppConfig({
         enabled: true, // possible value are : true | false
         repository: 'https://www.github.com/nuxt-themes/alpine' // our github repository
       },
-      navigation: false, // possible value are : true | false
+      navigation: true, // possible value are : true | false
       position: 'center', // possible value are : 'none' | 'left' | 'center' | 'right'
       message: 'Follow me on' // string that will be displayed in the footer (leave empty or delete to disable)
     },

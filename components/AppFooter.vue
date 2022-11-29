@@ -1,64 +1,87 @@
 <script lang="ts" setup>
 const { navigation } = useContent()
 const alpine = useAppConfig().alpine
-
-const placeItems = computed(() => {
-  switch (alpine.footer.position) {
-    case 'left':
-      return { grid: 'place-items-start', icons: 'items-start' }
-    case 'center':
-      return { grid: 'place-items-center', icons: 'items-center' }
-    case 'right':
-      return { grid: 'place-items-end', icons: 'items-end' }
-    default:
-      return { grid: 'place-items-center', icons: 'items-center' }
-  }
-})
-
-const rowsNumber = computed(() => {
-  const footer = alpine.footer
-  return [footer.navigation, footer.title, footer.socials, footer.socials?.message?.length].reduce((acc, val) => {
-    return acc + (val ? 1 : 0)
-  }, 0)
-})
 </script>
 
 <template>
   <footer
-    class="grid min-h-32 grid-cols-1 mt-24 md:min-h-36 py-8 gap-y-4"
     :class="[
-      placeItems.grid,
-      `grid-row-${rowsNumber}`,
+      alpine.footer.position
     ]"
   >
-    <NuxtLink v-if="alpine.footer?.credits?.enabled" :to="alpine.footer.credits.repository">
-      <h1 class="text-3xl font-bold text-primary-900 dark:text-primary-100">
-        Alpine.
-      </h1>
+    <NuxtLink v-if="alpine.footer?.credits?.enabled" class="credits" :to="alpine.footer.credits.repository">
+      Alpine.
     </NuxtLink>
 
-    <div v-if="alpine.footer.navigation" class="grid grid-flow-col gap-x-9 auto-cols-max">
+    <div v-if="alpine.footer.navigation" class="navigation">
       <NuxtLink
         v-for="link of navigation"
         :key="link._path"
         :to="link._path"
-        active-class="font-bold"
-        class="text-primary dark:text-primary-200"
       >
         {{ link.title }}
       </NuxtLink>
     </div>
-    <p v-if="alpine.footer && alpine.footer.message" class="text-center text-primary dark:text-primary-200">
+    <p v-if="alpine.footer?.message" class="message">
       {{ alpine.footer.message }}
     </p>
-    <div v-if="alpine.socials && Object.entries(alpine.socials)" class="flex flex-col" :class="placeItems.icons">
-      <div class="flex gap-x-9">
+    <div v-if="alpine.socials && Object.entries(alpine.socials)" class="socials">
+      <div class="layout">
         <SocialIcons :socials="alpine.socials" />
-      </div>
-      <div v-if="alpine.socials && Object.entries(alpine.socials).length > 6" class="flex my-5 text-blue-400 outline space-x-3 rounded-xl outline-1 w-full p-4 bg-blue-100 outline-blue-300">
-        <Icon name="uil:info-circle" class="w-5 h-5 !text-blue-400" />
-        <p>Please consider to override Footer.vue if you want to add more than 6 icons</p>
       </div>
     </div>
   </footer>
 </template>
+
+<style scoped lang="ts">
+css({
+  footer: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
+    placeItems: 'center',
+    gap: '{space.4}',
+    minHeight: '{space.32}',
+    marginTop: '{space.24}',
+    py: '{space.8}',
+    '&.left': {
+      placeItems: 'start'
+    },
+    '&.right': {
+      placeItems: 'end'
+    },
+    '@mq.md': {
+      minHeight: '{space.36}',
+    },
+    '.credits': {
+      fontSize: '{text.3xl.fontSize}',
+      lineHeight: '{text.3xl.lineHeight}',
+      fontWeight: '{fontWeights.bold}',
+    },
+    '.navigation': {
+      display: 'flex',
+      gap: '{space.8}',
+      '.router-link-active': {
+        color: '{colors.red.500}'
+      }
+    },
+    '.message': {
+      textAlign: 'center'
+    },
+    '.socials': {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      '&.left': {
+        alignItems: 'flex-start'
+      },
+      '&.right': {
+        alignItems: 'flex-end'
+      },
+      '.layout': {
+        display: 'flex',
+        gap: '{space.8}'
+      }
+    }
+  }
+})
+</style>
