@@ -1,15 +1,4 @@
 <script setup lang="ts">
-defineProps({
-  size: {
-    type: String,
-    default: 'w-8 h-8'
-  },
-  spacing: {
-    type: String,
-    default: 'p-0'
-  }
-})
-
 const colorMode = useColorMode()
 const onClick = () => {
   const values = ['system', 'light', 'dark']
@@ -21,11 +10,26 @@ const onClick = () => {
 </script>
 
 <template>
-  <button aria-label="Color Mode" class="inline-block text-primary-800 dark:text-primary-200" @click="onClick">
-    <ColorScheme placeholder="...">
+  <button aria-label="Color Mode" @click="onClick">
+    <ColorScheme>
       <Icon v-if="colorMode.preference === 'dark'" name="uil:moon" />
       <Icon v-else-if="colorMode.preference === 'light'" name="uil:sun" />
       <Icon v-else name="uil:desktop" />
     </ColorScheme>
   </button>
 </template>
+
+<style scoped lang="ts">
+css({
+  button: {
+    display: 'flex',
+    '--color-mode-switcher-size': '24px',
+    width: 'var(--color-mode-switcher-size)',
+    height: 'var(--color-mode-switcher-size)',
+    svg: {
+      width: '100%',
+      height: '100%',
+    }
+  }
+})
+</style>

@@ -9,7 +9,7 @@ export default defineAppConfig({
       height: 300
     },
     header: {
-      position: 'inline', // possible value are : 'none' | 'left' | 'center' | 'right' | 'inline'
+      position: 'right', // possible value are : | 'left' | 'center' | 'right'
       logo: {
         path: '/logo.svg', // path of the logo
         pathDark: '/logo-dark.svg', // path of the logo in dark mode, leave this empty if you want to use the same logo
@@ -22,7 +22,7 @@ export default defineAppConfig({
         repository: 'https://www.github.com/nuxt-themes/alpine' // our github repository
       },
       navigation: true, // possible value are : true | false
-      position: 'center', // possible value are : 'none' | 'left' | 'center' | 'right'
+      alignment: 'center', // possible value are : 'none' | 'left' | 'center' | 'right'
       message: 'Follow me on' // string that will be displayed in the footer (leave empty or delete to disable)
     },
     socials: {

@@ -6,7 +6,7 @@ const alpine = useAppConfig().alpine
 <template>
   <footer
     :class="[
-      alpine.footer.position
+      alpine.footer.alignment
     ]"
   >
     <NuxtLink v-if="alpine.footer?.credits?.enabled" class="credits" :to="alpine.footer.credits.repository">
@@ -29,6 +29,9 @@ const alpine = useAppConfig().alpine
       <div class="layout">
         <SocialIcons :socials="alpine.socials" />
       </div>
+    </div>
+    <div class="color-mode-switch">
+      <ColorModeSwitch />
     </div>
   </footer>
 </template>
@@ -81,7 +84,12 @@ css({
         display: 'flex',
         gap: '{space.8}'
       }
-    }
+    },
+    // '.color-mode-switch': {
+    //   display: 'flex',
+    //   justifyContent: 'flex-end',
+    //   gridColumn: 'span 2 / span 2',
+    // }
   }
 })
 </style>

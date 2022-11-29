@@ -1,59 +1,70 @@
 <script lang="ts" setup>
-const { navigation } = useContent()
 const alpine = useAppConfig().alpine
-
-const placeItems = computed(() => {
-  switch (alpine.header.position) {
-    case 'left':
-      return 'items-start'
-    case 'center':
-      return 'items-center'
-    case 'right':
-      return 'items-end'
-    case 'inline':
-      return 'sm:flex-row justify-between'
-    default:
-      return 'items-start'
-  }
-})
 </script>
 
 <template>
-  <header class="relative h-32 md:h-36 py-8 mb-6 md:mb-8 flex items-center justify-between">
-    <ColorModeSwitch
-      :class="[
-        { 'absolute top-6 md:top-8': !(alpine.header.position === 'inline') },
-        { 'order-last self-start md:self-auto': alpine.header.position === 'inline' },
-        { 'right-0' : ['left', 'center'].includes(alpine.header.position) }
-      ]"
-    />
-    <div
-      class="flex flex-col gap-y-[24px] md:gap-y-[32px] flex-1"
-      :class="placeItems"
-    >
-      <NuxtLink v-if="alpine.header.logo" to="/" class="text-primary-700 dark:text-primary-200">
+  <header :class="alpine.header.position">
+    <div class="logo">
+      <NuxtLink v-if="alpine.header.logo" to="/">
         <img class="dark-img" :src="alpine.header.logo.pathDark" :alt="alpine.header.logo.alt">
         <img class="light-img" :src="alpine.header.logo.path" :alt="alpine.header.logo.alt">
       </NuxtLink>
-      <NuxtLink v-else to="/" class="text-primary-700 dark:text-primary-200 text-xl font-semibold">
+      <NuxtLink v-else to="/" class="fallback">
         {{ alpine.header.title || alpine.title }}
       </NuxtLink>
-      <ul class="flex h-full sm:justify-center gap-x-[32px]" :class="{ 'flex-1': alpine.header.position }">
-        <li
-          v-for="link of navigation"
-          :key="link._path"
-        >
-          <NuxtLink
-            :to="link._path"
-            active-class="font-bold"
-            class="text-primary-700 dark:text-primary-200 relative group"
-          >
-            <!-- underline -->
-            <span class="absolute -bottom-1 w-0 h-0.5 bg-primary-700 dark:bg-primary-100 group-hover:w-full transition-all duration-200 ease-in-out" />
-            {{ link.title }}
-          </NuxtLink>
-        </li>
-      </ul>
+    </div>
+
+    <div class="main-nav">
+      <MainNav />
     </div>
   </header>
 </template>
+
+<style scoped lang="ts">
+css({
+  header: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(12, minmax(0, 1fr))',
+    alignItems: 'center',
+    gap: '{space.4}',
+    py: '{space.16}',
+    '.logo': {
+      display: 'flex',
+      gridColumn: 'span 4 / span 4',
+      '@mq.sm': {
+        '.center &&': {
+          gridColumn: 'span 12 / span 12',
+          justifyContent: 'center',
+        },
+        '.right &&': {
+          justifyContent: 'flex-end',
+          order: 2,
+        },
+      },
+      '.fallback': {
+        fontSize: '{text.2xl.fontSize}',
+        lineHeight: '{text.2xl.lineHeight}',
+        fontWeight: '{fontWeights.semibold}'
+      }
+    },
+    '.main-nav': {
+      // TODO: add mobile menu
+      display: 'none',
+      '@mq.sm': {
+        display: 'flex',
+        gridColumn: 'span 8 / span 8',
+        '.center &&': {
+          gridColumn: 'span 12 / span 12',
+          justifyContent: 'center',
+        },
+        '.right &&': {
+          justifyContent: 'flex-start',
+        },
+        '.left &&': {
+          justifyContent: 'flex-end',
+        },
+      }
+    },
+  }
+})
+</style>
