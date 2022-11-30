@@ -13,7 +13,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="not-proseee gallery">
+  <section class="gallery">
     <div
       class="layout"
     >

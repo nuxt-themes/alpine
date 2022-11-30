@@ -32,7 +32,8 @@ export default defineNuxtConfig({
 
   components: [
     { path: resolveThemeDir('./components'), global: true },
-    { path: resolveThemeDir('./components/content'), global: true }
+    { path: resolveThemeDir('./components/content'), global: true },
+    { path: resolveThemeDir('./components/data-entry'), global: true }
   ],
 
   css: [

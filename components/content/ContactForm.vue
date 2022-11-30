@@ -1,23 +1,3 @@
-<template>
-  <div>
-    <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-6 md:gap-y-9">
-      <Input
-        v-for="(field, index) in form"
-        :key="index"
-        v-model="field.data"
-        :field="field"
-        class="md:max-w-md lg:max-w-full"
-        :class="{ '!max-w-full lg:col-span-2': field.layout === 'big' }"
-      />
-    </div>
-    <div class="mt-8">
-      <Button :on-click="() => onSend()">
-        {{ sendButton }}
-      </Button>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import type { PropType } from 'vue'
 import type { Field, ContactField } from '../types/contact'
@@ -103,3 +83,36 @@ const onSend = async () => {
 }
 
 </script>
+
+<template>
+  <div class="contact-form">
+    <div class="inputs">
+      <Input
+        v-for="(field, index) in form"
+        :key="index"
+        v-model="field.data"
+        :field="field"
+      />
+    </div>
+    <div>
+      <Button :on-click="() => onSend()">
+        {{ sendButton }}
+      </Button>
+    </div>
+  </div>
+</template>
+
+<style scoped lang="ts">
+css({
+  '.contact-form': {
+    '.inputs': {
+      display: 'grid',
+      gridAutoFlow: 'row',
+      gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
+      gap: '{space.8}',
+      marginBottom: '{space.8}',
+      maxWidth: '{size.md}'
+    }
+  }
+})
+</style>
