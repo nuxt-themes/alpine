@@ -24,7 +24,7 @@ css({
     py: '{space.2}',
     px: '{space.4}',
     borderRadius: '{radii.md}',
-    '@mq.md': {
+    '@md': {
       fontSize: '{text.base.fontSize}',
       lineHeight: '{text.base.lineHeight}',
       py: '{space.3}',

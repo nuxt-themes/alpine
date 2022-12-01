@@ -35,10 +35,10 @@ css({
       my: '{space.16}',
       '--cols': 1,
       gridTemplateColumns: 'repeat(var(--cols), minmax(0, 1fr))',
-      '@mq.md': {
+      '@md': {
         '--cols': (props) => props.images.length < 2 ? props.images.length : 2
       },
-      '@mq.lg': {
+      '@lg': {
         '--cols': (props) => props.images.length < 3 ? props.images.length : 3,
       },
       img: {

@@ -28,15 +28,15 @@ const articles = computed(
 <style scoped lang="ts">
 css({
   '.articles-list': {
-    '@mq.sm': {
+    '@sm': {
       px: '{space.12}',
     },
-    '@mq.md': {
+    '@md': {
       px: 0,
     },
     '.featured': {
       my: '{space.12}',
-      '@mq.md': {
+      '@md': {
         my: '{space.8}',
       }
     },
@@ -44,11 +44,11 @@ css({
       display: 'grid',
       gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
       gap: '{space.12}',
-      '@mq.md': {
+      '@md': {
         gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
         gap: '{space.8}',
       },
-      '@mq.lg': {
+      '@lg': {
         gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
       },
     }

@@ -50,7 +50,7 @@ css({
       display: 'grid',
       gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
       gap: '{space.8}',
-      '@mq.lg': {
+      '@lg': {
         gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
       },
       '.title': {

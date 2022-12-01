@@ -21,9 +21,9 @@ specifiers:
 
 dependencies:
   '@fontsource/inter': 4.5.14
-  '@nuxt-themes/elements': 0.1.0_vue@3.2.45
-  '@nuxt-themes/tokens': 1.1.13_vue@3.2.45
-  '@nuxt-themes/typography': 0.0.25_vue@3.2.45
+  '@nuxt-themes/elements': 0.2.0_vue@3.2.45
+  '@nuxt-themes/tokens': 1.2.0_vue@3.2.45
+  '@nuxt-themes/typography': 0.0.26_vue@3.2.45
   '@nuxt/content': 2.2.2
   '@nuxthq/studio': 0.2.7
   '@nuxtjs/tailwindcss': 6.1.3
@@ -502,10 +502,10 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  /@nuxt-themes/elements/0.1.0_vue@3.2.45:
-    resolution: {integrity: sha512-OndK0hf2vy/4MoUOGE9FuRZDZuMBGgUaKcThkiWhlfXzqV7zz/Kjv8v1oQbAWlF/ISePmMCkVMmPh1Aq/8dLdQ==}
+  /@nuxt-themes/elements/0.2.0_vue@3.2.45:
+    resolution: {integrity: sha512-1QMw+f7jI5b4GjiAsD2we2woZ181YYACn8TZoA+UHAo4wM5CVpN+Nw+ds4eYdmW4hQc5pVx1fj0lc15/l/5GOQ==}
     dependencies:
-      '@nuxt-themes/tokens': 1.1.13_vue@3.2.45
+      '@nuxt-themes/tokens': 1.2.0_vue@3.2.45
       '@vueuse/core': 9.6.0_vue@3.2.45
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -516,12 +516,12 @@ packages:
       - vue
     dev: false
 
-  /@nuxt-themes/tokens/1.1.13_vue@3.2.45:
-    resolution: {integrity: sha512-XseCu1sACziUOIXS/MXKPZA4NwoWVTp7jnZ6qKQ433w/6qP5VUVeqH0/MmXDojIamlZGD/wSfUPB8z4xHGRDWA==}
+  /@nuxt-themes/tokens/1.2.0_vue@3.2.45:
+    resolution: {integrity: sha512-sWSSU6kIsetfUvpN2f+uUl6SC2FUx5HMIdON9oni6oCNBZ/kAKHeEE6oThm+kwQwAONOoOnCG7tlnUPvtWl6KQ==}
     dependencies:
       '@nuxtjs/color-mode': 3.2.0
       '@vueuse/core': 9.6.0_vue@3.2.45
-      pinceau: 0.7.4
+      pinceau: 0.8.2
       style-value-types: 5.1.2
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -532,13 +532,13 @@ packages:
       - vue
     dev: false
 
-  /@nuxt-themes/typography/0.0.25_vue@3.2.45:
-    resolution: {integrity: sha512-Iv9oTNV91aG5KrjKZNx/KwKlNSKfRHEQnkBDoUyIIySGC76V40icv08hZJUDkHhP/ERA0/Z4jXSo1DGLrsE7mA==}
+  /@nuxt-themes/typography/0.0.26_vue@3.2.45:
+    resolution: {integrity: sha512-oVqQv31kYzKvW2YcJb5JK++vbScfQ0dKHXaR8wxFRcgZvSgDrIvVLx7HufwtiKDEIUN11POLxJxQOHSuz7Chng==}
     dependencies:
-      '@nuxt-themes/tokens': 1.1.13_vue@3.2.45
+      '@nuxt-themes/tokens': 1.2.0_vue@3.2.45
       '@nuxtjs/color-mode': 3.2.0
       nuxt-icon: 0.1.7_vue@3.2.45
-      pinceau: 0.7.4
+      pinceau: 0.8.2
     transitivePeerDependencies:
       - '@vue/composition-api'
       - postcss
@@ -868,7 +868,7 @@ packages:
       defu: 6.1.1
       h3: 0.8.6
       postcss: 8.4.19
-      postcss-custom-properties: 12.1.10_postcss@8.4.19
+      postcss-custom-properties: 12.1.11_postcss@8.4.19
       postcss-nesting: 10.2.0_postcss@8.4.19
       tailwind-config-viewer: 1.7.2_tailwindcss@3.2.4
       tailwindcss: 3.2.4
@@ -1360,8 +1360,8 @@ packages:
       vue: 3.2.45
     dev: true
 
-  /@unocss/reset/0.46.5:
-    resolution: {integrity: sha512-DU1sisNixEaUsnfDdbU+POaedJLKUtalHnOOce2Txxrcakf7M2/I5/9cRIXt5diVbPjIyoDPcx+7Gn8K0cTGqg==}
+  /@unocss/reset/0.47.4:
+    resolution: {integrity: sha512-5AnzQRxlsfkktp5ctFdZA4jtEDLpt7ERpxGlPswTrrs1/oPT5Erco532jUh4TZ7BvHE3ZPRYEEy79HuFLUc5vQ==}
     dev: false
 
   /@vercel/nft/0.22.1:
@@ -5411,6 +5411,7 @@ packages:
 
   /nuxt-plausible/0.1.2:
     resolution: {integrity: sha512-w3Flmonlb73L/IpPkkNfSuUgahXtmp/xyp33MWdqaxMUgwRAdXNZy+YNJyFUPZObp/yruZquisoMy0WLKfcCJQ==}
+    deprecated: Moved to @nuxtjs/plausible. Please use this package instead.
     dependencies:
       '@nuxt/kit': 3.0.0
       defu: 6.1.1
@@ -5779,11 +5780,12 @@ packages:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
 
-  /pinceau/0.7.4:
-    resolution: {integrity: sha512-jQzHDaSmXj3L6yJoKAxc52XVNR2OEtsw2EMXO9bO4L0tRxd50WUeP5E8kGYBKPTXqWYgEhlLeSVIu+T0A5vQjw==}
+  /pinceau/0.8.2:
+    resolution: {integrity: sha512-FSVxGTon+ivmhqfHF2jfPmov7HDY0dFeB4HgWrX7orpbd1Sm5o143gUuHNnIJcoTJozs/zc7vHUiw4zj+hfFjQ==}
     dependencies:
-      '@unocss/reset': 0.46.5
+      '@unocss/reset': 0.47.4
       '@volar/vue-language-core': 1.0.10
+      acorn: 8.8.1
       chroma-js: 2.4.2
       consola: 2.15.3
       csstype: 3.1.1
@@ -5791,7 +5793,7 @@ packages:
       magic-string: 0.26.7
       nanoid: 4.0.0
       ohash: 1.0.0
-      postcss-custom-properties: 12.1.10
+      postcss-custom-properties: 12.1.11
       postcss-dark-theme-class: 0.7.3
       postcss-nested: 6.0.0
       recast: 0.21.5
@@ -5874,8 +5876,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /postcss-custom-properties/12.1.10:
-    resolution: {integrity: sha512-U3BHdgrYhCrwTVcByFHs9EOBoqcKq4Lf3kXwbTi4hhq0qWhl/pDWq2THbv/ICX/Fl9KqeHBb8OVrTf2OaYF07A==}
+  /postcss-custom-properties/12.1.11:
+    resolution: {integrity: sha512-0IDJYhgU8xDv1KY6+VgUwuQkVtmYzRwu+dMjnmdMafXYv86SWqfxkc7qdDvWS38vsjaEtv8e0vGOUQrAiMBLpQ==}
     engines: {node: ^12 || ^14 || >=16}
     peerDependencies:
       postcss: ^8.2
@@ -5886,8 +5888,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: false
 
-  /postcss-custom-properties/12.1.10_postcss@8.4.19:
-    resolution: {integrity: sha512-U3BHdgrYhCrwTVcByFHs9EOBoqcKq4Lf3kXwbTi4hhq0qWhl/pDWq2THbv/ICX/Fl9KqeHBb8OVrTf2OaYF07A==}
+  /postcss-custom-properties/12.1.11_postcss@8.4.19:
+    resolution: {integrity: sha512-0IDJYhgU8xDv1KY6+VgUwuQkVtmYzRwu+dMjnmdMafXYv86SWqfxkc7qdDvWS38vsjaEtv8e0vGOUQrAiMBLpQ==}
     engines: {node: ^12 || ^14 || >=16}
     peerDependencies:
       postcss: ^8.2

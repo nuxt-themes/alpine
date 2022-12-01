@@ -52,7 +52,7 @@ css({
     flexDirection: 'column',
     gap: '{space.4}',
     '&.featured': {
-      '@mq.md': {
+      '@md': {
         flexDirection: 'row',
         gap: '{space.8}',
       }

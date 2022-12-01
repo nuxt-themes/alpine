@@ -31,7 +31,7 @@ css({
     '.logo': {
       display: 'flex',
       gridColumn: 'span 4 / span 4',
-      '@mq.sm': {
+      '@sm': {
         '.center &&': {
           gridColumn: 'span 12 / span 12',
           justifyContent: 'center',
@@ -50,7 +50,7 @@ css({
     '.main-nav': {
       // TODO: add mobile menu
       display: 'none',
-      '@mq.sm': {
+      '@sm': {
         display: 'flex',
         gridColumn: 'span 8 / span 8',
         '.center &&': {

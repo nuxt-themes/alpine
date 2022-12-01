@@ -52,7 +52,7 @@ css({
     '&.right': {
       placeItems: 'end'
     },
-    '@mq.md': {
+    '@md': {
       minHeight: '{space.36}',
     },
     '.credits': {
