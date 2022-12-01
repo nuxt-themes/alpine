@@ -1,16 +1,3 @@
-<template>
-  <div v-if="articles?.length">
-    <div class="mt-8 mb-[72px]">
-      <ArticlesItem :article="articles[0]" :hero="true" />
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
-      <div v-for="(article, index) in articles.slice(1)" :key="index">
-        <ArticlesItem :article="article" />
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 const props = defineProps({
   path: {
@@ -26,3 +13,45 @@ const articles = computed(
   () => _articles.value || []
 )
 </script>
+
+<template>
+  <div v-if="articles?.length" class="articles-list">
+    <div class="featured">
+      <ArticlesListItem :article="articles[0]" :featured="true" />
+    </div>
+    <div class="layout">
+      <ArticlesListItem :article="article" v-for="(article, index) in articles.slice(1)" :key="index"/>
+    </div>
+  </div>
+</template>
+
+<style scoped lang="ts">
+css({
+  '.articles-list': {
+    '@mq.sm': {
+      px: '{space.12}',
+    },
+    '@mq.md': {
+      px: 0,
+    },
+    '.featured': {
+      my: '{space.12}',
+      '@mq.md': {
+        my: '{space.8}',
+      }
+    },
+    '.layout': {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
+      gap: '{space.12}',
+      '@mq.md': {
+        gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+        gap: '{space.8}',
+      },
+      '@mq.lg': {
+        gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+      },
+    }
+  }
+})
+</style>

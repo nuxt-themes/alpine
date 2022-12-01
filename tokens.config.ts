@@ -1,6 +1,18 @@
 import { defineTheme } from 'pinceau'
 
 export default defineTheme({
+  utils: {
+    lineClamp: lines => ({
+      overflow: 'hidden',
+      display: '-webkit-box',
+      '-webkit-box-orient': 'vertical',
+      '-webkit-line-clamp': lines,
+    }),
+    text: size => ({
+      fontSize: `{text.${size}.fontSize}`,
+      lineHeight: `{text.${size}.lineHeight}`,
+    })
+  },
   colors: {
     white: {
       value: '#FFFFFF'
