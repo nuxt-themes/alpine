@@ -58,13 +58,13 @@ css({
     '.credits': {
       fontSize: '{text.3xl.fontSize}',
       lineHeight: '{text.3xl.lineHeight}',
-      fontWeight: '{fontWeights.bold}',
+      fontWeight: '{fontWeight.bold}',
     },
     '.navigation': {
       display: 'flex',
       gap: '{space.8}',
       '.router-link-active': {
-        color: '{colors.red.500}'
+        color: '{color.red.500}'
       }
     },
     '.message': {

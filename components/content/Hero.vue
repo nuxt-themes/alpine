@@ -56,7 +56,7 @@ css({
       '.title': {
         fontSize: '{text.3xl.fontSize}',
         lineHeight: '{text.3xl.lineHeight}',
-        fontWeight: '{fontWeights.bold}',
+        fontWeight: '{fontWeight.bold}',
         color: '{}'
       },
       '.description': {

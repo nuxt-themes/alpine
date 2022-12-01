@@ -4,13 +4,12 @@
 
 /* TODO: use Design tokens here */
 html {
-  @apply bg-secondary-100;
+  background-color: $dt('color.secondary.100')
 }
 
 html.dark {
-  @apply bg-secondary-900;
+  background-color: $dt('color.secondary.900')
 }
-
 
 /* TODO: move it into a NuxtImage component */
 @layer components {

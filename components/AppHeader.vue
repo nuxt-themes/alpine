@@ -44,7 +44,7 @@ css({
       '.fallback': {
         fontSize: '{text.2xl.fontSize}',
         lineHeight: '{text.2xl.lineHeight}',
-        fontWeight: '{fontWeights.semibold}'
+        fontWeight: '{fontWeight.semibold}'
       }
     },
     '.main-nav': {

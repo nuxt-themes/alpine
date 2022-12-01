@@ -2,7 +2,7 @@
   "name": "@nuxt-themes/alpine",
   "version": "0.0.1",
   "type": "module",
-  "exports": "./theme/nuxt.config.ts",
+  "exports": "./nuxt.config.ts",
   "files": [
     "theme"
   ],
@@ -18,7 +18,7 @@
     "@nuxt-themes/tokens": "latest",
     "@nuxt-themes/typography": "latest",
     "@nuxt-themes/elements": "latest",
-    "@nuxthq/studio": "^0.2.7",
+    "@nuxthq/studio": "^0.3.1",
     "@nuxtjs/tailwindcss": "^6.1.3",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/line-clamp": "^0.4.2",

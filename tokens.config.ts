@@ -6,14 +6,14 @@ export default defineTheme({
       overflow: 'hidden',
       display: '-webkit-box',
       '-webkit-box-orient': 'vertical',
-      '-webkit-line-clamp': lines,
+      '-webkit-line-clamp': lines
     }),
     text: size => ({
       fontSize: `{text.${size}.fontSize}`,
-      lineHeight: `{text.${size}.lineHeight}`,
+      lineHeight: `{text.${size}.lineHeight}`
     })
   },
-  colors: {
+  color: {
     white: {
       value: '#FFFFFF'
     },

@@ -56,24 +56,24 @@ css({
       display: 'block',
       fontSize: '{text.base.fontSize}',
       lineHeight: '{text.base.lineHeight}',
-      fontWeight: '{fontWeights.semibold}',
+      fontWeight: '{fontWeight.semibold}',
       marginBottom: '{space.2}'
     },
     'input, textarea': {
       backgroundColor: 'transparent',
       outline: 'none',
-      border: '1px solid {colors.gray.300}',
+      border: '1px solid {color.gray.300}',
       borderRadius: '{radii.md}',
       padding: '{space.2} {space.4}',
       width: '100%',
-      caretColor: '{colors.gray.500}',
+      caretColor: '{color.gray.500}',
       '&:focus': {
-        borderColor: '{colors.gray.700}'
+        borderColor: '{color.gray.700}'
       },
       '@dark': {
-        borderColor: '{colors.gray.700}',
+        borderColor: '{color.gray.700}',
         '&:focus': {
-          borderColor: '{colors.gray.400}'
+          borderColor: '{color.gray.400}'
         },
       }
     },

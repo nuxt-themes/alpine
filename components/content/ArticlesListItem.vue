@@ -68,7 +68,7 @@ css({
       '.headline': {
         text: '2xl',
         marginBottom: '{space.2}',
-        fontWeight: '{fontWeights.semibold}',
+        fontWeight: '{fontWeight.semibold}',
         lineClamp: 2,
         '.featured &&': {
           lineClamp: 3,
@@ -84,9 +84,9 @@ css({
       time: {
         text: 'sm',
         // TODO: add secondary color token
-        color: '{colors.gray.500}',
+        color: '{color.gray.500}',
         '@dark': {
-          color: '{colors.gray.500}',
+          color: '{color.gray.500}',
         }
       }
     },

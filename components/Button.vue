@@ -16,11 +16,11 @@ defineProps({
 <style scoped lang="ts">
 css({
   button: {
-    backgroundColor: '{colors.gray.900}',
-    color: '{colors.gray.100}',
+    backgroundColor: '{color.gray.900}',
+    color: '{color.gray.100}',
     fontSize: '{text.sm.fontSize}',
     lineHeight: '{text.sm.lineHeight}',
-    fontWeight: '{fontWeights.medium}',
+    fontWeight: '{fontWeight.medium}',
     py: '{space.2}',
     px: '{space.4}',
     borderRadius: '{radii.md}',
@@ -31,8 +31,8 @@ css({
       px: '{space.6}',
     },
     '@dark': {
-      backgroundColor: '{colors.gray.100}',
-      color: '{colors.gray.900}',
+      backgroundColor: '{color.gray.100}',
+      color: '{color.gray.900}',
     }
   }
 })
