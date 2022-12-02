@@ -18,10 +18,11 @@ useContentHead(alpine)
 </script>
 
 <template>
-  <div class="px-4 sm:px-6 lg:px-8 mx-auto max-w-4xl">
+  <!-- TODO: move AppContainer to Elements, add tokens -->
+  <AppContainer>
     <AppLoadingBar />
     <AppHeader v-if="alpine.header" />
     <slot />
     <AppFooter v-if="alpine.footer" />
-  </div>
+  </AppContainer>
 </template>

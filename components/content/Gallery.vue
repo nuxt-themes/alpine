@@ -44,8 +44,7 @@ css({
       img: {
         objectFit: 'cover',
         width: '100%',
-        // TODO: add image ratio
-        height: '{space.56}',
+        aspectRatio: '16 / 9',
         borderRadius: '{radii.xl}'
       }
     }

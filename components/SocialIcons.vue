@@ -1,13 +1,5 @@
 <script setup lang="ts">
 const props = defineProps({
-  size: {
-    type: String,
-    default: 'w-5 h-5'
-  },
-  spacing: {
-    type: String,
-    default: 'p-0'
-  },
   socials: {
     type: Object,
     default: () => {}
@@ -45,9 +37,21 @@ const icons = computed<any>(() => {
     :aria-label="icon.label"
     :href="icon.href"
     target="_blank"
-    class="u-text-gray-500 hover:u-text-gray-700"
-    :class="[spacing]"
   >
-    <Icon v-if="icon.icon" :name="icon.icon" :class="size" />
+    <Icon v-if="icon.icon" :name="icon.icon" />
   </NuxtLink>
 </template>
+
+<style scoped lang="ts">
+css({
+  a: {
+    '--social-icon-size': '24px',
+    width: 'var(--social-icon-size)',
+    height: 'var(--social-icon-size)',
+    svg: {
+      width: '100%',
+      height: '100%',
+    }
+  }
+})
+</style>

@@ -63,9 +63,8 @@ css({
         marginTop: '{space.3}'
       },
       img: {
-        // TODO: add image ratio
         width: '100%',
-        height: '{space.44}',
+        aspectRatio: '16 / 9',
         objectFit: 'cover',
         borderRadius: '{radii.xl}',
         '&.left': {

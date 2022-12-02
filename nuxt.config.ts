@@ -16,18 +16,10 @@ export default defineNuxtConfig({
 
   pages: true,
 
-  // TODO: Remove TW
-  tailwindcss: {
-    viewer: false,
-    exposeConfig: true,
-    injectPosition: 'last'
-  },
-
   modules: [
     envModules.tokens,
     envModules.studio,
-    '@nuxt/content',
-    '@nuxtjs/tailwindcss'
+    '@nuxt/content'
   ],
 
   components: [
@@ -37,17 +29,13 @@ export default defineNuxtConfig({
   ],
 
   css: [
+    resolveThemeDir('./assets/main.css'),
     // Inter font
     '@fontsource/inter/400.css',
     '@fontsource/inter/500.css',
     '@fontsource/inter/600.css',
     '@fontsource/inter/700.css'
   ],
-
-  tailwindcss: {
-    cssPath: resolveThemeDir('./assets/main.css'),
-    viewer: false
-  },
 
   colorMode: {
     classSuffix: ''

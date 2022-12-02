@@ -1,5 +1,5 @@
 <template>
-  <main class="max-w-full">
+  <main>
     <slot />
   </main>
 </template>
