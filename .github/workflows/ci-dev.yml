@@ -24,16 +24,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-          cache: 'yarn'
 
       - name: Install dependencies
-        run: yarn --immutable
+        run: yarn install
 
       - name: Build
         run: yarn build
-
-      - name: Release Edge version
-        if: github.event_name == 'push'
-        run: ./.github/scripts/release-edge.sh
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
