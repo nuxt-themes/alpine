@@ -1,22 +1,23 @@
 html {
-  background-color: $dt('color.secondary.100')
+  background-color: $dt('color.secondary.100');
 }
 
 html.dark {
-  background-color: $dt('color.secondary.900')
+  background-color: $dt('color.secondary.900');
 }
 
-/* TODO: check Pinceau color mode bug */
+/* Color scheme images helper classes */
 .light-img {
   display: block;
-  @dark {
-    display: hidden;
-  }
 }
-
 .dark-img {
-  display: hidden;
-  @dark {
+  display: none;
+}
+@dark {
+  .dark-img {
     display: block;
+  }
+  .light-img {
+    display: none;
   }
 }

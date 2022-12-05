@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 
-const props = defineProps({
+defineProps({
   images: {
     type: Array as PropType<string[]>,
-    default: () => [],
-    validator: (value: string[]) => {
-      return value.length <= 3
-    }
+    default: () => []
   }
 })
 </script>

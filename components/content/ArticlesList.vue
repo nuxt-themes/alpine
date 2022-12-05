@@ -9,9 +9,7 @@ const props = defineProps({
 // @ts-ignore
 const { data: _articles } = await useAsyncData('articles', async () => await queryContent(props.path).sort({ date: -1 }).where({ _path: { $ne: `/${props.path}` } }).find())
 
-const articles = computed(
-  () => _articles.value || []
-)
+const articles = computed(() => _articles.value || [])
 </script>
 
 <template>
@@ -20,7 +18,7 @@ const articles = computed(
       <ArticlesListItem :article="articles[0]" :featured="true" />
     </div>
     <div class="layout">
-      <ArticlesListItem :article="article" v-for="(article, index) in articles.slice(1)" :key="index"/>
+      <ArticlesListItem v-for="(article, index) in articles.slice(1)" :key="index" :article="article" />
     </div>
   </div>
 </template>

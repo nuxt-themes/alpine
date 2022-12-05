@@ -64,7 +64,7 @@ css({
       display: 'flex',
       gap: '{space.8}',
       '.router-link-active': {
-        color: '{color.red.500}'
+        color: '{color.primary.500}'
       }
     },
     '.message': {

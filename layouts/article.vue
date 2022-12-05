@@ -32,5 +32,4 @@ const parentPath = computed(
     return pathTabl.join('/')
   }
 )
-
 </script>

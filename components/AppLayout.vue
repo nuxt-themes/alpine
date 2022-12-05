@@ -14,7 +14,7 @@ useHead({
   ]
 })
 
-useContentHead(alpine)
+useContentHead(alpine as any)
 </script>
 
 <template>
