@@ -25,9 +25,14 @@ css({
   nav: {
     ul: {
       display: 'flex',
+      flexDirection: 'column',
       width: '100%',
       justifyContent: 'center',
-      gap: '{space.8}',
+      gap: '{space.4}',
+      '@sm': {
+        flexDirection: 'row',
+        gap: '{space.8}',
+      },
       a: {
         position: 'relative',
         '&.router-link-active': {
