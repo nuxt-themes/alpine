@@ -1,9 +1,9 @@
 html {
-  background-color: $dt('color.secondary.100');
+  background-color: $dt('color.gray.100');
 }
 
 html.dark {
-  background-color: $dt('color.secondary.900');
+  background-color: $dt('color.gray.900');
 }
 
 /* Color scheme images helper classes */
