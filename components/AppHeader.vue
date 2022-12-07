@@ -2,7 +2,6 @@
 const alpine = useAppConfig().alpine
 
 const show = ref(false)
-
 </script>
 
 <template>
