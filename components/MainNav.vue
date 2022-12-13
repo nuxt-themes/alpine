@@ -36,7 +36,7 @@ css({
       a: {
         position: 'relative',
         '&.router-link-active': {
-          fontWeight: '{fontWeight.bold}'
+          color: '{color.primary.500}'
         },
         '.underline-fx': {
           position: 'absolute',

@@ -4,34 +4,29 @@ const alpine = useAppConfig().alpine
 </script>
 
 <template>
-  <footer
-    :class="[
-      alpine.footer.alignment
-    ]"
-  >
+  <footer :class="[
+    alpine.footer.alignment
+  ]">
     <NuxtLink v-if="alpine.footer?.credits?.enabled" class="credits" :to="alpine.footer.credits.repository">
       Alpine.
     </NuxtLink>
 
     <div v-if="alpine.footer.navigation" class="navigation">
-      <NuxtLink
-        v-for="link of navigation"
-        :key="link._path"
-        :to="link._path"
-      >
+      <!-- <NuxtLink v-for="link of navigation" :key="link._path" :to="link._path">
         {{ link.title }}
-      </NuxtLink>
+      </NuxtLink> -->
+      <MainNav />
     </div>
     <p v-if="alpine.footer?.message" class="message">
       {{ alpine.footer.message }}
     </p>
-    <div v-if="alpine.socials && Object.entries(alpine.socials)" class="socials">
-      <div class="layout">
+    <div class="icons">
+      <div v-if="alpine.socials && Object.entries(alpine.socials)" class="social">
         <SocialIcons :socials="alpine.socials" />
       </div>
-    </div>
-    <div class="color-mode-switch">
-      <ColorModeSwitch />
+      <div class="color-mode-switch">
+        <ColorModeSwitch />
+      </div>
     </div>
   </footer>
 </template>
@@ -39,18 +34,16 @@ const alpine = useAppConfig().alpine
 <style scoped lang="ts">
 css({
   footer: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
-    placeItems: 'center',
-    gap: '{space.4}',
-    minHeight: '{space.32}',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
     marginTop: '{space.24}',
     py: '{space.8}',
     '&.left': {
-      placeItems: 'start'
+      alignItems: 'flex-start'
     },
     '&.right': {
-      placeItems: 'end'
+      alignItems: 'flex-end'
     },
     '@md': {
       minHeight: '{space.36}',
@@ -59,37 +52,60 @@ css({
       fontSize: '{text.3xl.fontSize}',
       lineHeight: '{text.3xl.lineHeight}',
       fontWeight: '{fontWeight.bold}',
+      marginBottom: '{space.8}',
+      '@sm': {
+        marginBottom: '{space.4}'
+      }
     },
     '.navigation': {
-      display: 'flex',
-      gap: '{space.8}',
-      '.router-link-active': {
-        color: '{color.primary.500}'
+      display: 'none',
+      '@sm': {
+        display: 'flex',
+        marginBottom: '{space.8}',
       }
     },
     '.message': {
-      textAlign: 'center'
+      textAlign: 'center',
+      marginBottom: '{space.4}',
+      color: '{text.color.secondary}'
     },
-    '.socials': {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      '&.left': {
-        alignItems: 'flex-start'
-      },
-      '&.right': {
-        alignItems: 'flex-end'
-      },
-      '.layout': {
+    '.icons': {
+      display: 'grid',
+      width: '100%',
+      gridTemplateColumns: 'repeat(12, minmax(0, 1fr))',
+      gap: '{space.6}',
+      '.left &&': {
         display: 'flex',
-        gap: '{space.8}'
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      },
+      '.right &&': {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexDirection: 'row-reverse'
+      },
+      '.social': {
+        gridColumn: 'span 12 / span 12',
+        display: 'flex',
+        justifyContent: 'center',
+        gap: '{space.4}',
+        '@xs': {
+          gridColumn: 'span 4 / span 4',
+          gridColumnStart: 5,
+        }
+      },
+      '.color-mode-switch': {
+        gridColumn: 'span 12 / span 12',
+        display: 'flex',
+        justifyContent: 'center',
+        '@xs': {
+          gridColumn: 'span 1 / span 1',
+          gridColumnStart: 12,
+          justifyContent: 'flex-end',
+        }
       }
     },
-    // '.color-mode-switch': {
-    //   display: 'flex',
-    //   justifyContent: 'flex-end',
-    //   gridColumn: 'span 2 / span 2',
-    // }
   }
 })
 </style>
