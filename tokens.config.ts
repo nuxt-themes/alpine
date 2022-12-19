@@ -25,8 +25,10 @@ export default defineTheme({
   container: {
     maxWidth: '64rem',
     padding: {
-      mobile: '{space.4}',
-      sm: '{space.6}'
+      mobile: '{space.6}',
+      xs: '{space.8}',
+      sm: '{space.12}',
+      md: '{space.16}',
     }
   },
   color: {
@@ -34,5 +36,22 @@ export default defineTheme({
       value: '#FFFFFF'
     },
     primary: theme.color.lightblue
+  },
+  prose: {
+    p: {
+      fontSize: '18px'
+    },
+    code: {
+      block: {
+        backgroundColor: {
+          light: 'transparent',
+          dark: 'transparent'
+        },
+        borderColor: {
+          light: '{color.gray.200}',
+          dark: '{color.gray.800}'
+        }
+      }
+    }
   }
 })

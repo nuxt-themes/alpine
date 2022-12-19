@@ -66,7 +66,7 @@ css({
       border: '1px solid {color.gray.200}',
       borderRadius: '{radii.lg}',
       padding: '{space.6}',
-      paddingRight: '{space.16}',
+      paddingRight: '{space.24}',
       transition: 'all 250ms',
       perspective: '2000px',
       transformOrigin: 'top',

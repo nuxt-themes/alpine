@@ -35,9 +35,6 @@ css({
       '@md': {
         '--cols': (props) => props.images.length < 2 ? props.images.length : 2
       },
-      '@lg': {
-        '--cols': (props) => props.images.length < 3 ? props.images.length : 3,
-      },
       img: {
         objectFit: 'cover',
         width: '100%',
