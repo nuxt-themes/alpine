@@ -3,6 +3,8 @@ import type { PropType } from 'vue'
 import type { Field } from '../types/contact'
 const alpine = useAppConfig().alpine
 
+const { FORMSPREE_URL } = useRuntimeConfig().public
+
 const status = ref()
 
 const props = defineProps({
@@ -83,7 +85,7 @@ const onSend = async (e) => {
 </script>
 
 <template>
-  <form class="contact-form" @submit="onSend" method="POST" :action="alpine.integrations.formspree.url">
+  <form class="contact-form" @submit="onSend" method="POST" :action="FORMSPREE_URL">
     <div class="inputs">
       <Input v-for="(field, index) in form" :key="index" v-model="field.data" :field="field" />
     </div>

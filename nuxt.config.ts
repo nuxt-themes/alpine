@@ -14,6 +14,12 @@ const envModules = {
 export default defineNuxtConfig({
   extends: [envModules.typography, envModules.elements],
 
+  runtimeConfig: {
+    public: {
+      FORMSPREE_URL: process.env.FORMSPREE_URL
+    }
+  },
+
   pages: true,
 
   modules: [
