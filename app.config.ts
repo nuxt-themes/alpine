@@ -33,6 +33,14 @@ export default defineAppConfig({
         label: 'LinkedIn',
         href: 'https://www.linkedin.com/company/nuxtlabs'
       }
+    },
+    form: {
+      successMessage: 'Message sent. Thank you!'
+    },
+    integrations: {
+      formspree: { 
+        url: 'https://formspree.io/f/xdovneqb' 
+      }
     }
   }
 })

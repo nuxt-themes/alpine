@@ -1,19 +1,14 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import type { Field, ContactField } from '../types/contact'
+import type { Field } from '../types/contact'
+const alpine = useAppConfig().alpine
+
+const status = ref()
 
 const props = defineProps({
   sendButton: {
     type: String,
     default: 'Send message'
-  },
-  email: {
-    type: String,
-    required: true
-  },
-  subject: {
-    type: String,
-    default: 'Contact from Alpine Theme !'
   },
   fields: {
     type: Array as PropType<Field[]>,
@@ -49,57 +44,55 @@ const props = defineProps({
         required: true,
         layout: 'big'
       }
-    ] /* ,
-    validator: (fields: Field[]) => {
-      for (const field of fields) {
-        if (!field.name) {
-          return false
-        }
-        if (!field.required) {
-          return false
-        }
-        if (!field.layout) {
-          return false
-        }
-      }
-      return true
-    } */
+    ]
   }
 })
 
 const form = reactive(props.fields.map(v => ({ ...v, data: '' })))
 
-const onSend = async () => {
-  const formatedData: ContactField[] = []
-  await form.forEach((field) => {
-    const data: ContactField = {
-      name: field.name,
-      data: field.data
+const onSend = async (e) => {
+  e.preventDefault()
+  const data = new FormData(e.target)
+
+  fetch(e.target.action, {
+    method: e.target.method,
+    body: data,
+    headers: {
+      'Accept': 'application/json'
     }
-    formatedData.push(data)
+  }).then(response => {
+    if (response.ok) {
+      status.value = alpine.form.successMessage
+      e.target.reset()
+    } else {
+      // Handle errors from API
+      response.json().then(data => {
+        if (Object.hasOwn(data, 'errors')) {
+          console.error(data["errors"].map(error => error["message"]).join(", "))
+        } else {
+          console.error("There was a problem submitting your form")
+        }
+      })
+    }
+  }).catch(error => {
+    // Catch all other errors
+    console.error("There was a problem submitting your form")
   })
-  // eslint-disable-next-line no-console
-  console.log(formatedData)
 }
 
 </script>
 
 <template>
-  <div class="contact-form">
+  <form class="contact-form" @submit="onSend" method="POST" :action="alpine.integrations.formspree.url">
     <div class="inputs">
-      <Input
-        v-for="(field, index) in form"
-        :key="index"
-        v-model="field.data"
-        :field="field"
-      />
+      <Input v-for="(field, index) in form" :key="index" v-model="field.data" :field="field" />
     </div>
     <div>
-      <Button :on-click="() => onSend()">
-        {{ sendButton }}
+      <Button type="submit">
+        {{ status ? status : sendButton }}
       </Button>
     </div>
-  </div>
+  </form>
 </template>
 
 <style scoped lang="ts">

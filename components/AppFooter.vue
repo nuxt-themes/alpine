@@ -100,8 +100,8 @@ css({
         display: 'flex',
         justifyContent: 'center',
         '@xs': {
-          gridColumn: 'span 1 / span 1',
-          gridColumnStart: 12,
+          gridColumn: 'span 2 / span 2',
+          gridColumnStart: 11,
           justifyContent: 'flex-end',
         }
       }

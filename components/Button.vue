@@ -1,14 +1,14 @@
 <script setup lang="ts">
 defineProps({
-  onClick: {
-    type: Function,
-    required: true
+  type: {
+    type: String,
+    default: 'submit'
   }
 })
 </script>
 
 <template>
-  <button @click="onClick()">
+  <button :type="type">
     <slot />
   </button>
 </template>

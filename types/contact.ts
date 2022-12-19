@@ -5,8 +5,3 @@ export interface Field {
   label?: string;
   required?: boolean;
 }
-
-export interface ContactField {
-  name: string;
-  data: string;
-}

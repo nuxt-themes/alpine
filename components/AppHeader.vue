@@ -49,6 +49,9 @@ css({
     py: 'var(--header-padding)',
     '.menu': {
       position: 'absolute',
+      ':hover': {
+        color: '{color.primary.500}',
+      },
       '.left &&': {
         right: 0
       },

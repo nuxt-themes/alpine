@@ -26,6 +26,9 @@ css({
     '--color-mode-switcher-size': '24px',
     width: 'var(--color-mode-switcher-size)',
     height: 'var(--color-mode-switcher-size)',
+    ':hover': {
+      color: '{color.primary.500}',
+    },
     svg: {
       width: '100%',
       height: '100%',
