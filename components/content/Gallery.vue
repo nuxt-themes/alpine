@@ -39,7 +39,7 @@ css({
         objectFit: 'cover',
         width: '100%',
         aspectRatio: '16 / 9',
-        borderRadius: '{radii.xl}'
+        borderRadius: '{radii.md}'
       }
     }
   }

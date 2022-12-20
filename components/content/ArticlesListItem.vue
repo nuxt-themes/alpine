@@ -71,6 +71,7 @@ css({
         fontWeight: '{fontWeight.semibold}',
         lineClamp: 2,
         '.featured &&': {
+          text: '4xl',
           lineClamp: 3,
         },
       },

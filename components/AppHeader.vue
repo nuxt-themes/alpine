@@ -64,9 +64,12 @@ css({
       top: 'calc(var(--header-padding) + var(--logo-height) + {space.2})',
       backgroundColor: '{alpine.backdrop.backgroundColor.light}',
       border: '1px solid {color.gray.200}',
-      borderRadius: '{radii.lg}',
+      borderRadius: '{radii.md}',
       padding: '{space.6}',
       paddingRight: '{space.24}',
+      fontSize: '{text.lg.fontSize}',
+      lineHeight: '{text.lg.lineHeight}',
+      fontWeight: '{fontWeight.medium}',
       transition: 'all 250ms',
       perspective: '2000px',
       transformOrigin: 'top',
@@ -126,6 +129,9 @@ css({
       '@sm': {
         display: 'flex',
         gridColumn: 'span 8 / span 8',
+        fontSize: '{text.xl.fontSize}',
+        lineHeight: '{text.xl.lineHeight}',
+        fontWeight: '{fontWeight.medium}',
         '.center &&': {
           gridColumn: 'span 12 / span 12',
           justifyContent: 'center',

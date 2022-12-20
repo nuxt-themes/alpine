@@ -1,23 +1,24 @@
 <template>
   <article>
     <!-- TODO: could be refactored as a transparent ButtonLink -->
-    <NuxtLink :to="parentPath">
-      <div class="flex flex-row mt-10 mb-8 lg:mb-7 items-center">
-        <Icon class="mr-2" name="uil:arrow-left" />
-        <p class="text-primary-900 dark:text-primary-100">
-          Back
-        </p>
-      </div>
+    <NuxtLink :to="parentPath" class="back">
+      <Icon name="ph:arrow-left" />
+      <span class="text-primary-900 dark:text-primary-100">
+        Back
+      </span>
     </NuxtLink>
-    <h1 v-if="page?.title" class="mb-4 text-5xl font-semibold text-primary-900 dark:text-primary-100">
-      {{ page.title }}
-    </h1>
-    <p v-if="page?.date" class="text-primary-700 dark:text-primary-400">
-      {{ formatDate(page.date) }}
-    </p>
-    <main class="max-w-full prose dark:prose-invert">
+    <header>
+      <h1 v-if="page?.title" class="title">
+        {{ page.title }}
+      </h1>
+      <time v-if="page?.date" class="text-primary-700 dark:text-primary-400" :datetime="page.date">
+        {{ formatDate(page.date) }}
+      </time>
+    </header>
+
+    <div class="prose">
       <slot />
-    </main>
+    </div>
   </article>
 </template>
 
@@ -33,3 +34,46 @@ const parentPath = computed(
   }
 )
 </script>
+
+<style scoped lang="ts">
+css({
+  article: {
+    maxWidth: '{alpine.readableLine}',
+    mx: 'auto',
+    py: '{space.4}',
+    '@sm': {
+    py: '{space.12}',
+
+    },
+    '.back': {
+      display: 'inline-flex',
+      alignItems: 'center',
+      fontSize: '{text.lg.fontSize}',
+      borderBottom: '1px solid {borders.secondary.default}',
+      '& :deep(svg)': {
+        width: '{size.16}',
+        height: '{size.16}',
+        marginRight: '{space.2}'
+      }
+    },
+    header: {
+      marginTop: '{space.16}',
+      marginBottom: '{space.12}',
+    },
+    '.title': {
+      fontSize: '{text.5xl.fontSize}',
+      lineHeight: '{text.5xl.lineHeight}',
+      fontWeight: '{fontWeight.semibold}',
+      marginBottom: '{space.4}'
+    },
+    time: {
+      color: '{text.color.secondary}'
+    },
+    '.prose': {
+      '& :deep(h1)': {
+        display: 'none'
+      }
+    }
+  }
+})
+</style>

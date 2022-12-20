@@ -12,9 +12,6 @@ const alpine = useAppConfig().alpine
     </NuxtLink>
 
     <div v-if="alpine.footer.navigation" class="navigation">
-      <!-- <NuxtLink v-for="link of navigation" :key="link._path" :to="link._path">
-        {{ link.title }}
-      </NuxtLink> -->
       <MainNav />
     </div>
     <p v-if="alpine.footer?.message" class="message">
@@ -52,16 +49,16 @@ css({
       fontSize: '{text.3xl.fontSize}',
       lineHeight: '{text.3xl.lineHeight}',
       fontWeight: '{fontWeight.bold}',
-      marginBottom: '{space.8}',
-      '@sm': {
-        marginBottom: '{space.4}'
-      }
+      marginBottom: '{space.4}',
     },
     '.navigation': {
       display: 'none',
       '@sm': {
         display: 'flex',
         marginBottom: '{space.8}',
+        fontSize: '{text.base.fontSize}',
+        lineHeight: '{text.base.lineHeight}',
+        fontWeight: '{fontWeight.medium}',
       }
     },
     '.message': {
@@ -73,7 +70,7 @@ css({
       display: 'grid',
       width: '100%',
       gridTemplateColumns: 'repeat(12, minmax(0, 1fr))',
-      gap: '{space.6}',
+      gap: '{space.4}',
       '.left &&': {
         display: 'flex',
         alignItems: 'center',

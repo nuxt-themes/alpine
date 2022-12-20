@@ -63,7 +63,7 @@ css({
       backgroundColor: 'transparent',
       outline: 'none',
       border: '1px solid {color.gray.300}',
-      borderRadius: '{radii.md}',
+      borderRadius: '{radii.sm}',
       padding: '{space.2} {space.4}',
       width: '100%',
       caretColor: '{color.gray.500}',

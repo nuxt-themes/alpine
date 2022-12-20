@@ -54,19 +54,20 @@ css({
         gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
       },
       '.title': {
-        fontSize: '{text.3xl.fontSize}',
-        lineHeight: '{text.3xl.lineHeight}',
+        fontSize: '{text.4xl.fontSize}',
+        lineHeight: '{text.4xl.lineHeight}',
         fontWeight: '{fontWeight.bold}',
-        color: '{}'
       },
       '.description': {
-        marginTop: '{space.3}'
+        marginTop: '{space.3}',
+        fontSize: '{text.xl.fontSize}',
+        lineHeight: '{text.xl.lineHeight}',
       },
       img: {
         width: '100%',
         aspectRatio: '16 / 9',
         objectFit: 'cover',
-        borderRadius: '{radii.xl}',
+        borderRadius: '{radii.md}',
         '&.left': {
           order: -1
         }
