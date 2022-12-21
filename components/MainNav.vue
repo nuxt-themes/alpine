@@ -1,5 +1,11 @@
 <script lang="ts" setup>
 const { navigation } = useContent()
+
+const emits = defineEmits(['linkClick'])
+
+function handleClick() {
+  emits('linkClick')
+}
 </script>
 
 <template>
@@ -11,6 +17,7 @@ const { navigation } = useContent()
       >
         <NuxtLink
           :to="link._path"
+          @click="handleClick"
         >
           <span class="underline-fx" />
           {{ link.title }}

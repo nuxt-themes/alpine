@@ -17,7 +17,7 @@ const show = ref(false)
     </div>
 
     <div class="overlay" :class="[show && 'show']">
-      <MainNav />
+      <MainNav @linkClick="show = !show"/>
     </div>
 
     <div class="logo">
@@ -31,7 +31,7 @@ const show = ref(false)
     </div>
 
     <div class="main-nav">
-      <MainNav />
+      <MainNav/>
     </div>
   </header>
 </template>
