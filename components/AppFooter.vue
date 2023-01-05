@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-const { navigation } = useContent()
 const alpine = useAppConfig().alpine
 </script>
 
