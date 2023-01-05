@@ -16,6 +16,7 @@
     "tokens.config.ts"
   ],
   "scripts": {
+    "prepare": "nuxi prepare && nuxi prepare .docs",
     "build": "nuxt build .docs",
     "dev": "nuxt dev .docs",
     "lint": "eslint .",
