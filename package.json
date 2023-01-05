@@ -9,6 +9,7 @@
   "scripts": {
     "build": "nuxt build .docs",
     "dev": "nuxt dev .docs",
+    "lint": "eslint .",
     "generate": "nuxt generate .docs",
     "preview": "nuxt preview .docs"
   },

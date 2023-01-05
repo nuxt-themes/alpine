@@ -1,12 +1,13 @@
 <script lang="ts" setup>
-const { navigation } = useContent()
 const alpine = useAppConfig().alpine
 </script>
 
 <template>
-  <footer :class="[
-    alpine.footer.alignment
-  ]">
+  <footer
+    :class="[
+      alpine.footer.alignment
+    ]"
+  >
     <NuxtLink v-if="alpine.footer?.credits?.enabled" class="credits" :to="alpine.footer.credits.repository">
       Alpine.
     </NuxtLink>

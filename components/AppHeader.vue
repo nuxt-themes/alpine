@@ -17,7 +17,7 @@ const show = ref(false)
     </div>
 
     <div class="overlay" :class="[show && 'show']">
-      <MainNav @linkClick="show = !show"/>
+      <MainNav @link-lick="show = !show" />
     </div>
 
     <div class="logo">
@@ -26,12 +26,12 @@ const show = ref(false)
         <img class="light-img" :src="alpine.header.logo.path" :alt="alpine.header.logo.alt">
       </NuxtLink>
       <NuxtLink v-else to="/" class="fallback">
-        {{ alpine.header.title || alpine.title }}
+        {{ alpine.title }}
       </NuxtLink>
     </div>
 
     <div class="main-nav">
-      <MainNav/>
+      <MainNav />
     </div>
   </header>
 </template>
