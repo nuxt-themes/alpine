@@ -23,13 +23,15 @@ export default defineTheme({
       lineHeight: `{text.${size}.lineHeight}`
     })
   },
-  container: {
-    maxWidth: '64rem',
-    padding: {
-      mobile: '{space.6}',
-      xs: '{space.8}',
-      sm: '{space.12}',
-      md: '{space.16}',
+  elements: {
+    container: {
+      maxWidth: '64rem',
+      padding: {
+        mobile: '{space.6}',
+        xs: '{space.8}',
+        sm: '{space.12}',
+        md: '{space.16}'
+      }
     }
   },
   color: {

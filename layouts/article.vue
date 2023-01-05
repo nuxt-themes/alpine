@@ -49,7 +49,7 @@ css({
       display: 'inline-flex',
       alignItems: 'center',
       fontSize: '{text.lg.fontSize}',
-      borderBottom: '1px solid {borders.secondary.default}',
+      borderBottom: '1px solid {elements.border.secondary.default}',
       '& :deep(svg)': {
         width: '{size.16}',
         height: '{size.16}',
@@ -67,7 +67,7 @@ css({
       marginBottom: '{space.4}'
     },
     time: {
-      color: '{text.color.secondary}'
+      color: '{elements.color.text.secondary.default}'
     },
     '.prose': {
       '& :deep(h1)': {

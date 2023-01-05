@@ -65,7 +65,7 @@ css({
     '.message': {
       textAlign: 'center',
       marginBottom: '{space.4}',
-      color: '{text.color.secondary}'
+      color: '{elements.color.text.secondary.default}'
     },
     '.icons': {
       display: 'grid',
