@@ -4,9 +4,11 @@ const alpine = useAppConfig().alpine
 </script>
 
 <template>
-  <footer :class="[
-    alpine.footer.alignment
-  ]">
+  <footer
+    :class="[
+      alpine.footer.alignment
+    ]"
+  >
     <NuxtLink v-if="alpine.footer?.credits?.enabled" class="credits" :to="alpine.footer.credits.repository">
       Alpine.
     </NuxtLink>
@@ -64,7 +66,7 @@ css({
     '.message': {
       textAlign: 'center',
       marginBottom: '{space.4}',
-      color: '{text.color.secondary}'
+      color: '{elements.color.text.secondary.default}'
     },
     '.icons': {
       display: 'grid',
