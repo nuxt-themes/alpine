@@ -43,8 +43,16 @@
     "vue": "^3.2.45"
   },
   "release-it": {
+    "hooks": {
+      "before:init": [
+        "pnpm build"
+      ]
+    },
     "git": {
       "commitMessage": "chore(release): release v${version}"
+    },
+    "npm": {
+      "access": "public"
     },
     "github": {
       "release": true,
