@@ -3,6 +3,12 @@ import theme from '@nuxt-themes/tokens/tokens'
 
 export default defineTheme({
   alpine: {
+    $schema: {
+      title: 'All the configurable tokens from Alpine.',
+      tags: [
+        '@studio-icon carbon:blog'
+      ]
+    },
     backdrop: {
       backgroundColor: {
         light: '#f4f4f5b3', // TODO: rgba({color.gray.100}, 0.7)
@@ -10,18 +16,6 @@ export default defineTheme({
       }
     },
     readableLine: '68ch'
-  },
-  utils: {
-    lineClamp: (lines: any) => ({
-      overflow: 'hidden',
-      display: '-webkit-box',
-      '-webkit-box-orient': 'vertical',
-      '-webkit-line-clamp': lines
-    }),
-    text: (size: any) => ({
-      fontSize: `{text.${size}.fontSize}`,
-      lineHeight: `{text.${size}.lineHeight}`
-    })
   },
   elements: {
     container: {
@@ -35,9 +29,7 @@ export default defineTheme({
     }
   },
   color: {
-    white: {
-      value: '#FFFFFF'
-    },
+    white: '#FFFFFF',
     primary: theme.color.lightblue
   },
   prose: {

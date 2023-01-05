@@ -4,7 +4,16 @@
   "type": "module",
   "exports": "./nuxt.config.ts",
   "files": [
-    "theme"
+    "app",
+    "assets",
+    "components",
+    "composables",
+    "layouts",
+    "plugins",
+    "nuxt.schema.ts",
+    "app.vue",
+    "nuxt.config.ts",
+    "tokens.config.ts"
   ],
   "scripts": {
     "build": "nuxt build .docs",
@@ -14,19 +23,19 @@
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.14",
-    "@nuxt-themes/elements": "latest",
-    "@nuxt-themes/tokens": "latest",
-    "@nuxt-themes/typography": "latest",
-    "@nuxt/content": "^2.2.2",
-    "@nuxthq/studio": "^0.3.1",
-    "@vueuse/core": "^9.6.0"
+    "@nuxt-themes/elements": "^0.4.3",
+    "@nuxt-themes/tokens": "^1.5.2",
+    "@nuxt-themes/typography": "^0.4.0",
+    "@nuxt/content": "^2.3.0",
+    "@nuxthq/studio": "^0.4.3",
+    "@vueuse/core": "^9.10.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
-    "eslint": "^8.29.0",
+    "eslint": "^8.31.0",
     "nuxt": "^3.0.0",
     "nuxt-plausible": "^0.1.2",
-    "typescript": "^4.9.3",
+    "typescript": "^4.9.4",
     "vue": "^3.2.45"
   },
   "pnpm": {
