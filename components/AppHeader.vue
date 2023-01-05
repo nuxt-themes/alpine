@@ -17,7 +17,7 @@ const show = ref(false)
     </div>
 
     <div class="overlay" :class="[show && 'show']">
-      <MainNav @link-lick="show = !show" />
+      <MainNav @link-click="show = !show" />
     </div>
 
     <div class="logo">
