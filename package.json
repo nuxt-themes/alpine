@@ -4,22 +4,25 @@
   "type": "module",
   "exports": "./nuxt.config.ts",
   "files": [
-    "app",
     "assets",
     "components",
     "composables",
     "layouts",
-    "plugins",
-    "nuxt.schema.ts",
+    "types",
+    "app.config.ts",
     "app.vue",
     "nuxt.config.ts",
+    "nuxt.schema.ts",
     "tokens.config.ts"
   ],
   "scripts": {
     "build": "nuxt build .docs",
     "dev": "nuxt dev .docs",
+    "lint": "eslint .",
     "generate": "nuxt generate .docs",
-    "preview": "nuxt preview .docs"
+    "preview": "nuxt preview .docs",
+    "prepublishOnly": "pnpm lint",
+    "release": "release-it"
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.14",
@@ -31,17 +34,28 @@
     "@vueuse/core": "^9.10.0"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxt/eslint-config": "^0.1.1",
     "eslint": "^8.31.0",
     "nuxt": "^3.0.0",
-    "nuxt-plausible": "^0.1.2",
+    "@nuxtjs/plausible": "^0.2.0",
+    "release-it": "^15.6.0",
     "typescript": "^4.9.4",
     "vue": "^3.2.45"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): release v${version}"
+    },
+    "github": {
+      "release": true,
+      "releaseName": "v${version}"
+    }
   },
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {
-        "axios": "0.25.0"
+        "axios": "0.25.0",
+        "vue": "^3.0.0"
       },
       "ignoreMissing": [
         "postcss",

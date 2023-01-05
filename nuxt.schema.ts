@@ -142,4 +142,5 @@ export default defineNuxtConfigSchema({
         successMessage: 'Message sent. Thank you!'
       }
     }
+  }
 })

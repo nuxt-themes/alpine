@@ -1,5 +1,5 @@
-import { defineTheme } from 'pinceau'
 import theme from '@nuxt-themes/tokens/tokens'
+import { defineTheme } from 'pinceau'
 
 export default defineTheme({
   alpine: {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import type { Field } from '../types/contact'
+import type { Field } from '../../types/contact'
 const alpine = useAppConfig().alpine
 
 const { FORMSPREE_URL } = useRuntimeConfig().public
@@ -52,7 +52,7 @@ const props = defineProps({
 
 const form = reactive(props.fields.map(v => ({ ...v, data: '' })))
 
-const onSend = async (e) => {
+const onSend = async (e: any) => {
   e.preventDefault()
   const data = new FormData(e.target)
 
@@ -70,13 +70,13 @@ const onSend = async (e) => {
       // Handle errors from API
       response.json().then(data => {
         if (Object.hasOwn(data, 'errors')) {
-          console.error(data["errors"].map(error => error["message"]).join(", "))
+          console.error(data["errors"].map((error: any) => error["message"]).join(", "))
         } else {
           console.error("There was a problem submitting your form")
         }
       })
     }
-  }).catch(error => {
+  }).catch(() => {
     // Catch all other errors
     console.error("There was a problem submitting your form")
   })
@@ -85,7 +85,7 @@ const onSend = async (e) => {
 </script>
 
 <template>
-  <form class="contact-form" @submit="onSend" method="POST" :action="FORMSPREE_URL">
+  <form class="contact-form" method="POST" :action="FORMSPREE_URL" @submit="onSend">
     <div class="inputs">
       <Input v-for="(field, index) in form" :key="index" v-model="field.data" :field="field" />
     </div>
