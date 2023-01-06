@@ -1,4 +1,4 @@
-[![alpine theme](./.docs/public/social-card-preview.png)](https://alpine.nuxt.space)
+[![Alpine](./.docs/public/social-card-preview.png)](https://alpine.nuxt.space)
 
 # Alpine
 
@@ -9,13 +9,16 @@
 
 The minimalist blog theme, powered by [Nuxt](https://nuxt.com).
 
-Online demo: [alpine.nuxt.dev](https://alpine.nuxt.space)
+
+- [📸 Online demo](https://alpine.nuxt.space)
+- [⚡️ Play on StackBlitz](https://stackblitz.com/github/nuxt-themes/docus-starter)
 
 ## Features
 
-- Write pages in Markdown and Vue components
-- Blog section
-- etc. (TODO)
+- Start from a **profile page**, scale to a **complete blog**!
+- An [open source blog theme](https://github.com/nuxt-themes/alpine) powered by [Nuxt Content](https://content.nuxtjs.org), editable from [Nuxt Studio](https://studio.nuxt.com).
+- Write pages in Markdown and Vue components with the [MDC syntax](https://content.nuxtjs.org/guide/writing/mdc).
+- Use [**30+ built-in**](https://elements.nuxt.space) components in your Markdown pages.
 
 ## Quick Start
 
@@ -23,14 +26,16 @@ Online demo: [alpine.nuxt.dev](https://alpine.nuxt.space)
 npx nuxi init my-blog --theme alpine
 ```
 
-## Contributing
+## Contributing 🙏
 
-TODO
+1. Clone this repository
+2. Install dependencies using `yarn install` or `npm install`
+3. Run `npm run prepare` to generate type stubs.
+4. Use `npm run dev` to start [playground](./playground) in development mode.
 
 ## License
 
 [MIT](./LICENSE)
-
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@nuxt-themes/alpine/latest.svg?style=flat&colorA=18181B&colorB=28CF8D

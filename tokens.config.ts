@@ -30,6 +30,7 @@ export default defineTheme({
   },
   color: {
     white: '#FFFFFF',
+    // @ts-ignore
     primary: theme.color.lightblue
   },
   prose: {
