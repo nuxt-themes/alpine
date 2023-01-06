@@ -1,18 +1,49 @@
 <template>
-  <div class="h-screen">
-    <div class="m-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-center">
-      <div>
-        <p class="text-5xl mb-5 font-bold">
-          404
-        </p>
-        <p class="mb-8">
-          This page could not be found.
-        </p>
-        <NuxtLink to="/" class="inline-flex items-center gap-2">
-          Back to homepage
-          <Icon name="uil:arrow-right" />
-        </NuxtLink>
-      </div>
-    </div>
-  </div>
+  <section>
+    <p class="message">
+      This page could not be found
+    </p>
+
+    <p class="status">
+      404
+    </p>
+
+    <NuxtLink to="/">
+      Back to homepage
+      <Icon name="ph:arrow-right" />
+    </NuxtLink>
+  </section>
 </template>
+
+<style scoped lang="ts">
+css({
+  section: {
+    minHeight: '50vh',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    '.message': {
+      fontSize: '{text.3xl.fontSize}',
+      lineHeight: '{text.3xl.lineHeight}',
+      fontWeight: '{fontWeight.medium}',
+    },
+    '.status': {
+      text: '6xl',
+      my: '{space.12}'
+    },
+    a: {
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+      '.icon': {
+        position: 'absolute',
+        right: 'calc(0px - {space.1})',
+        width: '{space.5}',
+        height: '{space.5}',
+        transform: 'translateX(100%)',
+      }, 
+    }
+  }
+})
+</style>
