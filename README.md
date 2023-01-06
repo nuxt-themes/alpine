@@ -16,7 +16,7 @@ The minimalist blog theme, powered by [Nuxt](https://nuxt.com).
 ## Features
 
 - Start from a **profile page**, scale to a **complete blog**!
-- An [open source blog theme](https://github.com/nuxt-themes/alpine) powered by [Nuxt Content](https://content.nuxtjs.org), editable from [Nuxt Studio](https://studio.nuxt.com).
+- An [open source blog theme](https://github.com/nuxt-themes/alpine) powered by [Nuxt Content](https://content.nuxtjs.org), editable from [Nuxt Studio](https://nuxt.studio).
 - Write pages in Markdown and Vue components with the [MDC syntax](https://content.nuxtjs.org/guide/writing/mdc).
 - Use [**30+ built-in**](https://elements.nuxt.space) components in your Markdown pages.
 
