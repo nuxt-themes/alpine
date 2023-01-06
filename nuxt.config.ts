@@ -36,11 +36,6 @@ export default defineNuxtConfig({
 
   css: [
     resolveThemeDir('./assets/main.css'),
-    // Inter font
-    '@fontsource/inter/400.css',
-    '@fontsource/inter/500.css',
-    '@fontsource/inter/600.css',
-    '@fontsource/inter/700.css'
   ],
 
   colorMode: {

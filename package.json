@@ -26,7 +26,6 @@
     "release": "release-it"
   },
   "dependencies": {
-    "@fontsource/inter": "^4.5.14",
     "@nuxt-themes/elements": "^0.4.4",
     "@nuxt-themes/tokens": "^1.5.3",
     "@nuxt-themes/typography": "^0.4.0",
@@ -36,9 +35,9 @@
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.1.1",
+    "@nuxtjs/plausible": "^0.2.0",
     "eslint": "^8.31.0",
     "nuxt": "^3.0.0",
-    "@nuxtjs/plausible": "^0.2.0",
     "release-it": "^15.6.0",
     "typescript": "^4.9.4",
     "vue": "^3.2.45"

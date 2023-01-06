@@ -80,6 +80,10 @@ export default defineNuxtConfigSchema({
            */
           enabled: true,
           /**
+           * Text to be displayed.
+           */
+          text: 'Alpine',
+          /**
            * GitHub repository link.
            */
           repository: 'https://www.github.com/nuxt-themes/alpine'
