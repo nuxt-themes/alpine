@@ -23,7 +23,7 @@ The minimalist blog theme, powered by [Nuxt](https://nuxt.com).
 ## Quick Start
 
 ```bash
-npx nuxi init my-blog --theme alpine
+npx nuxi@latest init -t themes/alpine
 ```
 
 ## Contributing 🙏
