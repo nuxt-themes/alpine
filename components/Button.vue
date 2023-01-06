@@ -3,12 +3,16 @@ defineProps({
   type: {
     type: String,
     default: 'submit'
+  },
+  disabled: {
+    type: Boolean,
+    default: false
   }
 })
 </script>
 
 <template>
-  <button :type="type">
+  <button :type="type" :disabled="disabled">
     <slot />
   </button>
 </template>
@@ -33,6 +37,9 @@ css({
     '@dark': {
       backgroundColor: '{color.gray.100}',
       color: '{color.gray.900}',
+    },
+    '&:disabled': {
+      cursor: 'not-allowed',
     }
   }
 })

@@ -57,7 +57,8 @@ css({
       fontSize: '{text.base.fontSize}',
       lineHeight: '{text.base.lineHeight}',
       fontWeight: '{fontWeight.semibold}',
-      marginBottom: '{space.2}'
+      marginBottom: '{space.2}',
+      cursor: 'pointer',
     },
     'input, textarea': {
       backgroundColor: 'transparent',
