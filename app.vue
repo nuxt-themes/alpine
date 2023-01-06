@@ -6,6 +6,6 @@
 
 <style>
 html {
-  font-family: Supreme;
+  font-family: $dt('font.sans');
 }
 </style>

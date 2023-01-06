@@ -9,21 +9,21 @@ export default defineAppConfig({
       height: 300
     },
     header: {
-      position: 'right', // possible value are : | 'left' | 'center' | 'right'
+      position: 'right',
       logo: {
-        path: '/logo.svg', // path of the logo
-        pathDark: '/logo-dark.svg', // path of the logo in dark mode, leave this empty if you want to use the same logo
-        alt: 'alpine' // alt of the logo
+        path: '/logo.svg',
+        pathDark: '/logo-dark.svg',
+        alt: 'alpine'
       }
     },
     footer: {
       credits: {
-        enabled: true, // possible value are : true | false
-        repository: 'https://www.github.com/nuxt-themes/alpine' // our github repository
+        enabled: true,
+        repository: 'https://www.github.com/nuxt-themes/alpine'
       },
-      navigation: true, // possible value are : true | false
-      alignment: 'center', // possible value are : 'none' | 'left' | 'center' | 'right'
-      message: 'Follow me on' // string that will be displayed in the footer (leave empty or delete to disable)
+      navigation: true,
+      alignment: 'center',
+      message: 'Follow me on'
     },
     socials: {
       twitter: 'nuxtlabs',
