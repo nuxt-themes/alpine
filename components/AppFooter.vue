@@ -19,7 +19,7 @@ const alpine = useAppConfig().alpine
     <p v-if="alpine.footer?.message" class="message">
       {{ alpine.footer.message }}
     </p>
-    
+
     <div class="icons">
       <div v-if="alpine.socials && Object.entries(alpine.socials)" class="social">
         <SocialIcons :socials="alpine.socials" />
