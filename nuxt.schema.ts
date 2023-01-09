@@ -116,23 +116,37 @@ export default defineNuxtConfigSchema({
          * @example 'nuxt_js'
          * @studio-icon simple-icons:twitter
          */
-        twitter: 'nuxtlabs',
+        twitter: '',
         /**
          * Instagram handle
-         * @example https://www.instagram.com/atinuxt
+         * @example 'wearenuxt'
          * @studio-icon simple-icons:instagram
          */
-        instagram: 'atinuxt',
+        instagram: '',
         /**
-         * LinkedIn page url.
-         * @example https://www.linkedin.com/company/nuxtlabs
-         * @studio-icon simple-icons:instagram
+         * GitHub path
+         * @example 'nuxt-themes/alpine'
+         * @studio-icon simple-icons:github
          */
-        linkedin: {
-          icon: 'uil:linkedin',
-          label: 'LinkedIn',
-          href: 'https://www.linkedin.com/company/nuxtlabs'
-        }
+        github: '',
+        /**
+         * GitHub path
+         * @example 'nuxt'
+         * @studio-icon simple-icons:facebook
+         */
+        facebook: '',
+        /**
+         * Medium handle
+         * @example 'nuxt'
+         * @studio-icon simple-icons:medium
+         */
+        medium: '',
+        /**
+         * Youtube handle
+         * @example '@nuxtlabs'
+         * @studio-icon simple-icons:youtube
+         */
+        youtube: ''
       },
       /**
        * Contact form configuration.
