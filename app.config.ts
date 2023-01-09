@@ -27,13 +27,12 @@ export default defineAppConfig({
       message: 'Follow me on'
     },
     socials: {
-      twitter: 'nuxtlabs',
-      instagram: 'atinuxt',
-      linkedin: {
-        icon: 'uil:linkedin',
-        label: 'LinkedIn',
-        href: 'https://www.linkedin.com/company/nuxtlabs'
-      }
+      twitter: '',
+      instagram: '',
+      github: '',
+      facebook: '',
+      medium: '',
+      youtube: ''
     },
     form: {
       successMessage: 'Message sent. Thank you!'
