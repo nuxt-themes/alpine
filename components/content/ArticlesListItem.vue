@@ -24,9 +24,11 @@ defineProps({
 
 <template>
   <article v-if="article._path && article.title" :class="{ 'featured': featured }">
-    <NuxtLink :to="article._path">
-      <img v-if="article.cover" :src="article.cover">
-    </NuxtLink>
+    <div class="image">
+      <NuxtLink :to="article._path">
+        <img v-if="article.cover" :src="article.cover">
+      </NuxtLink>
+    </div>
 
     <div class="content">
       <NuxtLink :to="article._path" class="headline">
@@ -62,9 +64,13 @@ css({
       objectFit: 'cover',
       borderRadius: '{radii.md}',
     },
+    '.image': {
+      flex: 1,
+    },
     '.content': {
       display: 'flex',
       flexDirection: 'column',
+      flex: 1,
       '.headline': {
         text: '2xl',
         marginBottom: '{space.2}',
