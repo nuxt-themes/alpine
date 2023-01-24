@@ -11,7 +11,7 @@ The minimalist blog theme, powered by [Nuxt](https://nuxt.com).
 
 
 - [📸 Online demo](https://alpine.nuxt.space)
-- [⚡️ Play on StackBlitz](https://stackblitz.com/github/nuxt-themes/docus-starter)
+- [⚡️ Play on StackBlitz](https://stackblitz.com/github/nuxt-themes/apline-starter)
 
 ## Features
 
