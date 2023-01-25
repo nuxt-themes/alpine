@@ -28,6 +28,10 @@ export default defineNuxtConfig({
     '@nuxt/content'
   ],
 
+  pinceau: {
+    studio: true
+  },
+
   components: [
     { path: resolveThemeDir('./components'), global: true },
     { path: resolveThemeDir('./components/content'), global: true },
