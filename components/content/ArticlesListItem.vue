@@ -25,7 +25,7 @@ defineProps({
 <template>
   <article v-if="article._path && article.title" :class="{ 'featured': featured }">
     <NuxtLink :to="article._path">
-      <img v-if="article.cover" :src="article.cover">
+      <ProseImg v-if="article.cover" :src="article.cover" />
     </NuxtLink>
 
     <div class="content">
