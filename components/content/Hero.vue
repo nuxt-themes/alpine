@@ -30,12 +30,12 @@ defineProps({
           <ContentSlot :use="$slots.description" unwrap="p" />
         </div>
       </div>
-      <img
+      <ProseImg
         v-if="image"
         :class="[imagePosition]"
         :src="image"
         alt=":("
-      >
+      />
     </div>
   </section>
   <p v-else>
