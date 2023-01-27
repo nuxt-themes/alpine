@@ -14,11 +14,11 @@ defineProps({
     <div
       class="layout"
     >
-      <ProseImg
+      <img
         v-for="(image, index) in images"
         :key="index"
         :src="image"
-      />
+      >
     </div>
   </section>
 </template>

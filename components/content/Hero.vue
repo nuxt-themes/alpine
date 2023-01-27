@@ -1,16 +1,12 @@
 <script setup lang="ts">
 defineProps({
-  title: {
-    type: String,
-    default: ''
-  },
-  description: {
-    type: String,
-    default: null
-  },
   image: {
     type: String,
     default: null
+  },
+  imageAlt: {
+    type: String,
+    default: 'Hero Image'
   },
   imagePosition: {
     type: String,
@@ -20,27 +16,28 @@ defineProps({
 </script>
 
 <template>
-  <section v-if="title || $slots.title" class="hero">
+  <section class="hero">
     <div class="layout">
       <div class="content">
         <div class="title">
-          <ContentSlot :use="$slots.title" unwrap="p" />
+          <ContentSlot :use="$slots.title" unwrap="p">
+            Hero title
+          </ContentSlot>
         </div>
-        <div v-if="description || $slots.description" class="description">
-          <ContentSlot :use="$slots.description" unwrap="p" />
+        <div class="description">
+          <ContentSlot :use="$slots.description" unwrap="p">
+            Hero description
+          </ContentSlot>
         </div>
       </div>
-      <ProseImg
+      <img
         v-if="image"
-        :class="[imagePosition]"
+        :class="imagePosition"
         :src="image"
-        alt=":("
-      />
+        :alt="imageAlt"
+      >
     </div>
   </section>
-  <p v-else>
-    :( a hero block must have a title !
-  </p>
 </template>
 
 <style scoped lang="ts">
