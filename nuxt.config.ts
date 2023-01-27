@@ -19,29 +19,23 @@ export default defineNuxtConfig({
       FORMSPREE_URL: process.env.FORMSPREE_URL
     }
   },
-
   pages: true,
-
   modules: [
     envModules.tokens,
     envModules.studio,
     '@nuxt/content'
   ],
-
   components: [
     { path: resolveThemeDir('./components'), global: true },
     { path: resolveThemeDir('./components/content'), global: true },
     { path: resolveThemeDir('./components/data-entry'), global: true }
   ],
-
   css: [
     resolveThemeDir('./assets/main.css'),
   ],
-
   colorMode: {
     classSuffix: ''
   },
-
   content: {
     documentDriven: true,
     navigation: {
