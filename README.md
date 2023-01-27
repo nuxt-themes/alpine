@@ -29,9 +29,9 @@ npx nuxi@latest init -t themes/alpine
 ## Contributing 🙏
 
 1. Clone this repository
-2. Install dependencies using `yarn install` or `npm install`
-3. Run `npm run prepare` to generate type stubs.
-4. Use `npm run dev` to start [playground](./playground) in development mode.
+2. Install dependencies using `pnpm install`
+3. Run `pnpm prepare` to generate type stubs.
+4. Use `pnpm dev` to start [playground](./playground) in development mode.
 
 ## License
 
