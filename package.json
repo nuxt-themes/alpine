@@ -34,6 +34,7 @@
     "@vueuse/core": "^9.11.1"
   },
   "devDependencies": {
+    "@nuxt/devtools-edge": "0.0.0-27913604.d72e5be",
     "@nuxt/eslint-config": "^0.1.1",
     "@nuxtjs/plausible": "^0.2.0",
     "eslint": "^8.32.0",
