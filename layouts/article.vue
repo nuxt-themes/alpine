@@ -42,8 +42,7 @@ css({
     mx: 'auto',
     py: '{space.4}',
     '@sm': {
-    py: '{space.12}',
-
+      py: '{space.12}',
     },
     '.back': {
       display: 'inline-flex',

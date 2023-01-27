@@ -22,8 +22,8 @@ const show = ref(false)
 
     <div class="logo">
       <NuxtLink v-if="alpine.header.logo" to="/">
-        <ProseImg class="dark-img" :src="alpine.header.logo.pathDark" :alt="alpine.header.logo.alt" />
-        <ProseImg class="light-img" :src="alpine.header.logo.path" :alt="alpine.header.logo.alt" />
+        <img class="dark-img" :src="alpine.header.logo.pathDark" :alt="alpine.header.logo.alt">
+        <img class="light-img" :src="alpine.header.logo.path" :alt="alpine.header.logo.alt">
       </NuxtLink>
       <NuxtLink v-else to="/" class="fallback">
         {{ alpine.title }}
