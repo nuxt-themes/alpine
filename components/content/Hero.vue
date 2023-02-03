@@ -30,12 +30,12 @@ defineProps({
           </ContentSlot>
         </div>
       </div>
-      <img
+      <NuxtImg
         v-if="image"
         :class="imagePosition"
         :src="image"
         :alt="imageAlt"
-      >
+      />
     </div>
   </section>
 </template>

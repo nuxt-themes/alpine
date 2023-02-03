@@ -14,11 +14,11 @@ defineProps({
     <div
       class="layout"
     >
-      <img
+      <NuxtImg
         v-for="(image, index) in images"
         :key="index"
         :src="image"
-      >
+      />
     </div>
   </section>
 </template>
