@@ -37,17 +37,5 @@ export default defineTheme({
     p: {
       fontSize: '18px'
     },
-    code: {
-      block: {
-        backgroundColor: {
-          light: 'transparent',
-          dark: 'transparent'
-        },
-        borderColor: {
-          light: '{color.gray.200}',
-          dark: '{color.gray.800}'
-        }
-      }
-    }
   }
 })
