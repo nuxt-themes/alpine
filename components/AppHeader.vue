@@ -62,7 +62,7 @@ css({
     '.overlay': {
       position: 'absolute',
       top: 'calc(var(--header-padding) + var(--logo-height) + {space.2})',
-      backgroundColor: '{alpine.backdrop.backgroundColor.light}',
+      backgroundColor: '{alpine.backdrop.backgroundColor}',
       border: '1px solid {color.gray.200}',
       borderRadius: '{radii.md}',
       padding: '{space.6}',
@@ -93,8 +93,7 @@ css({
         display: 'none'
       },
       '@dark': {
-        backgroundColor: '{alpine.backdrop.backgroundColor.dark}',
-        border: '1px solid {color.gray.800}',
+        borderColor: '{color.gray.800}',
       }
     },
     '.logo': {

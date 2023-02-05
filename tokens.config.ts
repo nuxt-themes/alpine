@@ -11,7 +11,7 @@ export default defineTheme({
     },
     backdrop: {
       backgroundColor: {
-        light: '#f4f4f5b3', // TODO: rgba({color.gray.100}, 0.7)
+        initial: '#f4f4f5b3', // TODO: rgba({color.gray.100}, 0.7)
         dark: '#18181bb3' // TODO: rgba({color.gray.900}, 0.7)
       }
     },
@@ -37,17 +37,5 @@ export default defineTheme({
     p: {
       fontSize: '18px'
     },
-    code: {
-      block: {
-        backgroundColor: {
-          light: 'transparent',
-          dark: 'transparent'
-        },
-        borderColor: {
-          light: '{color.gray.200}',
-          dark: '{color.gray.800}'
-        }
-      }
-    }
   }
 })
