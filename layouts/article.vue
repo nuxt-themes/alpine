@@ -48,7 +48,7 @@ css({
       display: 'inline-flex',
       alignItems: 'center',
       fontSize: '{text.lg.fontSize}',
-      borderBottom: '1px solid {elements.border.secondary.default}',
+      borderBottom: '1px solid {elements.border.secondary.static}',
       '& :deep(svg)': {
         width: '{size.16}',
         height: '{size.16}',
@@ -66,7 +66,7 @@ css({
       marginBottom: '{space.4}'
     },
     time: {
-      color: '{elements.color.text.secondary.default}'
+      color: '{elements.text.secondary.color.static}'
     },
     '.prose': {
       '& :deep(h1)': {
