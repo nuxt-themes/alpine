@@ -11,7 +11,15 @@ defineProps({
   imagePosition: {
     type: String,
     default: 'right'
-  }
+  },
+  imageSrcset: {
+    type: String,
+    default: 'Hero Image'
+  },
+  imageSizes: {
+    type: String,
+    default: 'Hero Image'
+  },
 })
 </script>
 
@@ -35,8 +43,11 @@ defineProps({
         :class="imagePosition"
         :src="image"
         :alt="imageAlt"
-        :width="16"
-        :height="9"
+        loading="lazy"
+        width="16"
+        height="9"
+        :srcset="imageSrcset"
+        :sizes="imageSizes"
       />
     </div>
   </section>
