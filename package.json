@@ -26,11 +26,11 @@
     "release": "release-it"
   },
   "dependencies": {
-    "@nuxt-themes/elements": "^0.7.0",
+    "@nuxt-themes/elements": "^0.7.1",
     "@nuxt-themes/tokens": "^1.7.3",
     "@nuxt-themes/typography": "^0.8.0",
     "@nuxt/content": "^2.4.3",
-    "@nuxthq/studio": "^0.7.0",
+    "@nuxthq/studio": "^0.7.1",
     "@vueuse/core": "^9.12.0",
     "ufo": "^1.0.1"
   },
