@@ -14,11 +14,11 @@ defineProps({
   },
   imageSrcset: {
     type: String,
-    default: 'Hero Image'
+    default: ''
   },
   imageSizes: {
     type: String,
-    default: 'Hero Image'
+    default: ''
   },
 })
 </script>
@@ -38,7 +38,7 @@ defineProps({
           </ContentSlot>
         </div>
       </div>
-      <NuxtImg
+      <!-- <NuxtImg
         v-if="image"
         :class="imagePosition"
         :src="image"
@@ -48,7 +48,7 @@ defineProps({
         height="9"
         :srcset="imageSrcset"
         :sizes="imageSizes"
-      />
+      /> -->
     </div>
   </section>
 </template>
