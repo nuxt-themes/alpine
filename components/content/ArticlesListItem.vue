@@ -26,7 +26,7 @@ defineProps({
   <article v-if="article._path && article.title" :class="{ 'featured': featured }">
     <div class="image">
       <NuxtLink :to="article._path">
-        <NuxtImg v-if="article.cover" :src="article.cover" :alt="article.title" />
+        <NuxtImg v-if="article.cover" :src="article.cover" :alt="article.title" width="16" height="9" />
       </NuxtLink>
     </div>
 
@@ -60,6 +60,7 @@ css({
       }
     },
     img: {
+      width: '100%',
       aspectRatio: '16 / 9',
       objectFit: 'cover',
       borderRadius: '{radii.md}',

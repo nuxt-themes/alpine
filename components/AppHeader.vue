@@ -7,7 +7,7 @@ const show = ref(false)
 <template>
   <header :class="alpine.header.position || 'left'">
     <div class="menu">
-      <button @click="(show = !show)">
+      <button @click="(show = !show)" aria-label="Navigation Menu">
         <svg width="24" height="24" viewBox="0 0 68 68" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path d="M8 34C8 32.1362 8 31.2044 8.30448 30.4693C8.71046 29.4892 9.48915 28.7105 10.4693 28.3045C11.2044 28 12.1362 28 14 28C15.8638 28 16.7956 28 17.5307 28.3045C18.5108 28.7105 19.2895 29.4892 19.6955 30.4693C20 31.2044 20 32.1362 20 34C20 35.8638 20 36.7956 19.6955 37.5307C19.2895 38.5108 18.5108 39.2895 17.5307 39.6955C16.7956 40 15.8638 40 14 40C12.1362 40 11.2044 40 10.4693 39.6955C9.48915 39.2895 8.71046 38.5108 8.30448 37.5307C8 36.7956 8 35.8638 8 34Z" />
           <path d="M28 34C28 32.1362 28 31.2044 28.3045 30.4693C28.7105 29.4892 29.4892 28.7105 30.4693 28.3045C31.2044 28 32.1362 28 34 28C35.8638 28 36.7956 28 37.5307 28.3045C38.5108 28.7105 39.2895 29.4892 39.6955 30.4693C40 31.2044 40 32.1362 40 34C40 35.8638 40 36.7956 39.6955 37.5307C39.2895 38.5108 38.5108 39.2895 37.5307 39.6955C36.7956 40 35.8638 40 34 40C32.1362 40 31.2044 40 30.4693 39.6955C29.4892 39.2895 28.7105 38.5108 28.3045 37.5307C28 36.7956 28 35.8638 28 34Z" />
@@ -22,8 +22,10 @@ const show = ref(false)
 
     <div class="logo">
       <NuxtLink v-if="alpine.header.logo" to="/">
-        <NuxtImg class="dark-img" :src="alpine.header.logo.pathDark" :alt="alpine.header.logo.alt" />
-        <NuxtImg class="light-img" :src="alpine.header.logo.path" :alt="alpine.header.logo.alt" />
+        <!-- TODO: width/height doesn't make much sense here, but Lighthouse requires it. 
+        Used current Alpine logo ratio, will break on enduser logo -->
+        <NuxtImg class="dark-img" :src="alpine.header.logo.pathDark" :alt="alpine.header.logo.alt" width="89" height="31" />
+        <NuxtImg class="light-img" :src="alpine.header.logo.path" :alt="alpine.header.logo.alt" width="89" height="31" />
       </NuxtLink>
       <NuxtLink v-else to="/" class="fallback">
         {{ alpine.title }}
@@ -49,6 +51,7 @@ css({
     py: 'var(--header-padding)',
     '.menu': {
       position: 'absolute',
+      display: 'flex',
       ':hover': {
         color: '{color.primary.500}',
       },

@@ -1,6 +1,5 @@
 html {
   background-color: $dt('color.gray.100');
-  /* font-family: ClashGrotesk; */
 }
 
 html.dark {
