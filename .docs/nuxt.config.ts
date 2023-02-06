@@ -4,9 +4,12 @@ export default defineNuxtConfig({
   typescript: { includeWorkspace: true },
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'en'
+      },
       link: [
         { rel: 'stylesheet', href: '/css/supreme.css' }
       ]
     }
-  }
+  },
 })
