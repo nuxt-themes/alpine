@@ -26,11 +26,10 @@
 const { page } = useContent()
 const route = useRoute()
 
-const cover = unref(page).cover;
-if(cover) {
+if (page.value && page.value.cover) {
   useHead({
     meta: [
-      { property: 'og:image', content: cover }
+      { property: 'og:image', content: page.value.cover }
     ]
   })
 }
