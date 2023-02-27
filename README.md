@@ -5,6 +5,8 @@
 [![npm version][npm-version-src]][npm-version-href]
 [![License][license-src]][license-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![Nuxt][nuxt-src]][nuxt-href]
+[![Nuxt Studio][nuxt-studio-src]][nuxt-studio-href]
 [![Volta][volta-src]][volta-href]
 
 The minimalist blog theme, powered by [Nuxt](https://nuxt.com).
@@ -46,6 +48,13 @@ npx nuxi@latest init -t themes/alpine
 
 [license-src]: https://img.shields.io/github/license/nuxt-themes/alpine.svg?style=flat&colorA=18181B&colorB=28CF8D
 [license-href]: https://github.com/nuxt-themes/alpine/blob/main/LICENSE
+
+
+[nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?&logo=nuxt.js
+[nuxt-href]: https://nuxt.com
+
+[nuxt-studio-src]: https://img.shields.io/badge/Open%20in%20Nuxt%20Studio-18181B?&logo=nuxt.js&logoColor=3BB5EC
+[nuxt-studio-href]: https://nuxt.studio/templates/alpine
 
 [volta-src]: https://user-images.githubusercontent.com/904724/209143798-32345f6c-3cf8-4e06-9659-f4ace4a6acde.svg
 [volta-href]: https://volta.net/nuxt-themes/alpine?utm_source=readme_alpine

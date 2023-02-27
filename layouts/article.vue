@@ -26,6 +26,14 @@
 const { page } = useContent()
 const route = useRoute()
 
+if (page.value && page.value.cover) {
+  useHead({
+    meta: [
+      { property: 'og:image', content: page.value.cover }
+    ]
+  })
+}
+
 const parentPath = computed(
   () => {
     const pathTabl = route.path.split('/')
