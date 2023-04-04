@@ -4,6 +4,7 @@ type Article = {
   title: string
   date: string
   description: string
+  badges?: { bg: string, text: string, content: string }[]
 }
 
 defineProps({
@@ -25,6 +26,11 @@ defineProps({
 <template>
   <article v-if="article._path && article.title" :class="{ 'featured': featured }">
     <div class="image">
+      <div v-if="article?.badges">
+        <span v-for="({ bg, text, content }, index) in article.badges" :key="index" :style="{ backgroundColor: bg, color: text }">
+          {{ content }}
+        </span>
+      </div>
       <NuxtLink :to="article._path">
         <NuxtImg v-if="article.cover" :src="article.cover" :alt="article.title" width="16" height="9" />
       </NuxtLink>
@@ -67,6 +73,20 @@ css({
     },
     '.image': {
       flex: 1,
+      div: {
+        position: 'absolute',
+        display: 'flex',
+        flexWrap: true,
+        gap: '{space.2}',
+        marginTop: '{space.2}',
+        marginLeft: '{space.2}',
+        span: {
+          padding: '{space.1}',
+          borderRadius: '{radii.sm}',
+          text: 'xs',
+          fontWeight: 700
+        }
+      }
     },
     '.content': {
       display: 'flex',
