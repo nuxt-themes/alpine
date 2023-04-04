@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article ref="article">
     <!-- TODO: could be refactored as a transparent ButtonLink -->
     <NuxtLink :to="parentPath" class="back">
       <Icon name="ph:arrow-left" />
@@ -18,6 +18,12 @@
 
     <div class="prose">
       <slot />
+      <div v-if="alpine?.article?.backToTop" class="back-to-top">
+        <button class="text-primary-900 dark:text-primary-100" @click.prevent.stop="onBackToTop">
+          {{ typeof alpine.article.backToTop === 'boolean' ? 'Back to Top' : page.backToTop }}
+          <Icon name="material-symbols:arrow-upward" />
+        </button>
+      </div>
     </div>
   </article>
 </template>
@@ -25,6 +31,9 @@
 <script setup lang="ts">
 const { page } = useContent()
 const route = useRoute()
+const alpine = useAppConfig().alpine
+
+const article = ref<HTMLElement | null>(null)
 
 if (page.value && page.value.cover) {
   useHead({
@@ -41,6 +50,12 @@ const parentPath = computed(
     return pathTabl.join('/')
   }
 )
+
+const onBackToTop = () => {
+  article.value?.scrollIntoView({
+    behavior: 'smooth'
+  })
+}
 </script>
 
 <style scoped lang="ts">
@@ -77,9 +92,18 @@ css({
       color: '{elements.text.secondary.color.static}'
     },
     '.prose': {
+      '.back-to-top': {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        width: '100%',
+        button: {
+          cursor: 'pointer',
+          fontSize: '{text.lg.fontSize}'
+        }
+      },
       '& :deep(h1)': {
         display: 'none'
-      }
+      },
     }
   }
 })
