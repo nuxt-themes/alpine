@@ -54,7 +54,7 @@ npx nuxi@latest init -t themes/alpine
 [nuxt-href]: https://nuxt.com
 
 [nuxt-studio-src]: https://img.shields.io/badge/Open%20in%20Nuxt%20Studio-18181B?&logo=nuxt.js&logoColor=3BB5EC
-[nuxt-studio-href]: https://nuxt.studio/templates/alpine
+[nuxt-studio-href]: https://nuxt.studio/themes/alpine
 
 [volta-src]: https://user-images.githubusercontent.com/904724/209143798-32345f6c-3cf8-4e06-9659-f4ace4a6acde.svg
 [volta-href]: https://volta.net/nuxt-themes/alpine?utm_source=readme_alpine
