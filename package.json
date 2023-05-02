@@ -31,7 +31,7 @@
     "@nuxt-themes/typography": "^0.10.0",
     "@nuxt/content": "^2.5.2",
     "@nuxthq/studio": "^0.8.5",
-    "@vueuse/core": "^9.13.0",
+    "@vueuse/core": "^10.1.2",
     "ufo": "^1.1.1"
   },
   "devDependencies": {
