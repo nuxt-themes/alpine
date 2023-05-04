@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useContentPreview } from '#imports'
+
 type Article = {
   _path: string
   title: string
@@ -6,7 +8,7 @@ type Article = {
   description: string
 }
 
-defineProps({
+const props = defineProps({
   article: {
     type: Object,
     required: true,
@@ -20,10 +22,15 @@ defineProps({
     default: false
   }
 })
+
+const id = computed(() => {
+  // @ts-ignore
+  return (process.dev || useContentPreview()?.isEnabled()) ? props.article?._id : undefined
+})
 </script>
 
 <template>
-  <article v-if="article._path && article.title" :class="{ 'featured': featured }">
+  <article v-if="article._path && article.title" :class="{ 'featured': featured }" :data-content-id="id">
     <div class="image">
       <NuxtLink :to="article._path">
         <NuxtImg v-if="article.cover" :src="article.cover" :alt="article.title" width="16" height="9" />
