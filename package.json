@@ -19,7 +19,6 @@
     "prepare": "nuxi prepare && nuxi prepare .starters/default",
     "build": "nuxt build .starters/default",
     "dev": "nuxt dev .starters/default",
-    "play:starter": "nuxt dev .starters/default",
     "lint": "eslint .",
     "generate": "nuxt generate .starters/default",
     "preview": "nuxt preview .starters/default",
