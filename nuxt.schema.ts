@@ -3,19 +3,19 @@ export default defineNuxtSchema({
     /**
      * Alpine theme configuration.
      *
-     * @studio-icon carbon:blog
+     * @studioIcon carbon:blog
     */
     alpine: {
       /**
        * Website title, used as header default title and meta title.
        *
-       * @studio-icon material-symbols:title
+       * @studioIcon material-symbols:title
        */
       title: 'Alpine',
       /**
        * Website description, used for meta description.
        *
-       * @studio-icon material-symbols:description
+       * @studioIcon material-symbols:description
        */
       description: 'The minimalist blog theme',
       /**
@@ -23,9 +23,14 @@ export default defineNuxtSchema({
        *
        * @example '/cover.jpg'
        *
-       * @studio-icon dashicons:cover-image
+       * @studioIcon dashicons:cover-image
        */
       image: {
+        /**
+         * @example '/cover.jpg'
+         * @studioIcon dashicons:cover-image
+         * @studioInput file
+         */
         src: '/social-card-preview.png',
         alt: 'An image showcasing my project.',
         width: 400,
@@ -34,7 +39,7 @@ export default defineNuxtSchema({
       /**
        * Header configuration.
        *
-       * @studio-icon fluent:document-header-24-regular
+       * @studioIcon fluent:document-header-24-regular
        */
       header: {
         /**
@@ -46,7 +51,7 @@ export default defineNuxtSchema({
         /**
          * Header logo.
          *
-         * @studio-icon dashicons:cover-image
+         * @studioIcon dashicons:cover-image
          */
         logo: {
           /**
@@ -68,7 +73,7 @@ export default defineNuxtSchema({
       /**
        * Footer configuration.
        *
-       * @studio-icon fluent:document-footer-24-regular
+       * @studioIcon fluent:document-footer-24-regular
        */
       footer: {
         /**
@@ -108,50 +113,50 @@ export default defineNuxtSchema({
       /**
        * Icons to be added to Social Icons in footer.
        *
-       * @studio-icon material-symbols:add-link
+       * @studioIcon material-symbols:add-link
        */
       socials: {
         /**
          * Twitter handle
          * @example 'nuxt_js'
-         * @studio-icon simple-icons:twitter
+         * @studioIcon simple-icons:twitter
          */
         twitter: '',
         /**
          * Instagram handle
          * @example 'wearenuxt'
-         * @studio-icon simple-icons:instagram
+         * @studioIcon simple-icons:instagram
          */
         instagram: '',
         /**
          * GitHub path
          * @example 'nuxt-themes/alpine'
-         * @studio-icon simple-icons:github
+         * @studioIcon simple-icons:github
          */
         github: '',
         /**
          * GitHub path
          * @example 'nuxt'
-         * @studio-icon simple-icons:facebook
+         * @studioIcon simple-icons:facebook
          */
         facebook: '',
         /**
          * Medium handle
          * @example 'nuxt'
-         * @studio-icon simple-icons:medium
+         * @studioIcon simple-icons:medium
          */
         medium: '',
         /**
          * Youtube handle
          * @example '@nuxtlabs'
-         * @studio-icon simple-icons:youtube
+         * @studioIcon simple-icons:youtube
          */
         youtube: ''
       },
       /**
        * Contact form configuration.
        *
-       * @studio-icon ion:ios-paperplane
+       * @studioIcon ion:ios-paperplane
        */
       form: {
         /**
