@@ -56,12 +56,18 @@ export default defineNuxtSchema({
         logo: {
           /**
            * Path of the logo.
+           *
+           * @studioIcon dashicons:cover-image
+           * @studioInput file
            */
           path: '/logo.svg',
           /**
            * Path of the logo in dark mode.
            *
            * Leave it empty if you want to use the same logo.
+           *
+           * @studioIcon dashicons:cover-image
+           * @studioInput file
            */
           pathDark: '/logo-dark.svg',
           /**
