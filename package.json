@@ -16,13 +16,13 @@
     "tokens.config.ts"
   ],
   "scripts": {
-    "prepare": "nuxi prepare && nuxi prepare .docs",
-    "build": "nuxt build .docs",
-    "dev": "nuxt dev .docs",
+    "prepare": "nuxi prepare && nuxi prepare .starters/default",
+    "build": "nuxt build .starters/default",
+    "dev": "nuxt dev .starters/default",
     "play:starter": "nuxt dev .starters/default",
     "lint": "eslint .",
-    "generate": "nuxt generate .docs",
-    "preview": "nuxt preview .docs",
+    "generate": "nuxt generate .starters/default",
+    "preview": "nuxt preview .starters/default",
     "prepublishOnly": "pnpm lint",
     "release": "release-it"
   },
