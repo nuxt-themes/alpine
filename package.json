@@ -19,6 +19,7 @@
     "prepare": "nuxi prepare && nuxi prepare .docs",
     "build": "nuxt build .docs",
     "dev": "nuxt dev .docs",
+    "play:starter": "nuxt dev .starters/default",
     "lint": "eslint .",
     "generate": "nuxt generate .docs",
     "preview": "nuxt preview .docs",
