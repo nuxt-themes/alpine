@@ -44,12 +44,14 @@ importers:
       '@nuxt-themes/alpine': ^1.5.4
       '@nuxt/devtools': ^0.4.6
       '@nuxt/eslint-config': ^0.1.1
+      '@nuxtjs/plausible': ^0.2.1
       eslint: ^8.40.0
       nuxt: ^3.4.3
     devDependencies:
       '@nuxt-themes/alpine': link:../..
       '@nuxt/devtools': 0.4.6_nuxt@3.4.3
       '@nuxt/eslint-config': 0.1.1_eslint@8.40.0
+      '@nuxtjs/plausible': 0.2.1
       eslint: 8.40.0
       nuxt: 3.4.3_eslint@8.40.0
 
