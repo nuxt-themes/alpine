@@ -1,4 +1,4 @@
-[![Alpine](./.docs/public/social-card-preview.png)](https://alpine.nuxt.space)
+[![Alpine](./.starters/default/public/social-card-preview.png)](https://alpine.nuxt.space)
 
 # Alpine
 
