@@ -17,12 +17,11 @@
   ],
   "scripts": {
     "prepare": "nuxi prepare && nuxi prepare .starters/default",
-    "build": "nuxt build .starters/default",
-    "dev": "nuxt dev .starters/default",
+    "dev": "nuxi dev .starters/default",
+    "build": "nuxi build .starters/default",
+    "generate": "nuxi generate .starters/default",
+    "preview": "nuxi preview .starters/default",
     "lint": "eslint .",
-    "generate": "nuxt generate .starters/default",
-    "preview": "nuxt preview .starters/default",
-    "prepublishOnly": "pnpm lint",
     "release": "release-it"
   },
   "dependencies": {
@@ -37,41 +36,40 @@
   "devDependencies": {
     "@nuxt/eslint-config": "^0.1.1",
     "@nuxtjs/plausible": "^0.2.1",
+    "@types/node": "^20.1.2",
     "eslint": "^8.40.0",
     "nuxt": "^3.4.3",
     "release-it": "^15.10.3",
     "typescript": "^5.0.4",
+    "vite-plugin-inspect": "^0.7.26",
     "vue": "^3.2.47"
-  },
-  "release-it": {
-    "hooks": {
-      "before:init": [
-        "pnpm build"
-      ]
-    },
-    "git": {
-      "commitMessage": "chore(release): release v${version}"
-    },
-    "npm": {
-      "access": "public"
-    },
-    "github": {
-      "release": true,
-      "releaseName": "v${version}"
-    }
   },
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {
         "axios": "0.25.0",
-        "vue": "^3.0.0"
+        "vite": "*"
       },
       "ignoreMissing": [
         "postcss",
         "postcss-*",
         "webpack",
-        "axios"
+        "axios",
+        "vite"
       ]
+    }
+  },
+  "license": "MIT",
+  "release-it": {
+    "npm": {
+      "access": "public"
+    },
+    "git": {
+      "commitMessage": "chore(release): release v${version}"
+    },
+    "github": {
+      "release": true,
+      "releaseName": "v${version}"
     }
   }
 }
