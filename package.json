@@ -55,7 +55,8 @@
         "postcss-*",
         "webpack",
         "axios",
-        "vite"
+        "vite",
+        "@nuxt/vite-builder"
       ]
     }
   },
