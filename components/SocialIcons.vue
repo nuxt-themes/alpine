@@ -25,6 +25,14 @@ const icons = computed<any>(() => {
     })
     .filter(Boolean)
 })
+
+const getRel = (icon:any) => {
+  const base = ['noopener', 'noreferrer']
+  if (icon.rel) {
+    base.push(icon.rel)
+  }
+  return base.join(' ')
+}
 </script>
 
 <template>
@@ -32,7 +40,7 @@ const icons = computed<any>(() => {
   <NuxtLink
     v-for="icon in icons"
     :key="icon.label"
-    rel="noopener noreferrer"
+    :rel="getRel(icon)"
     :title="icon.label"
     :aria-label="icon.label"
     :href="icon.href"
