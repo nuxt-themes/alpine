@@ -9,6 +9,16 @@ export default defineTheme({
         '@studio-icon carbon:blog'
       ]
     },
+    body: {
+      backgroundColor: {
+        initial: '{color.white}',
+        dark: '{color.black}'
+      },
+      color: {
+        initial: '{color.gray.800}',
+        dark: '{color.gray.200}'
+      }
+    },
     backdrop: {
       backgroundColor: {
         initial: '#f4f4f5b3', // TODO: rgba({color.gray.100}, 0.7)

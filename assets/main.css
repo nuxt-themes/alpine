@@ -1,9 +1,6 @@
-html {
-  background-color: $dt('color.gray.100');
-}
-
-html.dark {
-  background-color: $dt('color.gray.900');
+body {
+  background-color: $dt('alpine.body.backgroundColor');
+  color: $dt('alpine.body.color');
 }
 
 /* Color scheme images helper classes */
