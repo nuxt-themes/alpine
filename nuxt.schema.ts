@@ -171,15 +171,13 @@ export default defineNuxtSchema({
         successMessage: 'Message sent. Thank you!'
       },
       /**
-       * Article configuration.
+       * Back to top button configuration.
        *
-       * @studio-icon material-symbols:article
+       * @studioIcon material-symbols:arrow-upward
        */
-      article: {
-        /**
-         * Back to top button
-         */
-        backToTop: true // possible value are : true | false | string
+      backToTop: {
+        icon: 'material-symbols:arrow-upward',
+        text: 'Back to top',
       }
     }
   }

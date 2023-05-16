@@ -31,20 +31,40 @@ const id = computed(() => {
 </script>
 
 <template>
-  <article v-if="article._path && article.title" :class="{ 'featured': featured }" :data-content-id="id">
+  <article
+    v-if="article._path && article.title"
+    :class="{ 'featured': featured }"
+    :data-content-id="id"
+  >
     <div class="image">
       <div v-if="article?.badges">
-        <span v-for="({ bg, text, content }, index) in article.badges" :key="index" :style="{ backgroundColor: bg, color: text }">
-          {{ content }}
+        <span
+          v-for="(badge, index) in article.badges"
+          :key="index"
+          :style="{
+            backgroundColor: badge?.bg || 'rgba(0, 0, 0, 0.3)',
+            color: badge?.color || 'white'
+          }"
+        >
+          {{ typeof badge === 'string' ? badge : badge.content }}
         </span>
       </div>
       <NuxtLink :to="article._path">
-        <NuxtImg v-if="article.cover" :src="article.cover" :alt="article.title" width="16" height="9" />
+        <NuxtImg
+          v-if="article.cover"
+          :src="article.cover"
+          :alt="article.title"
+          width="16"
+          height="9"
+        />
       </NuxtLink>
     </div>
 
     <div class="content">
-      <NuxtLink :to="article._path" class="headline">
+      <NuxtLink
+        :to="article._path"
+        class="headline"
+      >
         <h1>
           {{ article.title }}
         </h1>
