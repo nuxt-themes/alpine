@@ -36,13 +36,13 @@
   "devDependencies": {
     "@nuxt/eslint-config": "^0.1.1",
     "@nuxtjs/plausible": "^0.2.1",
-    "@types/node": "^20.1.2",
+    "@types/node": "^20.1.5",
     "eslint": "^8.40.0",
-    "nuxt": "^3.4.3",
+    "nuxt": "^3.5.0",
     "release-it": "^15.10.3",
     "typescript": "^5.0.4",
     "vite-plugin-inspect": "^0.7.26",
-    "vue": "^3.2.47"
+    "vue": "^3.3.2"
   },
   "pnpm": {
     "peerDependencyRules": {
