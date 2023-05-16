@@ -6,6 +6,7 @@ type Article = {
   title: string
   date: string
   description: string
+  badges?: { bg: string, text: string, content: string }[]
 }
 
 const props = defineProps({
@@ -30,15 +31,40 @@ const id = computed(() => {
 </script>
 
 <template>
-  <article v-if="article._path && article.title" :class="{ 'featured': featured }" :data-content-id="id">
+  <article
+    v-if="article._path && article.title"
+    :class="{ 'featured': featured }"
+    :data-content-id="id"
+  >
     <div class="image">
+      <div v-if="article?.badges">
+        <span
+          v-for="(badge, index) in article.badges"
+          :key="index"
+          :style="{
+            backgroundColor: badge?.bg || 'rgba(0, 0, 0, 0.3)',
+            color: badge?.color || 'white'
+          }"
+        >
+          {{ typeof badge === 'string' ? badge : badge.content }}
+        </span>
+      </div>
       <NuxtLink :to="article._path">
-        <NuxtImg v-if="article.cover" :src="article.cover" :alt="article.title" width="16" height="9" />
+        <NuxtImg
+          v-if="article.cover"
+          :src="article.cover"
+          :alt="article.title"
+          width="16"
+          height="9"
+        />
       </NuxtLink>
     </div>
 
     <div class="content">
-      <NuxtLink :to="article._path" class="headline">
+      <NuxtLink
+        :to="article._path"
+        class="headline"
+      >
         <h1>
           {{ article.title }}
         </h1>
@@ -74,6 +100,20 @@ css({
     },
     '.image': {
       flex: 1,
+      div: {
+        position: 'absolute',
+        display: 'flex',
+        flexWrap: true,
+        gap: '{space.2}',
+        marginTop: '{space.2}',
+        marginLeft: '{space.2}',
+        span: {
+          padding: '{space.1}',
+          borderRadius: '{radii.sm}',
+          text: 'xs',
+          fontWeight: 700
+        }
+      }
     },
     '.content': {
       display: 'flex',
