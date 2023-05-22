@@ -32,7 +32,7 @@ defineProps({
       </div>
       <NuxtPicture
         v-if="image"
-        :img-attrs="{ class: [imagePosition, 'hero-image'] }"
+        :img-attrs="{ class: imagePosition }"
         :src="image"
         :alt="imageAlt"
         :width="432"
