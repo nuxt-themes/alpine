@@ -30,19 +30,22 @@ defineProps({
           </ContentSlot>
         </div>
       </div>
-      <NuxtImg
+      <NuxtPicture
         v-if="image"
-        :class="imagePosition"
+        :img-attrs="{ class: [imagePosition, 'hero-image'] }"
         :src="image"
         :alt="imageAlt"
-        :width="16"
-        :height="9"
+        :width="432"
+        :height="288"
+        fetchpriority="high"
+        decoding="sync"
+        loading="eager"
       />
     </div>
   </section>
 </template>
 
-<style scoped lang="ts">
+<style lang="ts">
 css({
   '.hero': {
     '.layout': {
@@ -70,7 +73,7 @@ css({
         '&.left': {
           order: -1
         }
-      },
+      }
     }
   }
 })

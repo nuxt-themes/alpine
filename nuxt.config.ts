@@ -47,6 +47,7 @@ export default defineNuxtConfig({
     envModules.tokens,
     envModules.studio,
     '@nuxt/content',
+    '@nuxt/image-edge',
     updateModule as any
   ],
   components: [

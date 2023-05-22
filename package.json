@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.1.1",
+    "@nuxt/image-edge": "1.0.0-28059208.2abef1b",
     "@nuxtjs/plausible": "^0.2.1",
     "@types/node": "^20.1.5",
     "eslint": "^8.40.0",

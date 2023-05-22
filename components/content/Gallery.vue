@@ -14,18 +14,19 @@ defineProps({
     <div
       class="layout"
     >
-      <NuxtImg
+      <NuxtPicture
         v-for="(image, index) in images"
         :key="index"
         :src="image"
-        :width="16"
-        :height="9"
+        :width="418"
+        :height="236"
+        loading="lazy"
       />
     </div>
   </section>
 </template>
 
-<style scoped lang="ts">
+<style lang="ts">
 css({
   '.gallery': {
     '.layout': {
