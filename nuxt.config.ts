@@ -16,13 +16,13 @@ const updateModule = defineNuxtModule({
   meta: {
     name: '@nuxt-themes/alpine'
   },
-  setup (_, nuxt) {
+  setup(_, nuxt) {
     if (nuxt.options.dev) {
       $fetch('https://registry.npmjs.org/@nuxt-themes/alpine/latest').then((release) => {
         if (release.version > version) {
           logger.info(`A new version of Alpine (v${release.version}) is available: https://github.com/nuxt-themes/alpine/releases/latest`)
         }
-      }).catch(() => {})
+      }).catch(() => { })
     }
   }
 })
@@ -47,6 +47,7 @@ export default defineNuxtConfig({
     envModules.tokens,
     envModules.studio,
     '@nuxt/content',
+    '@nuxt/image',
     updateModule as any
   ],
   components: [

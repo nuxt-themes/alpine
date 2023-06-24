@@ -50,12 +50,15 @@ const id = computed(() => {
         </span>
       </div>
       <NuxtLink :to="article._path">
-        <NuxtImg
+        <NuxtPicture
           v-if="article.cover"
           :src="article.cover"
           :alt="article.title"
-          width="16"
-          height="9"
+          width="432"
+          height="243"
+          :decoding="featured ? 'sync' : 'async'"
+          :fetchpriority="featured ? 'high' : 'low'"
+          :loading="featured ? 'eager' : 'lazy'"
         />
       </NuxtLink>
     </div>
@@ -80,7 +83,7 @@ const id = computed(() => {
   </article>
 </template>
 
-<style scoped lang="ts">
+<style lang="ts">
 css({
   article: {
     display: 'flex',
