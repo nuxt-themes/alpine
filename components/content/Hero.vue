@@ -54,6 +54,7 @@ css({
       },
       '.title': {
         fontSize: '{text.4xl.fontSize}',
+        fontFamily: 'var(--typography-font-display)',
         lineHeight: '{text.4xl.lineHeight}',
         fontWeight: '{fontWeight.bold}',
       },
