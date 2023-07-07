@@ -61,6 +61,7 @@ css({
       '.description': {
         marginTop: '{space.3}',
         fontSize: '{text.xl.fontSize}',
+        fontFamily: 'var(--typography-font-body)',
         lineHeight: '{text.xl.lineHeight}',
       },
       img: {
