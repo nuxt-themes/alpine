@@ -5,7 +5,7 @@
 </template>
 
 <style>
-html {
+/* html {
   font-family: $dt('font.sans');
-}
+} */
 </style>

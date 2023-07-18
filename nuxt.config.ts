@@ -6,10 +6,7 @@ const { resolve } = createResolver(import.meta.url)
 
 // That allows to overwrite these dependencies paths via `.env` for local development
 const envModules = {
-  tokens: process?.env?.THEME_DEV_TOKENS_PATH || '@nuxt-themes/tokens',
-  elements: process?.env?.THEME_DEV_ELEMENTS_PATH || '@nuxt-themes/elements',
   studio: process?.env?.THEME_DEV_STUDIO_PATH || '@nuxthq/studio',
-  typography: process?.env?.THEME_DEV_TYPOGRAPHY_PATH || '@nuxt-themes/typography'
 }
 
 const updateModule = defineNuxtModule({
@@ -36,7 +33,6 @@ export default defineNuxtConfig({
       }
     }
   },
-  extends: [envModules.typography, envModules.elements],
   runtimeConfig: {
     public: {
       FORMSPREE_URL: process.env.FORMSPREE_URL
@@ -44,16 +40,15 @@ export default defineNuxtConfig({
   },
   pages: true,
   modules: [
-    envModules.tokens,
     envModules.studio,
     '@nuxt/content',
     updateModule as any
   ],
-  components: [
-    { path: resolve('./components'), global: true },
-    { path: resolve('./components/content'), global: true },
-    { path: resolve('./components/data-entry'), global: true }
-  ],
+  // components: [
+  //   { path: resolve('./components'), global: true },
+  //   { path: resolve('./components/content'), global: true },
+  //   { path: resolve('./components/data-entry'), global: true }
+  // ],
   css: [
     resolve('./assets/main.css'),
   ],
@@ -78,10 +73,5 @@ export default defineNuxtConfig({
   },
   typescript: {
     includeWorkspace: true
-  },
-  nitro: {
-    prerender: {
-      ignore: ['/__pinceau_tokens_config.json', '/__pinceau_tokens_schema.json']
-    }
   },
 })
