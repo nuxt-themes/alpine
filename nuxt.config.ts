@@ -41,14 +41,17 @@ export default defineNuxtConfig({
   pages: true,
   modules: [
     envModules.studio,
+    '@nuxtjs/color-mode',
+    '@nuxtjs/tailwindcss',
     '@nuxt/content',
     updateModule as any
   ],
-  // components: [
-  //   { path: resolve('./components'), global: true },
+  components: [
+    { path: resolve('./components'), global: true },
+    { path: resolve('./components/app'), global: true },
   //   { path: resolve('./components/content'), global: true },
   //   { path: resolve('./components/data-entry'), global: true }
-  // ],
+  ],
   css: [
     resolve('./assets/main.css'),
   ],

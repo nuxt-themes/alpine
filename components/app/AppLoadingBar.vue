@@ -1,5 +1,7 @@
-<script setup>
-import { useNuxtApp, onBeforeUnmount, reactive } from '#imports'
+<script setup lang="ts">
+import appConfig from '#build/app.config'
+
+const { tokens } = appConfig
 
 const props = defineProps({
   throttle: {
@@ -10,10 +12,6 @@ const props = defineProps({
     type: Number,
     default: 2000
   },
-  height: {
-    type: Number,
-    default: 3
-  }
 })
 
 const nuxtApp = useNuxtApp()
@@ -81,30 +79,19 @@ onBeforeUnmount(() => clear)
 
 <template>
   <div
-    class="nuxt-progress"
-    :class="{
-      'nuxt-progress-failed': !data.canSucceed,
-    }"
+    class="nuxt-progress fixed top-0 start-0 end-0 w-0 opacity-100 z-[9999]"
+    :class="['nuxt-progress-failed' && !data.canSucceed, tokens.loadingBar.height, tokens.loadingBar.backgroundImage]"
     :style="{
       width: `${data.percent}%`,
-      left: data.left,
-      height: `${props.height}px`,
+      insetInlineStart: data.left,
       opacity: data.show ? 1 : 0,
       backgroundSize: `${(100 / data.percent) * 100}% auto`,
     }"
   />
 </template>
 
-<style>
+<style scoped>
 .nuxt-progress {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  width: 0%;
-  opacity: 1;
   transition: width 0.1s, height 0.4s, opacity 0.4s;
-  background: repeating-linear-gradient(to right, #00dc82 0%, #34cdfe 50%, #0047e1 100%);
-  z-index: 999999;
 }
 </style>

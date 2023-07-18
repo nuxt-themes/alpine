@@ -1,7 +1,69 @@
-body {
+
+/* Use colors from tailwind.config.ts orange */
+:root {
+  /* --color-primary-50: #FFF7F2;
+  --color-primary-100: #FFEFE5;
+  --color-primary-200: #FFE5D7;
+  --color-primary-300: #FDAC7E;
+  --color-primary-400: #FC8E51;
+  --color-primary-500: #FA630E;
+  --color-primary-600: #7E3004;
+  --color-primary-700: #3F1802;
+  --color-primary-800: #2D1102;
+  --color-primary-900: #1A0A01;
+  --color-secondary-50: #F8F5FF;
+  --color-secondary-100: #F1ECFF;
+  --color-secondary-200: #E5DCFF;
+  --color-secondary-300: #A589F9;
+  --color-secondary-400: #8961FD;
+  --color-secondary-500: #6B39FA;
+  --color-secondary-600: #370DAD;
+  --color-secondary-700: #200273;
+  --color-secondary-800: #14014A;
+  --color-secondary-900: #080020; */
+
+  --color-black: 14 13 13;
+
+  --color-primary-50: 242 250 255;
+  --color-primary-100: 226 244 255;
+  --color-primary-200: 208 238 255;
+  --color-primary-300: 161 221 255;
+  --color-primary-400: 100 199 255;
+  --color-primary-500: 26 173 255;
+  --color-primary-600: 1 101 158;
+  --color-primary-700: 1 56 88;
+  --color-primary-800: 0 34 53;
+  --color-primary-900: 0 19 29;
+  --color-secondary-50: 248 245 255;
+  --color-secondary-100: 241 236 255;
+  --color-secondary-200: 229 220 255;
+  --color-secondary-300: 165 137 249;
+  --color-secondary-400: 137 97 253;
+  --color-secondary-500: 107 57 250;
+  --color-secondary-600: 55 13 173;
+  --color-secondary-700: 32 2 115;
+  --color-secondary-800: 20 1 74;
+  --color-secondary-900: 8 0 32;
+
+  --color-gray-50: 251 251 251;
+  --color-gray-100: 243 243 242;
+  --color-gray-200: 236 235 232;
+  --color-gray-300: 219 217 211;
+  --color-gray-400: 173 169 164;
+  --color-gray-500: 151 148 143;
+  --color-gray-600: 61 59 56;
+  --color-gray-700: 41 39 36;
+  --color-gray-800: 28 27 25;
+  --color-gray-900: 18 17 16;
+
+  --color-shadow: var(--color-gray-400);
+}
+
+
+/* body {
   background-color: $dt('alpine.body.backgroundColor');
   color: $dt('alpine.body.color');
-}
+} */
 
 /* Color scheme images helper classes */
 .light-img {

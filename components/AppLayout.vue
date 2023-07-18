@@ -20,7 +20,7 @@ useContentHead(alpine as any)
 <template>
   <div>
     <!-- <Container class="app-layout"> -->
-    <!-- <AppLoadingBar /> -->
+    <AppLoadingBar />
     <!-- <AppHeader v-if="alpine.header" /> -->
     <slot />
     <!-- <AppFooter v-if="alpine.footer" /> -->

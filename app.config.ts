@@ -1,4 +1,7 @@
+import tokens from './tokens.config'
+
 export default defineAppConfig({
+  tokens,
   alpine: {
     title: 'Alpine',
     description: 'The minimalist blog theme',
