@@ -11,11 +11,11 @@
   },
   "devDependencies": {
     "@nuxt-themes/alpine": "^1.6.2",
-    "@nuxt/devtools": "^0.6.7",
-    "@nuxt/eslint-config": "^0.1.1",
-    "@nuxtjs/plausible": "^0.2.1",
-    "@types/node": "^20.4.0",
-    "eslint": "^8.44.0",
-    "nuxt": "^3.6.2"
+    "@nuxt/devtools": "^0.8.5",
+    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxtjs/plausible": "^0.2.3",
+    "@types/node": "^20.7.1",
+    "eslint": "^8.50.0",
+    "nuxt": "^3.7.4"
   }
 }
