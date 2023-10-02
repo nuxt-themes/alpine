@@ -60,6 +60,9 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: ''
   },
+  pinceau: {
+    studio: true
+  },
   content: {
     documentDriven: true,
     navigation: {
