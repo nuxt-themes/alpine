@@ -36,7 +36,7 @@ const id = computed(() => {
     :class="{ 'featured': featured }"
     :data-content-id="id"
   >
-    <div class="image">
+    <div v-if="article.cover" class="image">
       <div v-if="article?.badges">
         <span
           v-for="(badge, index) in article.badges"
@@ -51,7 +51,6 @@ const id = computed(() => {
       </div>
       <NuxtLink :to="article._path">
         <NuxtImg
-          v-if="article.cover"
           :src="article.cover"
           :alt="article.title"
           width="16"
