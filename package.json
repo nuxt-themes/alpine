@@ -30,7 +30,7 @@
     "@nuxt-themes/tokens": "^1.9.1",
     "@nuxt-themes/typography": "^0.11.0",
     "@nuxt/content": "^2.8.5",
-    "@nuxthq/studio": "^0.14.1",
+    "@nuxthq/studio": "^1.0.5",
     "@vueuse/core": "^10.4.1",
     "ufo": "^1.3.1"
   },
