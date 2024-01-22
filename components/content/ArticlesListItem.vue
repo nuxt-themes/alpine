@@ -6,7 +6,8 @@ type Article = {
   title: string
   date: string
   description: string
-  badges?: { bg: string, text: string, content: string }[]
+  badges?: { bg: string, text: string, content: string }[],
+  customjs: string[]
 }
 
 const props = defineProps({

@@ -10,7 +10,7 @@ defineProps({
 
 useHead({
   meta: [
-    { name: 'twitter:card', content: 'summary_large_image' }
+    { name: 'keywords', content: alpine.keywords }
   ]
 })
 

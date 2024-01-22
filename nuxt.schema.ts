@@ -19,6 +19,12 @@ export default defineNuxtSchema({
        */
       description: 'The minimalist blog theme',
       /**
+       * Website description, used for meta description.
+       *
+       * @studioIcon material-symbols:keywords
+       */
+      keywords: 'Keywords',
+      /**
        * Cover image.
        *
        * @example '/cover.jpg'
@@ -182,6 +188,7 @@ export default defineNuxtSchema({
       /**
        * Back to top button configuration.
        *
+       * @studioIcon material-symbols:arrow-upward
        */
       back: {
         text: 'Back',
