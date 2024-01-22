@@ -40,6 +40,9 @@ export default defineAppConfig({
     backToTop: {
       text: 'Back to top',
       icon: 'material-symbols:arrow-upward'
+    },
+    back: {
+      text: 'Back',
     }
   }
 })

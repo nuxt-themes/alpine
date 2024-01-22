@@ -7,7 +7,7 @@
     >
       <Icon name="ph:arrow-left" />
       <span>
-        Back
+        {{ alpine?.back?.text || 'Back' }}
       </span>
     </NuxtLink>
     <header>

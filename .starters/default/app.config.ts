@@ -45,6 +45,9 @@ export default defineAppConfig({
 
     backToTop: {
       text: 'К началу'
+    },
+    back: {
+      text: 'Назад',
     }
   }
 })

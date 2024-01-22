@@ -178,6 +178,13 @@ export default defineNuxtSchema({
       backToTop: {
         icon: 'material-symbols:arrow-upward',
         text: 'Back to top',
+      },
+      /**
+       * Back to top button configuration.
+       *
+       */
+      back: {
+        text: 'Back',
       }
     }
   }
