@@ -1,1 +1,0 @@
-import{k as t,b as n,c as o,a5 as r}from"./entry.SO2DfJu_.js";const c={};function a(e,s){return n(),o("tr",null,[r(e.$slots,"default",{},void 0,!0)])}const d=t(c,[["render",a],["__scopeId","data-v-5f056677"]]);export{d as default};
