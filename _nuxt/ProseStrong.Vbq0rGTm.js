@@ -1,1 +1,0 @@
-import{k as r,b as t,c as n,a5 as o}from"./entry.jf147lS8.js";const s={};function a(e,c){return t(),n("strong",null,[o(e.$slots,"default",{},void 0,!0)])}const l=r(s,[["render",a],["__scopeId","data-v-16019da6"]]);export{l as default};
