@@ -1,3 +1,4 @@
+// https://github.com/nuxt-themes/alpine/blob/main/nuxt.schema.ts
 export default defineAppConfig({
   alpine: {
     title: 'Alpine',
