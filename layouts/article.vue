@@ -47,11 +47,19 @@ const alpine = useAppConfig().alpine
 
 const article = ref<HTMLElement | null>(null)
 
-if (page.value && page.value.cover) {
+if (page.value) {
+  const linkArray = []
+  const metaArray = []
+  
+  if (page.value.cover) {
+    metaArray.push({ property: 'og:image', content: page.value.cover })
+  }
+  if (page.value.canonical) {
+    linkArray.push({ rel: 'canonical', href: page.value.canonical })
+  }
   useHead({
-    meta: [
-      { property: 'og:image', content: page.value.cover }
-    ]
+    meta: metaArray,
+    link: linkArray
   })
 }
 
