@@ -54,12 +54,14 @@ css({
       },
       '.title': {
         fontSize: '{text.4xl.fontSize}',
+        fontFamily: 'var(--typography-font-display)',
         lineHeight: '{text.4xl.lineHeight}',
         fontWeight: '{fontWeight.bold}',
       },
       '.description': {
         marginTop: '{space.3}',
         fontSize: '{text.xl.fontSize}',
+        fontFamily: 'var(--typography-font-body)',
         lineHeight: '{text.xl.lineHeight}',
       },
       img: {
