@@ -3,7 +3,7 @@
   "version": "1.6.6",
   "type": "module",
   "exports": "./nuxt.config.ts",
-  "packageManager": "pnpm@8.5.1",
+  "packageManager": "pnpm@9.12.2",
   "files": [
     "assets",
     "components",
