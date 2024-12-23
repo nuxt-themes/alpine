@@ -67,6 +67,8 @@ const parentPath = computed(
   () => {
     const pathTabl = route.path.split('/')
     pathTabl.pop()
+    pathTabl.pop()
+    pathTabl.pop()
     return pathTabl.join('/')
   }
 )
