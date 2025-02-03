@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { withTrailingSlash } from 'ufo'
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+
+const router = useRouter()
+const route = useRoute()
 
 const props = defineProps({
   path: {
@@ -9,46 +13,45 @@ const props = defineProps({
   }
 })
 
-// @ts-ignore
-const { data: _articles } = await useAsyncData(props.path, async () => await queryContent(withTrailingSlash(props.path)).sort({ date: -1 }).find())
+const currentYear = ref(parseInt(route.query.year as string) || 2024)
+const years = ref([2024, 2023, 2022, 2021]) // Add more years as needed
+
+const fetchArticles = async (year: number) => {
+  const path = `${props.path}/${year}`
+  const { data } = await useAsyncData(path, async () => await queryContent(withTrailingSlash(path)).sort({ date: -1 }).find())
+  return data
+}
+
+const _articles = ref(await fetchArticles(currentYear.value))
 
 const articles = computed(() => _articles.value || [])
 
-// Get the unique years from the articles
-const years = computed(() => {
-  const yearsSet = new Set(articles.value.map(article => new Date(article.date).getFullYear()))
-  return Array.from(yearsSet).sort((a, b) => b - a)
-})
-
-const currentYear = ref(years.value[0])
-
-const filteredArticles = computed(() => {
-  return articles.value.filter(article => new Date(article.date).getFullYear() === currentYear.value)
-})
-
-const showNextYear = () => {
-  const currentIndex = years.value.indexOf(currentYear.value)
-  if (currentIndex > 0) {
-    currentYear.value = years.value[currentIndex - 1]
-  }
+const updateYear = async (year: number) => {
+  currentYear.value = year
+  await router.push({ query: { year: currentYear.value } })
+  window.location.reload()
 }
 
-const showPreviousYear = () => {
+const previousYearLink = computed(() => {
   const currentIndex = years.value.indexOf(currentYear.value)
-  if (currentIndex < years.value.length - 1) {
-    currentYear.value = years.value[currentIndex + 1]
-  }
-}
+  return currentIndex < years.value.length - 1 ? years.value[currentIndex + 1] : null
+})
+
+const nextYearLink = computed(() => {
+  const currentIndex = years.value.indexOf(currentYear.value)
+  return currentIndex > 0 ? years.value[currentIndex - 1] : null
+})
+
 </script>
 
 <template>
   <div>
-    <div v-if="filteredArticles?.length" class="articles-list">
+    <div v-if="articles?.length" class="articles-list">
       <div class="featured">
-        <ArticlesListItem :article="filteredArticles[0]" :featured="true" />
+        <ArticlesListItem :article="articles[0]" :featured="true" />
       </div>
       <div class="layout">
-        <ArticlesListItem v-for="(article, index) in filteredArticles.slice(1)" :key="index" :article="article" />
+        <ArticlesListItem v-for="(article, index) in articles.slice(1)" :key="index" :article="article" />
       </div>
     </div>
     <div v-else class="tour">
@@ -56,8 +59,8 @@ const showPreviousYear = () => {
     </div>
 
     <div class="navigation-buttons">
-      <button @click="showPreviousYear" :disabled="currentYear === years[years.length - 1]">Previous Year</button>
-      <button @click="showNextYear" :disabled="currentYear === years[0]">Next Year</button>
+      <button v-if="previousYearLink" @click="updateYear(previousYearLink)">Previous Year</button>
+      <button v-if="nextYearLink" @click="updateYear(nextYearLink)">Next Year</button>
     </div>
   </div>
 </template>
