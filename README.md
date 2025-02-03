@@ -1,5 +1,5 @@
 run pnpm pack to build the compiled theme
 
 
-TODO: complete the navigation buttons for every year
-TODO: lazy loading of articles for each year. Currently it loads everything. Not good
+TODO: find a way to recompute articles without using window.reload()
+TODO: refactor the buttons using the button classes in footer or any other existing class.

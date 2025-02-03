@@ -59,8 +59,8 @@ const nextYearLink = computed(() => {
     </div>
 
     <div class="navigation-buttons">
-      <button v-if="previousYearLink" @click="updateYear(previousYearLink)">Previous Year</button>
-      <button v-if="nextYearLink" @click="updateYear(nextYearLink)">Next Year</button>
+      <button :disabled="!previousYearLink" @click="previousYearLink && updateYear(previousYearLink)">Año anterior</button>
+      <button :disabled="!nextYearLink" @click="nextYearLink && updateYear(nextYearLink)">Año siguiente</button>
     </div>
   </div>
 </template>
@@ -102,7 +102,7 @@ css({
   },
   '.navigation-buttons': {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     marginTop: '20px',
     button: {
       padding: '10px 20px',
