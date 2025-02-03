@@ -13,8 +13,8 @@ const props = defineProps({
   }
 })
 
-const currentYear = ref(parseInt(route.query.year as string) || 2024)
-const years = ref([2024, 2023, 2022, 2021]) // Add more years as needed
+const currentYear = ref(parseInt(route.query.year as string) || new Date().getFullYear())
+const years = ref([2025, 2024, 2023]) // Add more years as needed
 
 const fetchArticles = async (year: number) => {
   const path = `${props.path}/${year}`
@@ -32,14 +32,29 @@ const updateYear = async (year: number) => {
   window.location.reload()
 }
 
-const previousYearLink = computed(() => {
+const yearButtons = computed(() => {
   const currentIndex = years.value.indexOf(currentYear.value)
-  return currentIndex < years.value.length - 1 ? years.value[currentIndex + 1] : null
-})
+  const buttons = []
 
-const nextYearLink = computed(() => {
-  const currentIndex = years.value.indexOf(currentYear.value)
-  return currentIndex > 0 ? years.value[currentIndex - 1] : null
+  if (currentIndex > 1) {
+    buttons.push(years.value[0])
+  }
+
+  if (currentIndex > 0) {
+    buttons.push(years.value[currentIndex - 1])
+  }
+
+  buttons.push(currentYear.value)
+
+  if (currentIndex < years.value.length - 1) {
+    buttons.push(years.value[currentIndex + 1])
+  }
+
+  if (currentIndex < years.value.length - 2) {
+    buttons.push(years.value[years.value.length - 1])
+  }
+
+  return buttons.reverse()
 })
 
 </script>
@@ -59,8 +74,15 @@ const nextYearLink = computed(() => {
     </div>
 
     <div class="navigation-buttons">
-      <button :disabled="!previousYearLink" @click="previousYearLink && updateYear(previousYearLink)">Año anterior</button>
-      <button :disabled="!nextYearLink" @click="nextYearLink && updateYear(nextYearLink)">Año siguiente</button>
+      <button
+        v-for="year in yearButtons"
+        :key="year"
+        :disabled="year === currentYear"
+        @click="updateYear(year)"
+        class="nav-button"
+      >
+        {{ year }}
+      </button>
     </div>
   </div>
 </template>
@@ -109,7 +131,7 @@ css({
       fontSize: '16px',
       cursor: 'pointer',
       '&:disabled': {
-        cursor: 'not-allowed',
+      // cursor: 'not-allowed', not quite good looking
         opacity: 0.5,
       }
     }
