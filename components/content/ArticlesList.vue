@@ -72,7 +72,7 @@ const yearButtons = computed(() => {
     <div v-else class="tour">
       <p>Seems like there are no articles for {{ currentYear }}.</p>
     </div>
-
+    <div class="spacing"> </div>
     <div class="navigation-buttons">
       <button
         v-for="year in yearButtons"
