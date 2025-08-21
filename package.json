@@ -1,6 +1,6 @@
 {
   "name": "@4verburga/alpine-spanishplus",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "type": "module",
   "exports": "./nuxt.config.ts",
   "packageManager": "pnpm@8.5.1",
