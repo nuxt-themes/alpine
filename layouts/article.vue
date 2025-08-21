@@ -23,6 +23,9 @@
       >
         {{ formatDate(page.date) }}
       </time>
+        <p v-if="page?.author?.name" class="author">
+          Por: {{ page.author.name }}
+        </p>
     </header>
 
     <div class="prose">
