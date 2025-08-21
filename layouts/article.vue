@@ -23,9 +23,9 @@
       >
         {{ formatDate(page.date) }}
       </time>
-        <p v-if="page?.author?.name" class="author">
-          Por: {{ page.author.name }}
-        </p>
+        <span v-if="page?.author?.name" class="author">
+          &nbsp;•&nbsp;Por <strong>{{ page.author.name }}</strong>
+        </span>
     </header>
 
     <div class="prose">
@@ -115,6 +115,12 @@ css({
     },
     time: {
       color: '{elements.text.secondary.color.static}'
+    },
+    '.author': {
+      fontSize: '0.95em',
+      color: '#666',
+      fontWeight: 'normal',
+      marginLeft: '8px',
     },
     '.prose': {
       '.back-to-top': {
