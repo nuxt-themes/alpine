@@ -1,0 +1,39 @@
+name: publish-dev
+
+on:
+  workflow_run:
+    workflows: ["ci-dev"]
+    types: [completed]
+    branches: [dev]
+
+jobs:
+  publish:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v2.2.4
+        name: Install pnpm
+        with:
+          version: 8
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Bump version with dev suffix
+        run: npx jiti ./.github/scripts/bump-dev $PWD
+
+      - name: Publish to npm with dev tag
+        run: npm publish --access public --tag dev
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
