@@ -2,9 +2,9 @@ name: publish
 
 on:
   workflow_run:
-    workflows: ["ci-main"]
+    workflows: ["ci-main", "ci-dev"]
     types: [completed]
-    branches: [main]
+    branches: [main, dev]
 
 jobs:
   publish:
@@ -13,24 +13,35 @@ jobs:
 
     permissions:
       contents: read
+      id-token: write
 
     steps:
       - uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v2.2.4
-        name: Install pnpm
         with:
-          version: 8
+          ref: ${{ github.event.workflow_run.head_branch }}
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
           registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --ignore-scripts
+
+      - name: Bump version with dev suffix
+        if: ${{ github.event.workflow_run.head_branch == 'dev' }}
+        run: |
+          COMMIT=$(git rev-parse --short HEAD)
+          VERSION=$(node -p "require('./package.json').version")
+          npm version "${VERSION}-dev.${COMMIT}" --no-git-tag-version
 
       - name: Publish to npm
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ "${{ github.event.workflow_run.head_branch }}" = "dev" ]; then
+            npm publish --access public --tag dev
+          else
+            npm publish --access public
+          fi
